@@ -968,6 +968,13 @@ section[id],.story-book{scroll-margin-top:var(--head-height)}
   .hero::before,.cta-band::before{animation:none;opacity:.25}
   .hero-bg,.book-closed,.review-cover,.practical-scrollhint span,.about-dragon,.cta-dragon,.book-glow,.book-motes span,.book3d-float,.book3d-shadow,.b-front::after{animation:none}
 }
+/* phones: keep Brenda in frame, below the text instead of cropped off the right edge */
+@media(max-width:680px){
+  .hero{--hero-photo-h:max(calc(540px + 113vw),calc(2480px - 383vw))}
+  .hero,.hero-grid{min-height:0}
+  .hero-bg{bottom:auto;height:var(--hero-photo-h);background-position:right bottom;transform-origin:80% 85%}
+  .hero-copy{min-height:var(--hero-photo-h);justify-content:flex-start}
+}
 
 /* ============ topic pages ============ */
 .sub-hero{background:var(--cream);padding:clamp(40px,7vh,88px) 0 clamp(56px,9vh,104px)}
