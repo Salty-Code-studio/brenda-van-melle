@@ -497,8 +497,8 @@ h1,h2,h3{font-synthesis:none}
 .herken-banner .herken-quote,.herken-banner .herken-close,.herken-banner .link-more{text-shadow:0 1px 18px rgba(20,39,40,.45)}
 
 /* ---------- 21. Homepage hero: Brenda in conversation ---------- */
-.hero-bg{background-image:url("img/photo/hero-brenda-gesprek.png")}
-@media (max-width:680px){.hero-bg{background-image:url("img/photo/hero-brenda-gesprek.png");background-position:60% 100%}}
+.hero-bg{background-image:url("img/photo/hero-brenda-gesprek.webp")}
+@media (max-width:680px){.hero-bg{background-image:url("img/photo/hero-brenda-gesprek.webp");background-position:60% 100%}}
 
 /* ---------- 22. Vision: group conversation as a soft blurred background ---------- */
 .vision{position:relative;overflow:hidden;isolation:isolate;background:var(--cream)}
@@ -1443,3 +1443,7 @@ h1,h2,h3{font-synthesis:none}
 .reviews-page .sub-head h1{color:#f6f1e7}
 .reviews-page h1 em{color:#cdb4e6}
 .hero-awards .award-big{font-weight:400!important}.hero-awards .award-top{font-weight:500!important}
+
+/* 69 · header CTA in light green */
+.site-head .nav-cta .btn-header{background:#cfe3d4!important;color:#243f3c!important;border-color:#cfe3d4!important;box-shadow:none!important}
+.site-head .nav-cta .btn-header:hover{background:#e0eee3!important;border-color:#e0eee3!important}
