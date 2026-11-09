@@ -76,9 +76,11 @@
       var naam = value('naam'), wat = value('wat');
       error.hidden = !!(naam && wat);
       if (!naam || !wat) { (naam ? form.elements.wat : form.elements.naam).focus(); return; }
-      var traject = checked('traject')[0] || 'Weet ik nog niet';
+      var traject = checked('traject').join(', ') || 'Weet ik nog niet';
       var lines = ['Hallo Brenda,', '', 'Ik wil graag een kennismaking plannen.', '', 'Begeleiding: ' + traject, 'Naam: ' + naam];
       if (value('telefoon')) lines.push('Telefoon: ' + value('telefoon'));
+      if (value('investering')) lines.push('', 'Gekozen investering: ' + value('investering'));
+      if (value('aanvulling')) lines.push('Erbij: ' + value('aanvulling'));
       lines.push('', 'Wat er speelt:', wat);
       if (checked('duur').length) lines.push('', 'Hoe lang dit al speelt: ' + checked('duur')[0]);
       if (checked('moment').length) lines.push('Goed bereikbaar: ' + checked('moment').join(', ').toLowerCase());

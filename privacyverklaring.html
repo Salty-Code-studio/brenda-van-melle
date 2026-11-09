@@ -9,8 +9,9 @@
 <meta name="robots" content="noindex, nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Mulish:wght@300;400;500;600;700&family=Caveat:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Mulish:wght@300;400;500;600;700&family=Caveat:wght@400;500;600&family=Cormorant+Garamond:wght@600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/design-b.css?v=223">
 </head>
 <body>
 <!-- ============ HEADER ============ -->
@@ -26,7 +27,16 @@
     <nav aria-label="Hoofdmenu">
       <ul class="nav-links">
         <li><a href="praktijk-moed.html">Visie</a></li>
-        <li><a href="coaching.html">Begeleiding</a></li>
+        <li class="has-dd"><a href="coaching.html" aria-haspopup="true">Begeleiding <svg class="dd-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a>
+          <div class="nav-dd" role="menu">
+            <a role="menuitem" href="coaching.html"><span class="dd-t">Alle begeleiding</span><span class="dd-s">Eén visie, verschillende ingangen</span></a>
+            <a role="menuitem" href="rouw-en-verlies.html"><span class="dd-t">Levend verlies &amp; rouw</span><span class="dd-s">Verlies tijdens en na het leven</span></a>
+            <a role="menuitem" href="innerlijke-groei.html"><span class="dd-t">Patronen &amp; generaties</span><span class="dd-s">Wat van generatie op generatie doorwerkt</span></a>
+            <a role="menuitem" href="richting-en-zingeving.html"><span class="dd-t">Persoonlijke coaching</span><span class="dd-s">Als je jezelf een beetje kwijt bent</span></a>
+            <a role="menuitem" href="systemische-begeleiding.html"><span class="dd-t">Systemisch werk</span><span class="dd-s">Een instrument als het past</span></a>
+            <a role="menuitem" href="familieopstellingen.html"><span class="dd-t">Familieopstellingen</span><span class="dd-s">Je systeem zichtbaar maken</span></a>
+          </div>
+        </li>
         <li><a href="werkwijze.html">Werkwijze</a></li>
         <li><a href="over-brenda.html">Over Brenda</a></li>
         <li><a href="boek.html">Boek</a></li>
@@ -57,9 +67,7 @@
 <section class="sub-hero sub-hero--plain">
   <div class="wrap sub-hero-grid">
     <div class="sub-hero-copy hero-in">
-      <nav class="crumbs" aria-label="Kruimelpad"><a href="index.html">Home</a><span aria-hidden="true">/</span><span aria-current="page">Privacyverklaring</span></nav>
       <p class="topic-tag"><span class="topic-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 5 6v5c0 4.5 3 8 7 10 4-2 7-5.5 7-10V6Z"/><path d="m9 12 2 2 4-4"/></svg></span>Privacyverklaring</p>
-      <span class="eyebrow">Praktijk MOED</span>
       <h1>Privacyverklaring</h1>
       <p class="sub-lead">Hoe Praktijk MOED omgaat met jouw gegevens. Kort gezegd: deze website slaat niets op, en wat je zelf deelt, wordt vertrouwelijk behandeld.</p>
     </div>
@@ -72,7 +80,7 @@
 <div class="concept-note"><strong>Conceptversie.</strong> Deze tekst is een eerste opzet en wordt nog door Brenda aangevuld en gecontroleerd. Onderdelen tussen [haken] moeten nog worden ingevuld.</div>
 
 <h2>Wie is verantwoordelijk?</h2>
-<p>Praktijk MOED, Brenda van Melle, is verantwoordelijk voor de verwerking van persoonsgegevens zoals beschreven in deze verklaring. Je kunt contact opnemen via <a href="mailto:bjvanmelle@gmail.com">bjvanmelle@gmail.com</a> of <a href="tel:+31654725032">+31 (0)6 54 72 50 32</a>. [KvK-nummer en adres aanvullen]</p>
+<p>Praktijk MOED, Brenda van Melle, is verantwoordelijk voor de verwerking van persoonsgegevens zoals beschreven in deze verklaring. Je kunt contact opnemen via <a href="mailto:bjvanmelle@gmail.com">bjvanmelle@gmail.com</a> of <a href="tel:+31654725032">+31 (0)6 54 72 50 32</a>. KvK-nummer 65739736. [Adres aanvullen: postcode en plaats]</p>
 
 <h2>Welke gegevens worden verwerkt?</h2>
 <p>Alleen de gegevens die je zelf deelt wanneer je contact opneemt via WhatsApp, e-mail of telefoon, zoals:</p>
@@ -144,7 +152,7 @@
       </div>
     </div>
     <div class="foot-bottom">
-      <span>&copy; 2026 Brenda van Melle · <a href="privacyverklaring.html">Privacyverklaring</a></span>
+      <span>&copy; 2026 Brenda van Melle · KvK 65739736 · <a href="privacyverklaring.html">Privacyverklaring</a></span>
       <span>Conceptontwerp door Salty Code Studio</span>
     </div>
   </div>
@@ -153,6 +161,7 @@
   <a class="btn btn-primary" href="contact.html#kennismaken">Plan een kennismaking</a>
   <a class="mobile-cta-wa" href="https://wa.me/31654725032?text=Hallo%20Brenda%2C%20ik%20wil%20graag%20een%20telefonische%20kennismaking%20plannen." target="_blank" rel="noopener" aria-label="Stuur Brenda een WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 19.5 5.6 16A8 8 0 1 1 8.4 18.6Z"/><path d="M9 10.5h.01M12 10.5h.01M15 10.5h.01"/></svg></a>
 </div>
-<script src="assets/site.js"></script>
+<script src="assets/site.js?v=3"></script>
+<script src="assets/design-b.js?v=30"></script>
 </body>
 </html>

@@ -9,8 +9,9 @@
 <meta name="robots" content="noindex, nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Mulish:wght@300;400;500;600;700&family=Caveat:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Mulish:wght@300;400;500;600;700&family=Caveat:wght@400;500;600&family=Cormorant+Garamond:wght@600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/design-b.css?v=223">
 </head>
 <body>
 <!-- ============ HEADER ============ -->
@@ -26,7 +27,16 @@
     <nav aria-label="Hoofdmenu">
       <ul class="nav-links">
         <li><a href="praktijk-moed.html">Visie</a></li>
-        <li><a class="is-current" href="coaching.html">Begeleiding</a></li>
+        <li class="has-dd"><a class="is-current" href="coaching.html" aria-haspopup="true">Begeleiding <svg class="dd-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a>
+          <div class="nav-dd" role="menu">
+            <a role="menuitem" href="coaching.html"><span class="dd-t">Alle begeleiding</span><span class="dd-s">Eén visie, verschillende ingangen</span></a>
+            <a role="menuitem" href="rouw-en-verlies.html"><span class="dd-t">Levend verlies &amp; rouw</span><span class="dd-s">Verlies tijdens en na het leven</span></a>
+            <a role="menuitem" href="innerlijke-groei.html"><span class="dd-t">Patronen &amp; generaties</span><span class="dd-s">Wat van generatie op generatie doorwerkt</span></a>
+            <a role="menuitem" href="richting-en-zingeving.html"><span class="dd-t">Persoonlijke coaching</span><span class="dd-s">Als je jezelf een beetje kwijt bent</span></a>
+            <a role="menuitem" href="systemische-begeleiding.html"><span class="dd-t">Systemisch werk</span><span class="dd-s">Een instrument als het past</span></a>
+            <a role="menuitem" href="familieopstellingen.html"><span class="dd-t">Familieopstellingen</span><span class="dd-s">Je systeem zichtbaar maken</span></a>
+          </div>
+        </li>
         <li><a href="werkwijze.html">Werkwijze</a></li>
         <li><a href="over-brenda.html">Over Brenda</a></li>
         <li><a href="boek.html">Boek</a></li>
@@ -54,34 +64,34 @@
 
 <main id="top" class="sub">
 
-<section class="sub-hero">
+<section class="tex-familie sub-hero sub-hero--plain photo-hero">
   <div class="wrap sub-hero-grid">
     <div class="sub-hero-copy hero-in">
-      <nav class="crumbs" aria-label="Kruimelpad"><a href="index.html">Home</a><span aria-hidden="true">/</span><a href="coaching.html">Begeleiding</a><span aria-hidden="true">/</span><span aria-current="page">Familieopstellingen</span></nav>
       <p class="topic-tag"><span class="topic-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0"/><circle cx="17" cy="9" r="2.5"/><path d="M15.5 14.5A5 5 0 0 1 21 19"/></svg></span>Familieopstellingen</p>
-      <span class="eyebrow">Systemisch werk · individueel</span>
       <h1>Familie<em>opstellingen</em></h1>
       <p class="sub-lead">Soms helpt een opstelling om zichtbaar te maken wat je meedraagt. Brenda zet het in wanneer het past bij jouw verhaal en je vraag.</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary btn-lg" href="innerlijke-groei.html#kennismaken">Plan een kennismaking <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="btn btn-ghost btn-lg" href="#inhoud">Lees verder</a>
-      </div>
     </div>
-    <figure class="sub-hero-media reveal"><img src="assets/img/brenda.webp" alt="Brenda van Melle met een kop thee in een warme huiskamer" decoding="async"></figure>
   </div>
 </section>
 
 <section class="section info-body" id="inhoud">
-  <div class="wrap info-grid">
-    <article class="prose reveal">
+  <div class="wrap info-grid info-grid--bio">
+    <aside class="bio-side"><nav class="bio-toc" aria-label="Op deze pagina"><p class="bio-toc-title">Op deze pagina</p><ol><li><a href="#wat">Wat het is</a></li><li><a href="#middel">Een middel</a></li><li><a href="#wanneer">Wanneer</a></li><li><a href="#verloop">Hoe het verloopt</a></li></ol></nav>
+      <div class="fact-card bio-fact"><h3>In het kort</h3><dl><dt>Vorm</dt><dd>Individuele familieopstelling</dd><dt>Waar</dt><dd>Bij jou thuis of op een plek die jullie samen kiezen</dd><dt>Duur</dt><dd>Circa 2 tot 2,5 uur</dd><dt>Tarief</dt><dd>€195 per sessie, of €585 voor drie sessies</dd></dl></div>
+      <nav class="related" aria-label="Meer lezen"><h3>Lees ook</h3><a href="praktijk-moed.html">Visie van MOED <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a href="rouw-en-verlies.html">Levend verlies &amp; rouw <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a href="innerlijke-groei.html">Patronen &amp; generaties <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a href="richting-en-zingeving.html">Persoonlijke coaching <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a href="werkwijze.html">Werkwijze &amp; tarieven <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></nav>
+    </aside>
+    <article class="prose bio-grid">
+<section class="bio-block reveal" id="wat" data-label="Wat het is">
 <h2>Wat is een familieopstelling?</h2>
 <p>Een familieopstelling is een manier om zichtbaar te maken hoe jij je verhoudt tot je familie en de mensen die belangrijk voor je zijn. Wat in woorden lastig te vangen is, krijgt een plek in de ruimte. Daardoor wordt vaak zichtbaar welke patronen, loyaliteiten of onuitgesproken gebeurtenissen met jouw vraag meebewegen.</p>
 <p>Het doel is niet om schuld te zoeken, maar om te zien wat er is. Als je ziet wat je (soms al generaties lang) meedraagt, ontstaat er ruimte om je eigen plek in te nemen.</p>
-
+</section>
+<section class="bio-block reveal" id="middel" data-label="Een middel">
 <h2>Een middel, geen vast onderdeel</h2>
 <p>Een opstelling is niet het uitgangspunt van iedere begeleiding. Brenda begint bij jouw verhaal. Pas als een opstelling daarbij past, stelt ze die voor.</p>
 <p>Ze werkt met <strong>individuele familieopstellingen</strong>: niet in een groep, maar samen met haar. Bij jou thuis of op een andere plek die jullie samen kiezen. Een sessie duurt circa 2 tot 2,5 uur en wordt rustig afgestemd op wat zich aandient.</p>
-
+</section>
+<section class="bio-block reveal" id="wanneer" data-label="Wanneer">
 <h2>Wanneer kan een opstelling helpend zijn?</h2>
 <ul>
 <li>Je loopt steeds tegen dezelfde dingen aan, in relaties, op je werk of in je familie.</li>
@@ -90,7 +100,8 @@
 <li>Je draagt verdriet of verlies mee dat nog geen plek heeft gekregen.</li>
 <li>Je weet wat je wilt veranderen, maar iets houdt je tegen.</li>
 </ul>
-
+</section>
+<section class="bio-block reveal" id="verloop" data-label="Hoe het verloopt">
 <h2>Hoe verloopt het?</h2>
 <ol>
 <li><strong>Kennismaken.</strong> Een telefonisch gesprek over je verhaal, je vraag en wat bij je past.</li>
@@ -98,18 +109,14 @@
 <li><strong>Nazorg.</strong> Terugkijken en, waar nodig, kort telefonische of schriftelijke nazorg.</li>
 </ol>
 <p>Drie sessies worden aangeraden, maar zijn niet verplicht. Zo is er ruimte om je vraag te verdiepen en inzichten te laten landen. Lees meer over de <a href="werkwijze.html">werkwijze en tarieven</a> of over <a href="systemische-begeleiding.html">systemische begeleiding</a>.</p>
+</section>
 </article>
-    <aside class="info-aside">
-      <div class="fact-card reveal"><h3>In het kort</h3><dl><dt>Vorm</dt><dd>Individuele familieopstelling</dd><dt>Waar</dt><dd>Bij jou thuis of op een plek die jullie samen kiezen</dd><dt>Duur</dt><dd>Circa 2 tot 2,5 uur</dd><dt>Tarief</dt><dd>€195 per sessie, of €585 voor drie sessies</dd></dl></div>
-      <nav class="related reveal" aria-label="Meer lezen"><h3>Lees ook</h3><a href="praktijk-moed.html">Visie van MOED <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a href="rouw-en-verlies.html">Levend verlies &amp; rouw <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a href="innerlijke-groei.html">Patronen &amp; generaties <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a href="richting-en-zingeving.html">Persoonlijke coaching <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a href="werkwijze.html">Werkwijze &amp; tarieven <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></nav>
-    </aside>
   </div>
 </section>
 
 <section class="cta-band info-cta">
   <span class="cta-dragon one" aria-hidden="true"></span>
   <div class="wrap">
-    <span class="eyebrow">Je eerste stap</span>
     <h2>Klaar om die stap te <em>nemen</em>?</h2>
     <p class="cta-lead">Begin gewoon met een rustig telefonisch gesprek. Je hoeft nog niets te beslissen.</p>
     <div class="cta-actions">
@@ -154,7 +161,7 @@
       </div>
     </div>
     <div class="foot-bottom">
-      <span>&copy; 2026 Brenda van Melle · <a href="privacyverklaring.html">Privacyverklaring</a></span>
+      <span>&copy; 2026 Brenda van Melle · KvK 65739736 · <a href="privacyverklaring.html">Privacyverklaring</a></span>
       <span>Conceptontwerp door Salty Code Studio</span>
     </div>
   </div>
@@ -163,6 +170,7 @@
   <a class="btn btn-primary" href="innerlijke-groei.html#kennismaken">Plan een kennismaking</a>
   <a class="mobile-cta-wa" href="https://wa.me/31654725032?text=Hallo%20Brenda%2C%20ik%20wil%20graag%20een%20telefonische%20kennismaking%20plannen." target="_blank" rel="noopener" aria-label="Stuur Brenda een WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 19.5 5.6 16A8 8 0 1 1 8.4 18.6Z"/><path d="M9 10.5h.01M12 10.5h.01M15 10.5h.01"/></svg></a>
 </div>
-<script src="assets/site.js"></script>
+<script src="assets/site.js?v=3"></script>
+<script src="assets/design-b.js?v=30"></script>
 </body>
 </html>

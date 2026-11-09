@@ -9,8 +9,9 @@
 <meta name="robots" content="noindex, nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Mulish:wght@300;400;500;600;700&family=Caveat:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Mulish:wght@300;400;500;600;700&family=Caveat:wght@400;500;600&family=Cormorant+Garamond:wght@600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/design-b.css?v=223">
 </head>
 <body>
 <!-- ============ HEADER ============ -->
@@ -26,7 +27,16 @@
     <nav aria-label="Hoofdmenu">
       <ul class="nav-links">
         <li><a href="praktijk-moed.html">Visie</a></li>
-        <li><a class="is-current" aria-current="page" href="coaching.html">Begeleiding</a></li>
+        <li class="has-dd"><a class="is-current" aria-current="page" href="coaching.html" aria-haspopup="true">Begeleiding <svg class="dd-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a>
+          <div class="nav-dd" role="menu">
+            <a role="menuitem" href="coaching.html"><span class="dd-t">Alle begeleiding</span><span class="dd-s">Eén visie, verschillende ingangen</span></a>
+            <a role="menuitem" href="rouw-en-verlies.html"><span class="dd-t">Levend verlies &amp; rouw</span><span class="dd-s">Verlies tijdens en na het leven</span></a>
+            <a role="menuitem" href="innerlijke-groei.html"><span class="dd-t">Patronen &amp; generaties</span><span class="dd-s">Wat van generatie op generatie doorwerkt</span></a>
+            <a role="menuitem" href="richting-en-zingeving.html"><span class="dd-t">Persoonlijke coaching</span><span class="dd-s">Als je jezelf een beetje kwijt bent</span></a>
+            <a role="menuitem" href="systemische-begeleiding.html"><span class="dd-t">Systemisch werk</span><span class="dd-s">Een instrument als het past</span></a>
+            <a role="menuitem" href="familieopstellingen.html"><span class="dd-t">Familieopstellingen</span><span class="dd-s">Je systeem zichtbaar maken</span></a>
+          </div>
+        </li>
         <li><a href="werkwijze.html">Werkwijze</a></li>
         <li><a href="over-brenda.html">Over Brenda</a></li>
         <li><a href="boek.html">Boek</a></li>
@@ -54,18 +64,12 @@
 
 <main id="top" class="sub">
 
-<section class="sub-hero sub-hero--plain">
+<section class="tex-begeleiding sub-hero sub-hero--plain photo-hero">
   <div class="wrap sub-hero-grid">
     <div class="sub-hero-copy hero-in">
-      <nav class="crumbs" aria-label="Kruimelpad"><a href="index.html">Home</a><span aria-hidden="true">/</span><span aria-current="page">Begeleiding</span></nav>
       <p class="topic-tag"><span class="topic-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8.5 15.5 2-5 5-2-2 5-5 2Z"/></svg></span>Begeleiding</p>
-      <span class="eyebrow">Eén visie, verschillende ingangen</span>
       <h1>Begeleiding die past bij <em>jouw</em> verhaal</h1>
       <p class="sub-lead">Jouw verhaal is het vertrekpunt. Of het nu gaat om verlies, om patronen die je meedraagt of om je richting: de vorm volgt daaruit.</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary btn-lg" href="contact.html#kennismaken">Plan een kennismaking <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="btn btn-ghost btn-lg" href="#inhoud">Lees verder</a>
-      </div>
     </div>
   </div>
 </section>
@@ -77,27 +81,25 @@
       <h2>Je hoeft niet eerst volledig vast te lopen voordat wat je voelt aandacht mag krijgen.</h2>
     </div>
     <div class="svc-grid">
-      <article class="svc svc--lead reveal">
+      <article class="svc svc--lead reveal"><figure class="svc-photo"><img src="assets/img/photo/topic-rouw.webp" alt="Een man met zijn hoofd in zijn handen" loading="lazy"></figure>
         <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20 4.5 12.6a5 5 0 0 1 7.5-6.6 5 5 0 0 1 7.5 6.6L12 20Z"/><path d="m12 8-1.5 2 2.2 1.5L11 14"/></svg></span>
         <h3>Levend verlies</h3>
         <p>Verlies is meer dan rouw na een overlijden. Ook wat je tijdens het leven verliest, kan je identiteit, je relaties, je toekomstbeeld of je dagelijks leven raken. Daar is aandacht voor.</p>
         <a class="svc-pick link-more" href="rouw-en-verlies.html">Over levend verlies en rouw <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </article>
-      <article class="svc reveal d1">
+      <article class="svc reveal d1"><figure class="svc-photo svc-photo--gesprek"><img src="assets/img/photo/hero-brenda-gesprek.png" alt="Brenda in gesprek met een cliënt" loading="lazy"></figure>
         <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8.5 15.5 2-5 5-2-2 5-5 2Z"/></svg></span>
         <h3>Persoonlijke begeleiding</h3>
         <p>Stilstaan bij wat er speelt, betekenis geven aan wat je meemaakt en nieuwe mogelijkheden verkennen.</p>
         <a class="svc-pick link-more" href="richting-en-zingeving.html">Over coaching <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </article>
-      <article class="svc reveal d2">
+      <article class="svc reveal d2"><figure class="svc-photo svc-photo--familie"><img src="assets/img/photo/familie-generaties.webp" alt="Een familie in gesprek met elkaar, drie volwassenen rond een kind" loading="lazy"></figure>
         <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21v-9"/><path d="M12 12c0-3-2-5-6-5v1c0 3 2 5 6 5Z"/><path d="M12 14c0-3 2-4 6-4v1c0 3-2 4-6 4Z"/></svg></span>
         <h3>Patronen &amp; generaties</h3>
         <p>Soms draag je meer mee dan je eigen verhaal. Ervaringen, patronen en stiltes kunnen van generatie op generatie doorwerken.</p>
         <a class="svc-pick link-more" href="innerlijke-groei.html">Over patronen en generaties <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </article>
     </div>
-    <p class="svc-method reveal">Daarbij put Brenda uit haar ervaring en kennis van onder meer coaching, NLP en systemisch werk. Welke vorm past, hangt af van jouw verhaal en je vraag.</p>
-    <div class="svc-more reveal"><a class="link-more" href="werkwijze.html">Bekijk hoe een traject verloopt <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </div>
 </section>
 
@@ -106,8 +108,8 @@
   <div class="wrap">
     <div class="sub-head reveal"><h2>Wat Brenda daarbij inzet</h2><p class="sub-kicker">Middelen die volgen uit jouw verhaal, niet andersom</p><p>“Ik ontmoet de mens achter de vraag en onderzoek samen wat er werkelijk speelt. Daarbij put ik uit mijn ervaring en kennis van onder meer coaching, NLP en systemisch werk. Welke vorm van begeleiding passend is, hangt af van jouw verhaal en hulpvraag.”</p></div>
     <div class="also-grid">
-      <a class="also-card reveal" href="systemische-begeleiding.html"><span class="herken-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 2l3 3-3 3"/><path d="M4 11V9a4 4 0 0 1 4-4h12"/><path d="M7 22l-3-3 3-3"/><path d="M20 13v2a4 4 0 0 1-4 4H4"/></svg></span><div><h3>Systemisch werk</h3><p>Kijken naar de patronen, relaties en loyaliteiten die met jou en je vraag meebewegen.</p><span class="link-more">Lees meer <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></a>
-      <a class="also-card reveal d1" href="familieopstellingen.html"><span class="herken-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0"/><circle cx="17" cy="9" r="2.5"/><path d="M15.5 14.5A5 5 0 0 1 21 19"/></svg></span><div><h3>Familieopstellingen</h3><p>Een individuele opstelling, wanneer het past bij je vraag. Circa 2 tot 2,5 uur.</p><span class="link-more">Lees meer <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></a>
+      <a class="also-card also-card--photo reveal" href="systemische-begeleiding.html"><span class="also-photo"><img src="assets/img/photo/werkwijze.jpg" alt="Een vrouw luistert aandachtig in een gesprek" loading="lazy"></span><span class="herken-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 2l3 3-3 3"/><path d="M4 11V9a4 4 0 0 1 4-4h12"/><path d="M7 22l-3-3 3-3"/><path d="M20 13v2a4 4 0 0 1-4 4H4"/></svg></span><div><h3>Systemisch werk</h3><p>Kijken naar de patronen, relaties en loyaliteiten die met jou en je vraag meebewegen.</p><span class="link-more">Lees meer <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></a>
+      <a class="also-card also-card--photo reveal d1" href="familieopstellingen.html"><span class="also-photo"><img src="assets/img/photo/familie-zittend.webp" alt="Een familie in gesprek, rond een kind" loading="lazy"></span><span class="herken-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0"/><circle cx="17" cy="9" r="2.5"/><path d="M15.5 14.5A5 5 0 0 1 21 19"/></svg></span><div><h3>Familieopstellingen</h3><p>Een individuele opstelling, wanneer het past bij je vraag. Circa 2 tot 2,5 uur.</p><span class="link-more">Lees meer <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></a>
     </div>
   </div>
 </section>
@@ -115,7 +117,6 @@
 <section class="cta-band info-cta">
   <span class="cta-dragon one" aria-hidden="true"></span>
   <div class="wrap">
-    <span class="eyebrow">Je eerste stap</span>
     <h2>Klaar om die stap te <em>nemen</em>?</h2>
     <p class="cta-lead">Begin gewoon met een rustig telefonisch gesprek. Je hoeft nog niets te beslissen.</p>
     <div class="cta-actions">
@@ -160,7 +161,7 @@
       </div>
     </div>
     <div class="foot-bottom">
-      <span>&copy; 2026 Brenda van Melle · <a href="privacyverklaring.html">Privacyverklaring</a></span>
+      <span>&copy; 2026 Brenda van Melle · KvK 65739736 · <a href="privacyverklaring.html">Privacyverklaring</a></span>
       <span>Conceptontwerp door Salty Code Studio</span>
     </div>
   </div>
@@ -169,6 +170,7 @@
   <a class="btn btn-primary" href="contact.html#kennismaken">Plan een kennismaking</a>
   <a class="mobile-cta-wa" href="https://wa.me/31654725032?text=Hallo%20Brenda%2C%20ik%20wil%20graag%20een%20telefonische%20kennismaking%20plannen." target="_blank" rel="noopener" aria-label="Stuur Brenda een WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 19.5 5.6 16A8 8 0 1 1 8.4 18.6Z"/><path d="M9 10.5h.01M12 10.5h.01M15 10.5h.01"/></svg></a>
 </div>
-<script src="assets/site.js"></script>
+<script src="assets/site.js?v=3"></script>
+<script src="assets/design-b.js?v=30"></script>
 </body>
 </html>

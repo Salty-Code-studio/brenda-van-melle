@@ -9,8 +9,9 @@
 <meta name="robots" content="noindex, nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Mulish:wght@300;400;500;600;700&family=Caveat:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Mulish:wght@300;400;500;600;700&family=Caveat:wght@400;500;600&family=Cormorant+Garamond:wght@600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/design-b.css?v=223">
 </head>
 <body>
 <!-- ============ HEADER ============ -->
@@ -26,7 +27,16 @@
     <nav aria-label="Hoofdmenu">
       <ul class="nav-links">
         <li><a href="praktijk-moed.html">Visie</a></li>
-        <li><a href="coaching.html">Begeleiding</a></li>
+        <li class="has-dd"><a href="coaching.html" aria-haspopup="true">Begeleiding <svg class="dd-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a>
+          <div class="nav-dd" role="menu">
+            <a role="menuitem" href="coaching.html"><span class="dd-t">Alle begeleiding</span><span class="dd-s">Eén visie, verschillende ingangen</span></a>
+            <a role="menuitem" href="rouw-en-verlies.html"><span class="dd-t">Levend verlies &amp; rouw</span><span class="dd-s">Verlies tijdens en na het leven</span></a>
+            <a role="menuitem" href="innerlijke-groei.html"><span class="dd-t">Patronen &amp; generaties</span><span class="dd-s">Wat van generatie op generatie doorwerkt</span></a>
+            <a role="menuitem" href="richting-en-zingeving.html"><span class="dd-t">Persoonlijke coaching</span><span class="dd-s">Als je jezelf een beetje kwijt bent</span></a>
+            <a role="menuitem" href="systemische-begeleiding.html"><span class="dd-t">Systemisch werk</span><span class="dd-s">Een instrument als het past</span></a>
+            <a role="menuitem" href="familieopstellingen.html"><span class="dd-t">Familieopstellingen</span><span class="dd-s">Je systeem zichtbaar maken</span></a>
+          </div>
+        </li>
         <li><a href="werkwijze.html">Werkwijze</a></li>
         <li><a href="over-brenda.html">Over Brenda</a></li>
         <li><a class="is-current" aria-current="page" href="boek.html">Boek</a></li>
@@ -57,18 +67,15 @@
 <section class="bp-hero">
   <div class="wrap bp-hero-grid">
     <div class="bp-hero-copy">
-      <nav class="crumbs" aria-label="Kruimelpad"><a href="index.html">Home</a><span aria-hidden="true">/</span><span aria-current="page">Boek</span></nav>
-      <p class="bp-kicker">De gedichtenbundel van Brenda van Melle</p>
+      <p class="bp-kicker">De gedichtenbundel</p>
       <h1>Van waar ik nu sta</h1>
-      <p class="bp-hook">Woorden die ademen in het nu.</p>
       <p class="bp-lead">Een poëtische bundel vol reflectie, verstilling en innerlijke waarneming. Om te vertragen, te voelen en aanwezig te zijn.</p>
       <div class="hero-actions">
-        <a class="btn btn-lilac btn-lg" href="mailto:bjvanmelle@gmail.com?subject=Bestelling%20%E2%80%98Van%20waar%20ik%20nu%20sta%E2%80%99">Bestel het boek
+        <a class="btn btn-lilac btn-lg" href="mailto:bjvanmelle@gmail.com?subject=Bestelling%20%E2%80%98Van%20waar%20ik%20nu%20sta%E2%80%99&amp;body=Beste%20Brenda%2C%0D%0A%0D%0AIk%20wil%20graag%20de%20gedichtenbundel%20%27Van%20waar%20ik%20nu%20sta%27%20bestellen.%0D%0A%0D%0AAantal%20exemplaren%3A%201%0D%0A%0D%0AMijn%20gegevens%3A%0D%0ANaam%3A%0D%0AAdres%3A%0D%0APostcode%20en%20woonplaats%3A%0D%0ATelefoonnummer%3A%0D%0A%0D%0AWil%20je%20me%20laten%20weten%20hoe%20ik%20kan%20betalen%20en%20wanneer%20het%20boek%20verstuurd%20wordt%3F%0D%0A%0D%0AHartelijke%20groet%2C%0D%0A">Bestel het boek
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
-        <a class="btn btn-ghost btn-lg" href="#inkijk">Kijk in het boek</a>
       </div>
-      <a class="bp-quote" href="getuigenissen.html"><span class="bp-quote-text">“Woorden die je toevallen als glinsterende parels die fluisteren van eenheid.”</span><span class="bp-quote-by">Mirjam, lezer van de bundel <span class="bp-quote-more">Lees alle reacties <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span></a>
+      <a class="bp-quote" href="getuigenissen.html"><span class="bp-quote-text">“Woorden die je toevallen als glinsterende parels die fluisteren van eenheid.”</span><span class="bp-quote-by">Mirjam, lezer van de bundel</span></a>
     </div>
     <div class="bp-books" aria-hidden="true">
       <div class="hb hb-back">
@@ -137,21 +144,12 @@
 <section class="section bp-author">
   <div class="wrap bp-author-grid">
     <div class="bp-author-media reveal">
-      <svg class="bp-author-rays" viewBox="200 425 850 440" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="28" stroke-linecap="round"><line x1="627" y1="455" x2="627" y2="752"/><line x1="484" y1="492" x2="569" y2="758"/><line x1="770" y1="492" x2="685" y2="758"/><line x1="341" y1="556" x2="507" y2="784"/><line x1="913" y1="556" x2="747" y2="784"/><line x1="233" y1="660" x2="452" y2="832"/><line x1="1020" y1="660" x2="802" y2="832"/></g></svg>
-      <img class="bp-author-photo" src="assets/img/brenda-portret.webp" alt="Portret van Brenda van Melle" width="652" height="814" loading="lazy" decoding="async">
+      <img class="bp-author-photo bp-author-photo--bank" src="assets/img/photo/hero-brenda-bank.webp" alt="Brenda van Melle, glimlachend op de bank" width="652" height="814" loading="lazy" decoding="async">
     </div>
     <div class="bp-author-copy reveal d1">
       <span class="eyebrow">Over de schrijver</span>
-      <h2>Brenda van Melle</h2>
-      <p class="bp-author-lead">Een verbinder met een warm hart, en met twee voeten op de grond.</p>
+      <h2 class="bp-author-lead">Een verbinder met een warm hart, en met twee voeten op de grond.</h2>
       <p class="bp-author-text">Bij Brenda voel je je al snel op je gemak. Ze is toegankelijk voor iedereen, ziet het grote geheel zonder de details te missen, en is bovenal een doener. Haar levens- en werkervaring, opgedaan in heel verschillende rollen en organisaties, leerde haar dat verlies vele vormen kent, en dat rouwen ook over leven gaat.</p>
-      <ul class="bp-drives" aria-label="Wat Brenda drijft">
-        <li><span class="bp-drive-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0"/><circle cx="17" cy="9" r="2.5"/><path d="M15.5 14.5A5 5 0 0 1 21 19"/></svg></span>Verbinding tussen mensen, culturen en achtergronden</li>
-        <li><span class="bp-drive-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20 4.5 12.6a5 5 0 0 1 7.5-6.6 5 5 0 0 1 7.5 6.6L12 20Z"/></svg></span>Ruimte voor wie het even niet meer weet</li>
-        <li><span class="bp-drive-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5Z"/><path d="M4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5"/></svg></span>Woorden die uitnodigen om te vertragen</li>
-      </ul>
-      <p class="bp-author-sign" aria-hidden="true">Brenda</p>
-      <p class="bp-author-roles">Lifecoach · rouw- en verliesbegeleider · spreker · schrijver</p>
       <div class="bp-author-actions">
         <a class="btn btn-light" href="over-brenda.html">Lees meer over Brenda <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         <a class="link-more" href="contact.html#kennismaken">Plan een kennismaking <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -166,50 +164,55 @@
     <div class="bp-rev-nav"><button class="testi-arrow" type="button" data-dir="-1" aria-label="Vorige lezersreactie"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg></button><button class="testi-arrow" type="button" data-dir="1" aria-label="Volgende lezersreactie"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div>
   </div>
   <div class="bp-rev-track" tabindex="0" role="region" aria-roledescription="carrousel" aria-label="Lezersreacties; schuift vanzelf door, of scroll zelf">
-<figure class="quote bp-rev" aria-label="Reactie 1 van 9">
+<figure class="quote bp-rev" aria-label="Reactie 1 van 10">
+  <span class="stars" role="img" aria-label="5 van 5 sterren">★★★★★</span>
+  <blockquote class="review-bubble"><p>Ik heb deze bundel in één adem uitgelezen. En dat zegt wat, want ik neem de laatste tijd maar weinig rust om echt te gaan zitten en lezen. Maar ik begon… en bleef lezen.<br><br>Voor mij voelde het als een feest van herkenning van de ziel. Alsof Brenda met een zachte fluistering, bijna als fluweel, woorden geeft aan zoveel facetten van het leven: aan wat we meemaken, verliezen, verlangen, ontdekken, loslaten en opnieuw ontmoeten in onszelf.<br><br>Zoveel herkenning, zachtheid en troost, zonder dat het ooit zwaar wordt. De woorden trekken of duwen nergens aan; ze mogen er gewoon zijn. Precies zoals het leven zelf eigenlijk.<br><br>Het bijzondere is dat je in haar woorden iets van háár voelt en tegelijkertijd steeds weer iets van jezelf tegenkomt. Ik weet bijna zeker dat heel veel mensen zich hierin zullen herkennen.<br><br>Een prachtige, zachte en troostende bundel om af en toe weer open te slaan en je door te laten raken. Deze fluisteringen mogen wat mij betreft heel veel mensen bereiken. ❤️</p></blockquote>
+  <figcaption class="who"><span class="review-initial" aria-hidden="true">D</span><span><span class="name">Daan Timmerman</span><span class="reader-role">Lezer van de bundel</span></span></figcaption>
+</figure>
+<figure class="quote bp-rev" aria-label="Reactie 2 van 10">
           <span class="stars" role="img" aria-label="5 van 5 sterren">★★★★★</span>
           <blockquote class="review-bubble"><p>Poëtische gedichten nemen je mee in een ontdekkingsreis naar het innerlijk weten dat geen begin of eindpunt heeft, dat paradoxaal kan zijn en daarom moeilijk te omschrijven. Maar het is er wèl en daarom is het knap dat het prachtig vormgegeven is in woorden zonder overtolligheid, want essentie ligt in de eenvoud.</p></blockquote>
           <figcaption class="who"><span class="review-initial" aria-hidden="true">O</span><span><span class="name">Odette</span><span class="reader-role">Lezer van de bundel</span></span></figcaption>
         </figure>
-<figure class="quote bp-rev" aria-label="Reactie 2 van 9">
+<figure class="quote bp-rev" aria-label="Reactie 3 van 10">
           <span class="stars" role="img" aria-label="5 van 5 sterren">★★★★★</span>
           <blockquote class="review-bubble"><p>Alleen al de moed om invulling te geven aan “Van waar ik nu sta” is voor weinigen weggelegd.</p></blockquote>
           <figcaption class="who"><span class="review-initial" aria-hidden="true">R</span><span><span class="name">Raymond</span><span class="reader-role">Lezer van de bundel</span></span></figcaption>
         </figure>
-<figure class="quote bp-rev" aria-label="Reactie 3 van 9">
+<figure class="quote bp-rev" aria-label="Reactie 4 van 10">
           <span class="stars" role="img" aria-label="5 van 5 sterren">★★★★★</span>
           <blockquote class="review-bubble"><p>De poëzie van Brenda raakt diep, elk woord “staat”. Ze biedt mij herkenning van mijn ervaringen: met mijzelf, relaties en mijn levensweg. Wonderschone pareltjes, om traag tot me te nemen en te laten bezinken.</p></blockquote>
           <figcaption class="who"><span class="review-initial" aria-hidden="true">A</span><span><span class="name">Alize</span><span class="reader-role">Lezer van de bundel</span></span></figcaption>
         </figure>
-<figure class="quote bp-rev" aria-label="Reactie 4 van 9">
+<figure class="quote bp-rev" aria-label="Reactie 5 van 10">
           <span class="stars" role="img" aria-label="5 van 5 sterren">★★★★★</span>
           <blockquote class="review-bubble"><p>Woorden die je toevallen als glinsterende parels die fluisteren van eenheid. In deze kostbare bundel valt je leven samen en opent zich een verlangen de wereld in te stappen met alles wat er is. Om langzaam te lezen en te verwonderen.</p></blockquote>
           <figcaption class="who"><span class="review-initial" aria-hidden="true">M</span><span><span class="name">Mirjam</span><span class="reader-role">Lezer van de bundel</span></span></figcaption>
         </figure>
-<figure class="quote bp-rev" aria-label="Reactie 5 van 9">
+<figure class="quote bp-rev" aria-label="Reactie 6 van 10">
           <span class="stars" role="img" aria-label="5 van 5 sterren">★★★★★</span>
           <blockquote class="review-bubble"><p>Een diepgaande “inkijk”, verhelderend, openhartig en kwetsbaar.</p></blockquote>
           <figcaption class="who"><span class="review-initial" aria-hidden="true">J</span><span><span class="name">Jan</span><span class="reader-role">Lezer van de bundel</span></span></figcaption>
         </figure>
-<figure class="quote bp-rev" aria-label="Reactie 6 van 9">
+<figure class="quote bp-rev" aria-label="Reactie 7 van 10">
           <span class="stars" role="img" aria-label="5 van 5 sterren">★★★★★</span>
           <blockquote class="review-bubble"><p>Met 20 jaar staat de horizon voor de oneindige ruimte en mogelijkheden om de wereld te ontdekken. Op bijna 90-jarige leeftijd heeft de horizon voor mij de invulling van de stip die steeds dichterbij komt. De poëzie van Brenda zet met mildheid een ieder in beweging om te reflecteren op wat is en wat nog komen zal.</p></blockquote>
           <figcaption class="who"><span class="review-initial" aria-hidden="true">M</span><span><span class="name">Marianne</span><span class="reader-role">Lezer van de bundel</span></span></figcaption>
         </figure>
-<figure class="quote bp-rev" aria-label="Reactie 7 van 9">
+<figure class="quote bp-rev" aria-label="Reactie 8 van 10">
           <span class="stars" role="img" aria-label="5 van 5 sterren">★★★★★</span>
           <blockquote class="review-bubble"><p>Fijn om van Brenda’s mooie schrijfstijl en inzichten te kunnen genieten. Ik heb de bundel in een keer uitgelezen, hetgeen ik geen verrassing vond. Waarschijnlijk zal ik het nog vaker gaan lezen. Ik zal wachten op het volgende boek dat misschien nog gaat komen van haar hand. Ook die zal ik direct met positieve nieuwsgierigheid, bijna gretigheid, aanschaffen.</p></blockquote>
           <figcaption class="who"><span class="review-initial" aria-hidden="true">A</span><span><span class="name">Angelique</span><span class="reader-role">Lezer van de bundel</span></span></figcaption>
         </figure>
-<figure class="quote bp-rev" aria-label="Reactie 8 van 9">
+<figure class="quote bp-rev" aria-label="Reactie 9 van 10">
           <span class="stars" role="img" aria-label="5 van 5 sterren">★★★★★</span>
           <blockquote class="review-bubble"><p>Brenda heeft indrukwekkend mooie gedichten geschreven. De bundel is een integere zielsreis. Met zachte maar ook krachtige taal omschrijft Brenda over de ontmoeting met zichzelf. Zonder oordeel, geen verwachtingen maar in aanwezigheid. De gedichtenbundel nodigt uit tot zelfreflectie. En in rust je hart te volgen. Zodra je deze bundel opent en leest begint licht te schijnen en komen de emoties. Brenda moedigt aan “echt” naar het leven te kijken en luisteren. In verbinding met jezelf, anderen en verwondering. Met deze gedichtenbundel weet Brenda de juiste snaar te raken!</p></blockquote>
           <figcaption class="who"><span class="review-initial" aria-hidden="true">J</span><span><span class="name">Jeannette</span><span class="reader-role">Lezer van de bundel</span></span></figcaption>
         </figure>
-<figure class="quote bp-rev" aria-label="Reactie 9 van 9">
+<figure class="quote bp-rev" aria-label="Reactie 10 van 10">
           <span class="stars" role="img" aria-label="5 van 5 sterren">★★★★★</span>
           <blockquote class="review-bubble"><p>Haar toegankelijke gedichten hebben een warm timbre. Het mooi handzame boekje nodigt uit tot bezinning over de vraag wat “leven” voor je inhoudt. Leven in het moment is een uitnodiging om thuis te komen bij jezelf, hier en nu. Een diepe verbondenheid met alles wat was en is, markeert haar gedichten. Dankbaarheid en verbinding met de ander is een sterke stroom die resoneert in dit boekje. De bundel “Van waar ik nu sta” smaakt naar meer, naar een mogelijk vervolg.</p></blockquote>
-          <figcaption class="who"><span class="review-initial" aria-hidden="true">“</span><span><span class="name">Naam niet vermeld</span><span class="reader-role">Lezer van de bundel</span></span></figcaption>
+          <figcaption class="who"><span class="review-initial" aria-hidden="true">N</span><span><span class="name">Nanneke</span><span class="reader-role">Lezer van de bundel</span></span></figcaption>
         </figure>
   </div>
   <div class="wrap"><a class="link-more" href="getuigenissen.html">Lees alle lezersreacties <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
@@ -218,7 +221,6 @@
 <section class="cta-band info-cta">
   <span class="cta-dragon one" aria-hidden="true"></span>
   <div class="wrap">
-    <span class="eyebrow">Je eerste stap</span>
     <h2>Klaar om die stap te <em>nemen</em>?</h2>
     <p class="cta-lead">Begin gewoon met een rustig telefonisch gesprek. Je hoeft nog niets te beslissen.</p>
     <div class="cta-actions">
@@ -263,7 +265,7 @@
       </div>
     </div>
     <div class="foot-bottom">
-      <span>&copy; 2026 Brenda van Melle · <a href="privacyverklaring.html">Privacyverklaring</a></span>
+      <span>&copy; 2026 Brenda van Melle · KvK 65739736 · <a href="privacyverklaring.html">Privacyverklaring</a></span>
       <span>Conceptontwerp door Salty Code Studio</span>
     </div>
   </div>
@@ -422,6 +424,7 @@
   }
 })();
 </script>
-<script src="assets/site.js"></script>
+<script src="assets/site.js?v=3"></script>
+<script src="assets/design-b.js?v=30"></script>
 </body>
 </html>

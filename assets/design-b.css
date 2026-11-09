@@ -1,0 +1,1445 @@
+/* ============================================================
+   DESIGN B: comparison variant, layered on top of site.css
+   1. Header: solid white bar
+   2. Round (pill) buttons
+   3. Hero keeps the original wave
+   4. Serif: Libre Caslon Text instead of Cormorant
+   ============================================================ */
+
+/* ---------- 1. Header: always a solid white bar ---------- */
+.site-head,.site-head.scrolled{
+  background:#fffdf9;-webkit-backdrop-filter:none;backdrop-filter:none;
+  border-bottom-color:rgba(41,71,73,.08);
+  box-shadow:0 10px 30px -22px rgba(41,58,57,.45);
+}
+.site-head .moed,
+.site-head .menu-btn{color:var(--teal-deep)}
+.site-head .nav-links a{color:var(--teal-deep)}
+.site-head .nav-links a:hover,
+.site-head .nav-links a.is-current{color:var(--ink)}
+.site-head .nav-links a::after{background:var(--teal-deep)}
+.site-head .btn-header{background:var(--teal-deep);border-color:var(--teal-deep);color:#fffdf7;box-shadow:none}
+.site-head .btn-header:hover{background:var(--teal);border-color:var(--teal)}
+
+/* ---------- 2. Round buttons ---------- */
+:root{--r-btn:999px}
+.btn,.btn-header,.mobile-cta-wa,.testi-arrow,.step-btn{border-radius:999px}
+.btn{padding:11px 22px;font-size:14px}
+.btn-lg{padding:12px 26px;font-size:15px}
+.site-head .btn-header{padding:9px 20px;font-size:13.5px}
+.btn svg{width:15px;height:15px}
+
+/* ---------- 3. Hero: keeps the original wave into the next section ---------- */
+
+/* ---------- 4. Serif: Libre Caslon Text instead of Cormorant ---------- */
+h1,h2,h3{font-weight:400;letter-spacing:-.01em;line-height:1.16}
+
+/* phone: the wider serif needs the full width so the headline stays on two lines above the photo */
+@media (max-width:680px){
+  .hero h1{max-width:none}
+}
+
+/* ---------- 6. Soft, glowing buttons ---------- */
+.btn-primary,
+.site-head .btn-header{
+  color:#fff;border:1px solid rgba(255,255,255,.55);
+  background:
+    radial-gradient(120% 90% at 50% 0%,rgba(255,255,255,.38),rgba(255,255,255,0) 60%),
+    linear-gradient(180deg,#c3a6dc 0%,#a07fc0 55%,#8f6cb0 100%);
+  box-shadow:
+    inset 0 2px 4px rgba(255,255,255,.55),
+    inset 0 -6px 12px rgba(110,70,150,.22),
+    0 12px 26px -10px rgba(160,127,192,.7),
+    0 4px 10px -6px rgba(110,70,150,.35);
+  text-shadow:0 1px 2px rgba(90,55,125,.35);
+}
+.btn-primary:hover,
+.site-head .btn-header:hover{
+  background:
+    radial-gradient(120% 90% at 50% 0%,rgba(255,255,255,.45),rgba(255,255,255,0) 60%),
+    linear-gradient(180deg,#cbb1e2 0%,#a888c7 55%,#9673b6 100%);
+  border-color:rgba(255,255,255,.7);
+  transform:translateY(-2px);
+  box-shadow:
+    inset 0 2px 4px rgba(255,255,255,.6),
+    inset 0 -6px 12px rgba(110,70,150,.2),
+    0 18px 34px -12px rgba(160,127,192,.8),
+    0 6px 14px -8px rgba(110,70,150,.4);
+}
+.btn-primary:active,.site-head .btn-header:active{transform:translateY(0)}
+/* secondary buttons: soft frosted cream */
+.btn-ghost{
+  background:linear-gradient(180deg,rgba(255,253,249,.9),rgba(243,236,226,.85));
+  border:1px solid rgba(255,255,255,.8);color:var(--teal-deep);
+  box-shadow:inset 0 2px 3px rgba(255,255,255,.9),inset 0 -4px 10px rgba(41,71,73,.06),0 10px 22px -14px rgba(41,58,57,.45);
+}
+.btn-ghost:hover{background:#fffdf9;border-color:#fff}
+
+/* ---------- 7. Photographic light textures behind sections ---------- */
+/* Herken je dit?: blurred green leaves, from below the hero wave down to the thin line above the quote.
+   --herken-line is measured by design-b.js */
+.values::after{
+  content:"";position:absolute;z-index:-1;left:0;right:0;top:0;pointer-events:none;
+  height:var(--herken-line,70%);
+  background:
+    linear-gradient(180deg,var(--cream) 0%,rgba(248,244,236,.55) 22%,rgba(248,244,236,.35) 85%,rgba(248,244,236,.55) 100%),
+    url("img/tex/bladeren.jpg") right 30%/cover no-repeat;
+}
+/* Zo ziet de begeleiding eruit: grey light warming into a peach sunrise at the bottom */
+.practical{
+  background:
+    linear-gradient(180deg,var(--cream) 0%,rgba(248,244,236,0) 14%),
+    url("img/tex/zonsopkomst.jpg") center bottom/cover no-repeat,
+    var(--cream);
+}
+/* Subpages: sage light at the top fading to white, ties in with the mint header */
+.sub-hero{
+  background:
+    linear-gradient(180deg,rgba(248,244,236,.2) 0%,rgba(248,244,236,.55) 60%,var(--cream) 100%),
+    url("img/tex/salie-wit.jpg") center top/cover no-repeat,
+    var(--cream);
+}
+
+/* ---------- 8. A texture per page, top section (images may be rotated) ---------- */
+.sub-hero.tex-visie{
+  background:linear-gradient(180deg,rgba(248,244,236,0) 55%,var(--cream) 100%),
+    url("img/tex/lila-blauw-l.jpg") center/cover no-repeat,var(--cream);
+}
+.sub-hero.tex-brenda{
+  background:linear-gradient(180deg,rgba(248,244,236,.1) 0%,rgba(248,244,236,.2) 65%,var(--cream) 100%),
+    url("img/tex/zonsopkomst.jpg") center bottom/cover no-repeat,var(--cream);
+}
+/* Brenda section (homepage and Over Brenda): light camel with white */
+.about{
+  background:
+    linear-gradient(180deg,rgba(239,232,220,.25),rgba(239,232,220,.15)),
+    url("img/tex/zonsopkomst-l.jpg") center/cover no-repeat,
+    var(--linen);
+}
+
+/* ---------- 9. "Soms vraagt het leven": original text and spacing, on a full-width dark green band ---------- */
+.values{overflow-x:clip}
+.herken-banner{
+  grid-column:1/-1;
+  margin:clamp(40px,7vh,72px) calc(50% - 50vw) calc(-1 * clamp(70px,8vw,102px));
+  padding:0 calc(50vw - 50%) clamp(70px,8vw,102px);
+  background:var(--teal-deep);
+}
+.herken-banner .herken-quote{margin-top:0;border-top-color:transparent;color:#f8f4ec}
+.herken-banner .herken-quote em{color:#d9c4ea}
+.herken-banner .herken-close{color:#d7e3dd}
+.herken-banner .link-more{color:#fffdf7}
+.herken-banner .link-more:hover{color:#d9c4ea}
+/* equal breathing room above and below the text in the dark band; link in light purple */
+.herken-banner{
+  padding-top:clamp(56px,8vh,88px);
+  padding-bottom:clamp(56px,8vh,88px);
+  margin-bottom:0;
+}
+.values{padding-bottom:0}
+.herken-banner .herken-quote{padding-top:0}
+.herken-banner .link-more{color:#cdb4e6}
+.herken-banner .link-more:hover{color:#e6d8f3}
+/* smaller quote (one line on desktop) and a thinner band */
+.herken-banner{padding-top:clamp(40px,6vh,56px);padding-bottom:clamp(40px,6vh,56px)}
+.herken-banner .herken-quote{font-size:clamp(26px,2.5vw,36px)}
+.herken-banner .herken-close{font-size:16px;margin-top:12px}
+.herken-banner .herken-more{margin-top:6px}
+/* full-bleed band that does not depend on the grid width */
+.herken-banner{
+  margin-left:0;margin-right:0;padding-left:0;padding-right:0;
+  box-shadow:0 0 0 100vmax var(--teal-deep);
+  clip-path:inset(0 -100vmax);
+}
+
+/* ---------- 10. Soft lilac highlight on key words ---------- */
+mark.hl{
+  background:#e6d8f0;color:inherit;padding:0 .08em;
+  -webkit-box-decoration-break:clone;box-decoration-break:clone;
+}
+/* pricing section: light green instead of the warm gold sunrise */
+.practical{
+  background:
+    linear-gradient(180deg,var(--cream) 0%,rgba(248,244,236,.15) 18%,rgba(248,244,236,.25) 100%),
+    url("img/tex/salie-wit.jpg") center 30%/cover no-repeat,
+    var(--cream);
+}
+/* pricing section: plain, no image */
+.practical{background:var(--cream)}
+
+/* ---------- 11. Header option: dark teal like the old site (delete this block to go back to white) ---------- */
+.site-head,.site-head.scrolled{
+  background:rgb(41,71,73);border-bottom-color:rgba(255,255,255,.08);
+  box-shadow:0 12px 32px -20px rgba(20,39,40,.6);
+}
+.site-head .moed,.site-head .menu-btn{color:#f2f6f3}
+.site-head .nav-links a{color:#dbe6e2}
+.site-head .nav-links a:hover,.site-head .nav-links a.is-current{color:#fff}
+.site-head .nav-links a::after{background:#e8eedb}
+
+/* ---------- 12. Matte buttons: flat colour, no gloss ---------- */
+.btn-primary,
+.site-head .btn-header{
+  background:#9474b4;border:1px solid #9474b4;color:#fff;
+  box-shadow:none;text-shadow:none;
+}
+.btn-primary:hover,
+.site-head .btn-header:hover{
+  background:#856aa5;border-color:#856aa5;box-shadow:none;transform:translateY(-1px);
+}
+.btn-ghost{
+  background:#fbf8f2;border:1px solid rgba(41,71,73,.22);color:var(--teal-deep);box-shadow:none;
+}
+.btn-ghost:hover{background:#fff;border-color:rgba(41,71,73,.4)}
+.herken-banner .herken-close{max-width:none}
+/* "Waar MOED voor staat" label on a lilac highlight */
+.vision-head .eyebrow{
+  display:inline-block;background:#e6d8f0;color:var(--teal-deep);
+  padding:5px 4px 5px 8px;
+}
+/* link text on a lilac highlight, arrow stays outside */
+.hl-link{background:#e6d8f0;color:var(--teal-deep);padding:4px 6px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+a:hover .hl-link{background:#dccbeb}
+/* "Persoonlijk begeleidingsvoorstel" label on the same lilac highlight */
+.practical-head .eyebrow{
+  display:inline-block;background:#e6d8f0;color:var(--teal-deep);
+  padding:5px 4px 5px 8px;
+}
+/* no fake bold on italic words in headings (Libre Caslon has no bold italic) */
+h1 em,h2 em,h3 em,.about h2 em{font-weight:400}
+h1,h2,h3{font-synthesis:none}
+/* book section: fern shadows less prominent */
+.book{
+  background:
+    linear-gradient(rgba(241,230,216,.5),rgba(241,230,216,.5)),
+    #f1e6d8 url("img/boek-varen.webp") center/cover no-repeat;
+}
+/* "Lezers over de gedichtenbundel": no dash, lilac highlight */
+.story-reviews .eyebrow{
+  display:inline-flex;justify-self:start;width:auto;
+  background:#e6d8f0;color:var(--teal-deep);padding:6px 6px 6px 10px;
+}
+.story-reviews .eyebrow::before{content:none}
+/* white buttons on dark sections inverted: matte violet with white text */
+.btn-light{background:#9474b4;border:1px solid #9474b4;color:#fff;box-shadow:none}
+.btn-light:hover{background:#856aa5;border-color:#856aa5;color:#fff;box-shadow:none;transform:translateY(-1px)}
+/* "Van waar ik nu sta" under "Wat lezers zeggen" in light purple */
+.sub-kicker em{color:#9b7bbd}
+.reviews-page h2 em{color:#cdb4e6}
+
+/* Over Brenda top: pale mint-grey light instead of the warm camel */
+.sub-hero.tex-brenda{
+  background:linear-gradient(180deg,rgba(248,244,236,.1) 0%,rgba(248,244,236,.2) 65%,var(--cream) 100%),
+    url("img/tex/mint-licht-l.jpg") center/cover no-repeat,var(--cream);
+}
+/* book page title: never runs into the book on wide screens */
+.bp-hero h1{white-space:normal;font-size:clamp(40px,3.6vw,56px)}
+/* dark header turns translucent with a soft blur when you scroll, like the old site */
+.site-head.scrolled{
+  background:rgba(41,71,73,.68);
+  -webkit-backdrop-filter:blur(14px) saturate(140%);backdrop-filter:blur(14px) saturate(140%);
+  box-shadow:0 12px 32px -20px rgba(20,39,40,.82);border-bottom-color:rgba(255,255,255,.12);
+}
+/* topic-page note ("Je hoeft het antwoord nog niet te weten."): dark green with light text */
+.pain-grid .pain-note{background:var(--teal-deep);color:#d7e3dd}
+.pain-grid .pain-note strong{color:#f8f4ec;font-weight:400;font-synthesis:none}
+
+/* ---------- 13. Subpage tops: smooth CSS gradients instead of stretched photos (crisp at any size) ---------- */
+/* default: soft sage light from the top, fading into cream */
+.sub-hero{
+  background:
+    radial-gradient(90% 70% at 15% 0%,rgba(125,154,134,.30),rgba(125,154,134,0) 70%),
+    radial-gradient(70% 60% at 85% 10%,rgba(229,236,230,.9),rgba(229,236,230,0) 70%),
+    linear-gradient(180deg,#e3eae4 0%,#ecefe8 45%,var(--cream) 100%);
+}
+/* Visie: pastel lilac and soft blue */
+.sub-hero.tex-visie{
+  background:
+    radial-gradient(70% 80% at 20% 30%,rgba(214,226,246,.75),rgba(214,226,246,0) 70%),
+    radial-gradient(60% 70% at 80% 20%,rgba(232,222,246,.85),rgba(232,222,246,0) 70%),
+    linear-gradient(180deg,#f1eef7 0%,#f4f1f3 55%,var(--cream) 100%);
+}
+/* Over Brenda: pale mint-grey light */
+.sub-hero.tex-brenda{
+  background:
+    radial-gradient(80% 70% at 85% 15%,rgba(214,228,222,.9),rgba(214,228,222,0) 70%),
+    radial-gradient(70% 60% at 10% 80%,rgba(231,238,235,.9),rgba(231,238,235,0) 70%),
+    linear-gradient(180deg,#e9eeeb 0%,#eff1ec 55%,var(--cream) 100%);
+}
+/* logo wordmark stays in its original font */
+.moed-word{font-family:"Cormorant Garamond",serif}
+/* hero awards strip sits further to the right on desktop */
+@media (min-width:1101px){
+  .hero-awards{right:max(2vw,calc((100vw - 1160px)/2 - 60px))}
+}
+@media (min-width:1101px){
+  .hero-awards{right:max(24px,2vw)}
+}
+
+/* ---------- 14. "Herken je dit?" motion: warm, soft, alive while scrolling ---------- */
+@media (prefers-reduced-motion:no-preference){
+  /* leaf light: slow parallax drift (--leaf-y set by design-b.js) plus a gentle breathing */
+  .values::after{
+    transform:translate3d(0,var(--leaf-y,0px),0) scale(1.06);
+    animation:leafBreath 14s ease-in-out infinite alternate;
+    will-change:transform;
+  }
+  @keyframes leafBreath{from{opacity:.85}to{opacity:1}}
+
+  /* heading: rises out of a soft blur, then the line below follows */
+  .has-motion .herken-intro h2,.has-motion .herken-intro p{
+    transition:opacity 1.1s var(--ease-out),transform 1.1s var(--ease-out),filter 1.1s var(--ease-out);
+  }
+  .has-motion .herken-intro:not(.in) h2{opacity:0;transform:translateY(24px);filter:blur(6px)}
+  .has-motion .herken-intro:not(.in) p{opacity:0;transform:translateY(16px);filter:blur(4px)}
+  .has-motion .herken-intro.in h2{transition-delay:.35s}
+  .has-motion .herken-intro.in p{transition-delay:.6s}
+  .has-motion .herken-intro:not(.in){opacity:1;transform:none}
+
+  /* rays: after drawing in, they keep a slow, warm glow */
+  .herken-intro.in .herken-rays{animation:raysGlow 5s ease-in-out 1.4s infinite alternate}
+  @keyframes raysGlow{
+    from{transform:scale(1);filter:drop-shadow(0 0 0 rgba(195,154,84,0))}
+    to{transform:scale(1.05);filter:drop-shadow(0 0 10px rgba(195,154,84,.35))}
+  }
+
+  /* cards: softer entrance with a little blur and scale */
+  @keyframes cardSoftIn{
+    from{opacity:0;transform:translateY(38px) scale(.96);filter:blur(5px)}
+    to{opacity:1;transform:none;filter:none}
+  }
+  .has-motion .herken-list li.reveal.in{animation:cardSoftIn 1.2s var(--ease-out) backwards}
+  .has-motion .herken-list li.reveal.in:nth-child(2){animation-delay:.22s}
+  .has-motion .herken-list li.reveal.in:nth-child(3){animation-delay:.44s}
+  /* depth: each card floats at its own pace while scrolling (--py set by design-b.js) */
+  .herken-list li{translate:0 var(--py,0px);transition:translate .25s linear,transform .45s var(--ease-out),box-shadow .45s var(--ease-out),border-color .45s ease}
+
+  /* icons: pop in after their card, then breathe slowly */
+  @keyframes icPop{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:scale(1)}}
+  @keyframes icBreath{
+    0%,100%{transform:scale(1);box-shadow:0 0 0 0 rgba(180,154,208,0)}
+    50%{transform:scale(1.06);box-shadow:0 0 0 8px rgba(180,154,208,.12)}
+  }
+  .has-motion .herken-list li.reveal.in .herken-ic{
+    animation:icPop .8s var(--ease-out) .5s backwards,icBreath 5.5s ease-in-out 1.6s infinite;
+  }
+  .has-motion .herken-list li.reveal.in:nth-child(2) .herken-ic{animation-delay:.72s,2.4s}
+  .has-motion .herken-list li.reveal.in:nth-child(3) .herken-ic{animation-delay:.94s,3.2s}
+}
+/* closing section: remove the large extra dragonfly, keep the small pattern */
+.cta-dragon.one{display:none}
+/* leaf layer never rises above its section (keeps the hero wave clean) */
+@media (prefers-reduced-motion:no-preference){
+  .values::after{transform-origin:center top;transform:translate3d(0,var(--leaf-y,0px),0) scale(1.04)}
+}
+
+/* ---------- 15. "Herken je dit?": word-by-word heading and breathing rays ---------- */
+@media (prefers-reduced-motion:no-preference){
+  /* heading words come in one by one (words wrapped by design-b.js) */
+  .has-motion .herken-intro:not(.in) h2{opacity:1;transform:none;filter:none}
+  .herken-intro h2 .w{display:inline-block;transition:opacity 1s var(--ease-out),transform 1.1s var(--ease-out),filter 1s var(--ease-out);transition-delay:calc(.35s + var(--w) * .14s)}
+  .has-motion .herken-intro:not(.in) h2 .w{opacity:0;transform:translateY(.45em) rotate(1.5deg);filter:blur(8px)}
+
+  /* rays: after drawing in, they keep lengthening and shortening in a slow wave */
+  @keyframes rayBreath{0%,100%{stroke-dashoffset:0}50%{stroke-dashoffset:.3}}
+  .herken-intro.in .herken-rays line{animation:rayBreath 4.2s ease-in-out infinite;animation-delay:calc(1.8s + var(--i) * .3s)}
+  .herken-intro.in .herken-rays{animation:raysSway 9s ease-in-out 1.8s infinite alternate}
+  @keyframes raysSway{
+    from{transform:rotate(-2deg) scale(1);filter:drop-shadow(0 0 0 rgba(195,154,84,0))}
+    to{transform:rotate(2deg) scale(1.05);filter:drop-shadow(0 0 10px rgba(195,154,84,.35))}
+  }
+}
+
+/* ---------- 16. Rays: unfold once from left to right like an arch, then stay still ---------- */
+.herken-intro .herken-rays,.herken-intro.in .herken-rays{animation:none;transform:none;filter:none}
+.herken-intro .herken-rays line,.herken-intro.in .herken-rays line{animation:none}
+/* order the seven rays left to right (markup order is centre-out) */
+.herken-rays line:nth-child(6){--seq:0}
+.herken-rays line:nth-child(4){--seq:1}
+.herken-rays line:nth-child(2){--seq:2}
+.herken-rays line:nth-child(1){--seq:3}
+.herken-rays line:nth-child(3){--seq:4}
+.herken-rays line:nth-child(5){--seq:5}
+.herken-rays line:nth-child(7){--seq:6}
+.herken-rays line{
+  transition:stroke-dashoffset .65s cubic-bezier(.22,1,.36,1);
+  transition-delay:calc(.15s + var(--seq) * .13s);
+}
+/* each ray grows outward from the centre */
+.has-motion .herken-intro:not(.in) .herken-rays line{stroke-dashoffset:-1}
+/* hidden state applies instantly; only the unfolding is animated */
+.herken-rays line{transition:none}
+.herken-intro.in .herken-rays line{
+  transition:stroke-dashoffset .65s cubic-bezier(.22,1,.36,1);
+  transition-delay:calc(.15s + var(--seq) * .13s);
+}
+/* rays: whole sticks pop in quickly one after another, left to right (no drawing) */
+.herken-rays line,
+.has-motion .herken-intro:not(.in) .herken-rays line{stroke-dashoffset:0}
+.has-motion .herken-intro:not(.in) .herken-rays line{opacity:0}
+.herken-intro.in .herken-rays line{
+  opacity:1;
+  transition:opacity .18s ease-out;
+  transition-delay:calc(.15s + var(--seq) * .07s);
+}
+
+/* ---------- 17. Photo heroes: Begeleiding, Contact, Werkwijze ---------- */
+/* note: --photo url is relative to this stylesheet (assets/) */
+.sub-hero.photo-hero{
+  position:relative;overflow:hidden;isolation:isolate;
+  min-height:clamp(480px,62vh,640px);display:flex;align-items:center;
+  background:var(--cream);
+}
+.sub-hero.photo-hero::before{
+  content:"";position:absolute;inset:0;z-index:-2;
+  background:var(--photo) right center/cover no-repeat;
+}
+/* soft cream wash on the left so the text reads, fading out before the person */
+.sub-hero.photo-hero::after{
+  content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:
+    linear-gradient(90deg,rgba(248,244,236,.97) 0%,rgba(248,244,236,.92) 32%,rgba(248,244,236,.55) 48%,rgba(248,244,236,0) 62%),
+    linear-gradient(180deg,rgba(248,244,236,0) 70%,var(--cream) 100%);
+}
+.sub-hero.photo-hero .sub-hero-grid{width:100%}
+.sub-hero.photo-hero .sub-hero-copy{max-width:min(560px,48%)}
+.sub-hero.photo-hero .sub-lead{max-width:46ch}
+
+/* phone: photo as a band on top, text below on cream */
+@media (max-width:760px){
+  .sub-hero.photo-hero{display:block;min-height:0;padding-top:0}
+  .sub-hero.photo-hero::before{position:relative;display:block;height:62vw;inset:auto;background-position:72% center;
+    -webkit-mask-image:linear-gradient(180deg,#000 70%,transparent);mask-image:linear-gradient(180deg,#000 70%,transparent)}
+  .sub-hero.photo-hero::after{display:none}
+  .sub-hero.photo-hero .sub-hero-copy{max-width:none;margin-top:-8px}
+}
+.sub-hero.photo-hero.tex-begeleiding::before{background-image:url("img/photo/begeleiding.jpg")}
+.sub-hero.photo-hero.tex-contact::before{background-image:url("img/photo/contact.jpg")}
+.sub-hero.photo-hero.tex-werkwijze::before{background-image:url("img/photo/werkwijze.jpg")}
+.sub-hero.photo-hero::before{background-position:right center;background-size:cover;background-repeat:no-repeat}
+/* photo heroes: first layout, slightly lighter cream wash */
+.sub-hero.photo-hero::after{
+  background:
+    linear-gradient(90deg,rgba(248,244,236,.88) 0%,rgba(248,244,236,.78) 32%,rgba(248,244,236,.4) 48%,rgba(248,244,236,0) 62%),
+    linear-gradient(180deg,rgba(248,244,236,0) 70%,var(--cream) 100%);
+}
+
+/* ---------- 18. Vision: wide photo of a conversation circle under the heading ---------- */
+.vision-photo{
+  margin:0 0 clamp(40px,6vh,72px);border-radius:28px;overflow:hidden;
+  aspect-ratio:2000/723;max-height:460px;
+  box-shadow:0 34px 70px -46px rgba(41,58,57,.55);
+}
+.vision-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 40%}
+@media (max-width:760px){
+  .vision-photo{aspect-ratio:4/3;border-radius:20px}
+  .vision-photo img{object-position:38% center}
+}
+@media (prefers-reduced-motion:no-preference){
+  .has-motion .vision-photo.reveal:not(.in){opacity:0;transform:translateY(26px) scale(.98)}
+  .vision-photo.reveal{transition:opacity 1.1s var(--ease-out),transform 1.2s var(--ease-out)}
+}
+/* pricing: smiling woman above the card */
+.practical-photo{max-width:var(--wrap);margin-inline:auto;margin-top:clamp(28px,4vh,44px);margin-bottom:clamp(28px,4vh,44px)}
+.practical-photo img{object-position:center 30%}
+@media (max-width:760px){.practical-photo img{object-position:68% center}}
+/* photo heroes end with a straight edge instead of fading into the next section */
+.sub-hero.photo-hero{padding-bottom:0}
+@media (min-width:761px){
+  .sub-hero.photo-hero::after{
+    background:linear-gradient(90deg,rgba(248,244,236,.88) 0%,rgba(248,244,236,.78) 32%,rgba(248,244,236,.4) 48%,rgba(248,244,236,0) 62%);
+  }
+  .sub-hero.photo-hero .sub-hero-grid{padding-block:clamp(40px,7vh,88px)}
+}
+@media (max-width:760px){
+  .sub-hero.photo-hero::before{-webkit-mask-image:none;mask-image:none}
+  .sub-hero.photo-hero{padding-bottom:clamp(40px,6vh,56px)}
+}
+@media (min-width:761px){
+  .sub-hero.photo-hero .sub-hero-copy{max-width:min(520px,40%)}
+  .sub-hero.photo-hero .sub-lead{max-width:38ch}
+}
+
+/* ---------- 19. New homepage hero: Brenda on the sofa ---------- */
+.hero-bg{background-image:url("img/photo/hero-brenda-bank.webp");background-position:right center}
+/* soft cream light behind the text on the left */
+.hero::before{
+  opacity:1;animation:none;
+  background:linear-gradient(90deg,rgba(248,244,236,.55) 0%,rgba(248,244,236,.25) 38%,rgba(248,244,236,0) 55%);
+}
+@media (max-width:680px){
+  .hero-bg{background-image:url("img/photo/hero-brenda-bank.webp");background-size:auto 100%;background-position:64% bottom}
+  .hero::before{background:linear-gradient(180deg,rgba(248,244,236,.85) 0%,rgba(248,244,236,.5) 40%,rgba(248,244,236,0) 60%)}
+}
+.hero-bg{background-position:center center}
+.hero{background-color:#efe3d6}
+@media (max-width:680px){
+  .hero-bg{background-size:auto 56%;background-position:63% 100%}
+  .hero::before{background:linear-gradient(180deg,#efe3d6 0%,rgba(239,227,214,.9) 38%,rgba(239,227,214,0) 52%)}
+}
+
+/* ---------- 20. "Soms vraagt het leven": tree canopy photo that pans while you scroll ---------- */
+.herken-banner{position:relative;isolation:isolate;background:transparent;box-shadow:none}
+.herken-banner::before,.herken-banner::after{
+  content:"";position:absolute;top:0;bottom:0;left:calc(50% - 50vw);width:100vw;pointer-events:none;
+}
+.herken-banner::before{
+  z-index:-2;
+  background:var(--teal-deep) url("img/photo/perspectief-boomkruinen.jpg") center var(--band-pos,50%)/100% auto no-repeat;
+}
+/* dark green veil: keeps white text readable and the photo in Brenda's colours */
+.herken-banner::after{
+  z-index:-1;
+  background:
+    radial-gradient(60% 90% at 50% 50%,rgba(41,71,73,.62),rgba(41,71,73,.42) 100%),
+    linear-gradient(rgba(41,71,73,.25),rgba(41,71,73,.25));
+}
+.herken-banner .herken-quote,.herken-banner .herken-close,.herken-banner .link-more{text-shadow:0 1px 18px rgba(20,39,40,.45)}
+
+/* ---------- 21. Homepage hero: Brenda in conversation ---------- */
+.hero-bg{background-image:url("img/photo/hero-brenda-gesprek.png")}
+@media (max-width:680px){.hero-bg{background-image:url("img/photo/hero-brenda-gesprek.png");background-position:60% 100%}}
+
+/* ---------- 22. Vision: group conversation as a soft blurred background ---------- */
+.vision{position:relative;overflow:hidden;isolation:isolate;background:var(--cream)}
+.vision::before{
+  content:"";position:absolute;inset:-40px;z-index:-2;pointer-events:none;
+  background:url("img/photo/visie-kring.webp") center/cover no-repeat;
+  filter:blur(14px) saturate(.9);
+}
+.vision::after{
+  content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:linear-gradient(180deg,var(--cream) 0%,rgba(248,244,236,.72) 14%,rgba(248,244,236,.66) 86%,var(--cream) 100%);
+}
+@media (min-width:681px){.hero-bg{background-position:right center}}
+
+/* ---------- 23. Canopy band in brand colours: photo toned to deep teal / sage ---------- */
+.herken-banner::before{filter:grayscale(1) contrast(1.05) brightness(1.05)}
+.herken-banner::after{
+  background:
+    linear-gradient(rgba(41,71,73,.78),rgba(41,71,73,.78)),
+    linear-gradient(135deg,rgba(125,154,134,.35),rgba(180,154,208,.18));
+  mix-blend-mode:normal;
+}
+
+/* ---------- 24. Vision back to plain; group photo behind "Zo ziet de begeleiding eruit" (sharp) ---------- */
+.vision::before,.vision::after{content:none}
+.vision{background:var(--cream)}
+.practical{position:relative;isolation:isolate;overflow:hidden;background:var(--cream)}
+.practical--home::before{
+  content:"";position:absolute;inset:0;z-index:-2;pointer-events:none;
+  background:url("img/photo/visie-kring.webp") center 35%/cover no-repeat;
+}
+.practical--home::after{
+  content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:linear-gradient(180deg,rgba(248,244,236,.55) 0%,rgba(248,244,236,.3) 30%,rgba(248,244,236,.3) 75%,var(--cream) 100%);
+}
+.practical--home .practical-head{background:rgba(248,244,236,.82);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-radius:22px;padding:18px 28px;max-width:max-content;margin-inline:auto}
+
+/* ---------- 25. Photo swap: Werkwijze hero = smiling woman, Contact hero = handshake ---------- */
+.sub-hero.photo-hero.tex-werkwijze::before{background-image:url("img/photo/contact.jpg")}
+.sub-hero.photo-hero.tex-contact::before{background-image:url("img/photo/contact-handdruk.webp");background-position:center center}
+.sub-hero.photo-hero.tex-contact::before{transform:scaleX(-1);background-position:left center}
+/* homepage pricing: photo at full strength, no veil */
+.practical--home::after{content:none}
+.practical--home::before{background-position:center center}
+/* homepage pricing: photo removed again, plain cream */
+.practical--home::before,.practical--home::after{content:none}
+.practical--home .practical-head{background:none;-webkit-backdrop-filter:none;backdrop-filter:none;padding:0;border-radius:0;max-width:none}
+
+/* ---------- 26. Vision: three anchor words in a small row, descriptions woven into the story ---------- */
+.vision-story{max-width:720px;margin:0 auto;text-align:center}
+.vision-story p{font-size:18px;line-height:1.72;color:var(--ink-soft);margin:0 auto 16px}
+.vision-story p strong{color:var(--teal-deep);font-weight:600}
+.vision-story .link-more{margin-top:10px;justify-content:center}
+.anchor-row{margin:0 auto clamp(28px,4vh,40px)}
+.anchor-row .anchors-rays{display:block;width:64px;height:auto;margin:0 auto 12px;color:var(--sage)}
+.anchor-row ul{list-style:none;margin:0;padding:0;display:flex;justify-content:center;flex-wrap:wrap;gap:6px 0}
+.anchor-row li{font-family:"Libre Caslon Text",Georgia,serif;font-size:clamp(22px,2.2vw,28px);color:var(--teal-deep);padding:0 clamp(14px,2vw,26px)}
+.anchor-row li+li{border-left:1px solid rgba(41,71,73,.2)}
+@media (max-width:520px){.anchor-row li{font-size:20px;padding:0 10px}}
+
+/* ---------- 27. Vision: story left, group photo inside the arch on the right ---------- */
+.vision-grid--arch{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(36px,6vw,88px);align-items:center}
+.vision-grid--arch .vision-story{max-width:none;margin:0;text-align:left}
+.vision-grid--arch .vision-story p{margin:0 0 16px;max-width:54ch}
+.vision-grid--arch .vision-story .link-more{justify-content:flex-start}
+.vision-grid--arch .anchor-row{margin:0 0 clamp(22px,3vh,32px)}
+.vision-grid--arch .anchor-row .anchors-rays{margin:0 0 10px}
+.vision-grid--arch .anchor-row ul{justify-content:flex-start}
+.vision-grid--arch .anchor-row li:first-child{padding-left:0}
+.vision-story .anchors-note{font-family:"Libre Caslon Text",Georgia,serif;font-style:italic;font-size:20px;line-height:1.4;color:var(--sage-deep)}
+.vision-arch{
+  margin:0;aspect-ratio:4/5;max-height:620px;width:100%;
+  border-radius:999px 999px 28px 28px;overflow:hidden;
+  border:1px solid var(--line);
+  box-shadow:0 34px 70px -46px rgba(41,58,57,.55);
+}
+.vision-arch img{display:block;width:100%;height:100%;object-fit:cover;object-position:46% center}
+@media (max-width:900px){
+  .vision-grid--arch{grid-template-columns:1fr}
+  .vision-arch{max-width:420px;margin:8px auto 0;aspect-ratio:4/5}
+}
+.vision-grid--arch .anchor-row ul{flex-wrap:nowrap}
+.vision-grid--arch .anchor-row li{font-size:clamp(20px,1.8vw,24px);padding:0 clamp(10px,1.4vw,18px)}
+.anchor-row .anchors-rays line{stroke-dashoffset:0!important;opacity:1!important}
+.vision-arch{aspect-ratio:1/1.08}
+.vision-arch img{object-position:34% center}
+@media (max-width:420px){.anchor-row ul{flex-wrap:wrap}}
+
+/* ---------- 28. Vision: warm photo collage instead of the arch ---------- */
+.vision-collage{
+  display:grid;grid-template-columns:1.15fr 1fr;grid-template-rows:1fr 1fr;gap:14px;
+  aspect-ratio:1/1.02;max-height:600px;
+}
+.vc{margin:0;overflow:hidden;border-radius:22px;box-shadow:0 26px 50px -36px rgba(41,58,57,.6)}
+.vc img{display:block;width:100%;height:100%;object-fit:cover}
+.vc-a{grid-row:1/3;border-radius:999px 999px 22px 22px}
+.vc-a img{object-position:34% center}
+.vc-b img{object-position:30% center}
+.vc-c img{object-position:68% 30%}
+@media (prefers-reduced-motion:no-preference){
+  .vc{transition:transform .6s var(--ease-out)}
+  .vc:hover{transform:translateY(-4px)}
+}
+@media (max-width:900px){.vision-collage{max-width:520px;margin:8px auto 0;width:100%}}
+
+/* the three anchors as their own soft element */
+.vision-grid--arch .anchor-row{
+  display:inline-flex;flex-direction:column;align-items:flex-start;
+  background:var(--mist-lilac);border-radius:20px;padding:18px 22px 16px;
+}
+.vision-grid--arch .anchor-row ul{gap:8px}
+.vision-grid--arch .anchor-row li,
+.vision-grid--arch .anchor-row li+li{
+  border:0;padding:8px 16px;border-radius:999px;background:#fbf8f2;
+  font-size:clamp(18px,1.6vw,21px);box-shadow:0 8px 18px -14px rgba(41,58,57,.5);
+}
+.vision-grid--arch .anchor-row li:first-child{padding-left:16px}
+.vision-grid--arch .anchor-row .anchors-rays{width:44px;margin:0 0 10px 4px;color:var(--sage-deep)}
+@media (max-width:420px){.vision-grid--arch .anchor-row ul{flex-wrap:wrap}}
+/* Over Brenda: park portrait cropped to her within the portrait frame */
+.sub-hero-media img.brenda-park{width:100%;height:100%;object-fit:cover;object-position:67% 30%}
+
+/* ---------- 29. Photo on top of the Systemisch werk / Familieopstellingen cards ---------- */
+.also-card--photo{padding-top:0;overflow:hidden}
+.also-card--photo .also-photo{grid-column:1/-1;display:block;margin:0 -28px 6px;height:200px;overflow:hidden}
+.also-card--photo .also-photo img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease-out)}
+.also-card--photo:hover .also-photo img{transform:scale(1.04)}
+.also-card--photo .also-photo img[src*="werkwijze"]{object-position:62% 25%}
+.also-card--photo .also-photo img[src*="visie-kring"]{object-position:center 40%}
+
+/* ---------- 30. Over Brenda: park portrait fills the hero ---------- */
+.sub-hero.photo-hero.tex-brenda::before{background-image:url("img/photo/brenda-park.png");background-position:right 30%}
+@media (max-width:760px){.sub-hero.photo-hero.tex-brenda::before{background-position:72% 25%}}
+/* Begeleiding hero: zoom out (shorter hero) and keep Brenda's hair in view on the left */
+@media (min-width:761px){
+  .sub-hero.photo-hero.tex-begeleiding{min-height:0}
+  .sub-hero.photo-hero.tex-begeleiding .sub-hero-grid{padding-block:clamp(28px,4vh,44px)}
+  .sub-hero.photo-hero.tex-begeleiding .sub-hero-copy{max-width:min(600px,46%)}
+  .sub-hero.photo-hero.tex-begeleiding h1{font-size:clamp(36px,3.6vw,52px)}
+  .sub-hero.photo-hero.tex-begeleiding .topic-tag{margin-bottom:12px}
+  .sub-hero.photo-hero.tex-begeleiding::before{background-position:12% center}
+}
+@media (min-width:761px){
+  .sub-hero.photo-hero.tex-begeleiding::after{
+    background:linear-gradient(90deg,rgba(248,244,236,.62) 0%,rgba(248,244,236,.55) 30%,rgba(248,244,236,.25) 48%,rgba(248,244,236,0) 60%);
+  }
+}
+/* Werkwijze hero: same treatment (less zoom, Brenda's hair visible on the left, lighter wash) */
+@media (min-width:761px){
+  .sub-hero.photo-hero.tex-werkwijze{min-height:0}
+  .sub-hero.photo-hero.tex-werkwijze .sub-hero-grid{padding-block:clamp(28px,4vh,44px)}
+  .sub-hero.photo-hero.tex-werkwijze .sub-hero-copy{max-width:min(600px,46%)}
+  .sub-hero.photo-hero.tex-werkwijze h1{font-size:clamp(36px,3.6vw,52px)}
+  .sub-hero.photo-hero.tex-werkwijze .topic-tag{margin-bottom:12px}
+  .sub-hero.photo-hero.tex-werkwijze::before{background-position:12% center}
+  .sub-hero.photo-hero.tex-werkwijze::after{
+    background:linear-gradient(90deg,rgba(248,244,236,.62) 0%,rgba(248,244,236,.55) 30%,rgba(248,244,236,.25) 48%,rgba(248,244,236,0) 60%);
+  }
+}
+
+/* ---------- 31. Over Brenda: credentials with gold laurels, bottom-right of the photo ---------- */
+.brenda-awards{bottom:28px;right:max(24px,2vw);gap:clamp(10px,1.3vw,22px)}
+.brenda-awards .laurel{color:#e3c27e}
+.brenda-awards .award+.award{border-left:1px solid rgba(255,255,255,.18);padding-left:clamp(10px,1.3vw,22px)}
+.brenda-awards .award-big{font-size:20px}
+@media (max-width:1100px){
+  .brenda-awards{position:relative;right:auto;bottom:auto;margin:20px auto 0;width:max-content;max-width:calc(100% - 32px);border-radius:20px;flex-wrap:wrap;justify-content:center;padding:16px}
+}
+@media (max-width:680px){
+  .brenda-awards{display:grid;grid-template-columns:1fr 1fr;gap:14px 8px}
+  .brenda-awards .award+.award{border-left:0;padding-left:0}
+}
+
+/* ---------- 32. Topic pages: emotional photo heroes ---------- */
+.sub-hero.photo-hero.tex-topic-rouw::before{background-image:url("img/photo/topic-rouw.webp")}
+.sub-hero.photo-hero.tex-topic-patronen::before{background-image:url("img/photo/topic-patronen.webp")}
+.sub-hero.photo-hero.tex-topic-coaching::before{background-image:url("img/photo/topic-coaching.webp")}
+@media (min-width:761px){
+  .sub-hero.photo-hero[class*="tex-topic-"]::before{background-position:right center}
+}
+@media (max-width:760px){
+  .sub-hero.photo-hero[class*="tex-topic-"]::before{background-position:76% center}
+}
+@media (min-width:761px){
+  .sub-hero.photo-hero[class*="tex-topic-"]{min-height:0}
+  .sub-hero.photo-hero[class*="tex-topic-"] .sub-hero-grid{padding-block:clamp(32px,5vh,56px)}
+  .sub-hero.photo-hero[class*="tex-topic-"] .sub-hero-copy{max-width:min(620px,50%)}
+  .sub-hero.photo-hero[class*="tex-topic-"] h1{font-size:clamp(34px,3.2vw,48px);line-height:1.12}
+  .sub-hero.photo-hero[class*="tex-topic-"]::after{
+    background:linear-gradient(90deg,rgba(248,244,236,.93) 0%,rgba(248,244,236,.86) 36%,rgba(248,244,236,.45) 52%,rgba(248,244,236,0) 64%);
+  }
+}
+/* remove the dark page-name pill at the top of subpages */
+.topic-tag{display:none}
+/* homepage hero text a little further left, into the lighter wall */
+@media (min-width:1101px){
+  .hero-copy{padding-left:max(3.5vw,calc((100vw - 1160px)/2 - 20px))}
+}
+
+/* ---------- 33. Over Brenda: story split into cards, two columns ---------- */
+.info-grid--bio{display:block}
+.info-grid--bio .bio-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,2.4vw,32px);max-width:none;align-items:start}
+.bio-block{
+  background:var(--cream-raise);border:1px solid var(--line);border-radius:24px;
+  padding:clamp(26px,3vw,40px);box-shadow:0 22px 48px -40px rgba(41,58,57,.55);
+}
+.bio-block h2{margin-top:0!important;font-size:clamp(26px,2.4vw,34px)}
+.bio-block > :last-child{margin-bottom:0}
+.bio-block:nth-child(even){margin-top:clamp(40px,6vw,80px)}
+.info-grid--bio .info-aside{max-width:520px;margin:clamp(28px,4vw,48px) auto 0}
+@media (max-width:860px){
+  .info-grid--bio .bio-grid{grid-template-columns:1fr}
+  .bio-block:nth-child(even){margin-top:0}
+}
+.bio-fact{margin-top:clamp(40px,6vw,80px)}
+@media (max-width:860px){.bio-fact{margin-top:0}}
+/* flow as two columns (top-to-bottom, then the right column) instead of rows */
+.info-grid--bio .bio-grid{display:block;columns:2;column-gap:clamp(18px,2.4vw,32px)}
+.bio-block,.bio-fact{break-inside:avoid;margin:0 0 clamp(18px,2.4vw,32px)!important;display:block}
+.bio-block:nth-child(even){margin-top:0}
+@media (max-width:860px){.info-grid--bio .bio-grid{columns:1}}
+
+/* ---------- 34. Over Brenda: clear hierarchy — sticky chapter menu + one reading column ---------- */
+.info-grid--bio{display:grid;grid-template-columns:260px minmax(0,1fr);gap:clamp(32px,5vw,72px);align-items:start}
+.info-grid--bio .bio-grid{display:block;columns:auto;max-width:720px}
+.bio-side{position:sticky;top:calc(var(--head-height) + 28px);display:grid;gap:22px}
+.bio-toc{background:var(--cream-raise);border:1px solid var(--line);border-radius:20px;padding:20px 22px}
+.bio-toc-title{margin:0 0 10px;font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--sage-deep)}
+.bio-toc ol{list-style:none;margin:0;padding:0;counter-reset:c}
+.bio-toc li{counter-increment:c}
+.bio-toc a{display:flex;gap:12px;align-items:baseline;padding:9px 0;border-top:1px solid var(--line);color:var(--ink-soft);text-decoration:none;font-size:15px;transition:color .2s}
+.bio-toc li:first-child a{border-top:0}
+.bio-toc a::before{content:counter(c,decimal-leading-zero);font-family:"Libre Caslon Text",serif;font-style:italic;font-size:14px;color:var(--lilac);min-width:22px}
+.bio-toc a:hover,.bio-toc a.is-active{color:var(--teal-deep)}
+.bio-toc a.is-active::before{color:var(--violet)}
+.bio-toc a.is-active{font-weight:600}
+.bio-side .fact-card{margin:0!important}
+
+/* chapters: no boxes, just strong rhythm */
+.bio-block{background:none;border:0;box-shadow:none;border-radius:0;padding:0 0 clamp(36px,5vh,56px);margin:0 0 clamp(36px,5vh,56px)!important;border-bottom:1px solid var(--line);scroll-margin-top:calc(var(--head-height) + 24px)}
+.bio-block:last-child{border-bottom:0;margin-bottom:0!important}
+.bio-block::before{content:attr(data-label);display:inline-block;margin-bottom:12px;padding:4px 8px;background:#e6d8f0;color:var(--teal-deep);font-size:11.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase}
+.bio-block h2{font-size:clamp(28px,2.6vw,38px);margin:0 0 14px!important}
+/* the first chapter leads: bigger and warmer */
+.bio-block:first-child h2{font-size:clamp(34px,3.4vw,48px)}
+.bio-block:first-child p:first-of-type{font-family:"Libre Caslon Text",Georgia,serif;font-size:clamp(20px,1.7vw,24px);line-height:1.5;color:var(--teal-deep)}
+@media (max-width:900px){
+  .info-grid--bio{grid-template-columns:1fr}
+  .bio-side{position:static;order:-1}
+  .bio-toc ol{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px}
+  .bio-toc a{border:1px solid var(--line);border-radius:999px;padding:7px 14px;white-space:nowrap}
+  .bio-toc li:first-child a{border-top:1px solid var(--line)}
+  .bio-side .fact-card{display:none}
+}
+
+/* ---------- 35. Photo-hero wash in brand tints: soft sage melting into lilac (instead of cream) ---------- */
+@media (min-width:761px){
+  .sub-hero.photo-hero::after,
+  .sub-hero.photo-hero[class*="tex-"]::after{
+    background:
+      linear-gradient(90deg,rgba(229,236,230,.9) 0%,rgba(229,236,230,.78) 30%,rgba(239,231,244,.45) 48%,rgba(239,231,244,0) 62%);
+  }
+  .sub-hero.photo-hero.tex-begeleiding::after,
+  .sub-hero.photo-hero.tex-werkwijze::after{
+    background:
+      linear-gradient(90deg,rgba(229,236,230,.66) 0%,rgba(229,236,230,.58) 30%,rgba(239,231,244,.3) 48%,rgba(239,231,244,0) 60%);
+  }
+}
+
+/* ---------- 36. Book page: poem card as tall as the book, no scrolling needed ---------- */
+@media (min-width:901px){
+  .bp-poem{padding:28px 40px 20px}
+  .bp-poem h3{font-size:26px;margin-bottom:14px}
+  .bp-poem p{font-size:16.5px;line-height:1.5}
+  .bp-poem p+p{margin-top:12px}
+  .bp-poem .bp-poem-close{font-size:19px;line-height:1.38}
+  .bp-poem-foot{margin-top:16px;padding-top:12px}
+  .bp-poem-tabs{margin-bottom:18px}
+}
+
+/* ---------- 37. Visie page photo hero ---------- */
+.sub-hero.photo-hero.tex-visie::before{background-image:url("img/photo/visie-kring.webp");background-position:right center}
+
+/* ---------- 38. Homepage band back to solid teal (no tree photo) ---------- */
+.herken-banner::before{background:var(--teal-deep)!important;filter:none}
+.herken-banner::after{content:none}
+.herken-banner .herken-quote{text-shadow:none}
+
+/* ---------- 39. Homepage collage: anchor words on the photos; more of the face in green ---------- */
+.vc{position:relative}
+.vc-a img{object-position:58% center}
+.vc figcaption{
+  position:absolute;left:14px;bottom:14px;
+  padding:7px 14px;border-radius:999px;
+  background:rgba(251,248,242,.88);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+  font-family:"Libre Caslon Text",Georgia,serif;font-size:clamp(17px,1.5vw,21px);color:var(--teal-deep);
+  box-shadow:0 10px 24px -16px rgba(41,58,57,.6);
+}
+.vc-a figcaption{left:50%;transform:translateX(-50%)}
+
+/* ---------- 40. Book: author photo (Brenda on the sofa) cropped to her ---------- */
+.bp-author-photo--bank{object-fit:cover;object-position:64% 30%;aspect-ratio:652/814;width:100%;height:auto}
+
+/* ---------- 41. Practical strip v2: three items with icons, link as small pill ---------- */
+.practical-strip.ps-v2{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) auto;align-items:center;gap:12px 20px;
+  padding:16px 18px;background:var(--cream-raise);border:1px solid var(--line);
+  border-radius:20px;box-shadow:0 18px 40px -34px rgba(41,58,57,.5);
+}
+.practical-strip.ps-v2 span+span::before,.practical-strip.ps-v2 .ps-item+.ps-item::before{content:none}
+.practical-strip.ps-v2 .ps-item{display:flex;align-items:center;gap:12px;font-size:14.5px;line-height:1.35;color:var(--teal-deep)}
+.practical-strip.ps-v2 .ps-ic{flex:none;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:var(--sage-tint);color:var(--sage-deep)}
+.practical-strip.ps-v2 .ps-ic svg{width:19px;height:19px}
+.practical-strip.ps-v2 .link-more{margin:0;white-space:nowrap;padding:8px 14px;border-radius:999px;background:#e6d8f0;color:var(--teal-deep);font-size:14px}
+@media (max-width:900px){
+  .practical-strip.ps-v2{grid-template-columns:1fr}
+  .practical-strip.ps-v2 .link-more{justify-self:start}
+}
+
+/* ---------- 42. "Je eerste stap": thinner, smaller text, photo on the left ---------- */
+.sub-steps{padding-block:clamp(48px,7vh,72px)}
+.sub-head.first-step{
+  display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);column-gap:clamp(28px,4vw,56px);
+  max-width:920px;text-align:left;align-items:center;
+}
+.sub-head.first-step > *:not(.fs-photo){grid-column:2}
+.first-step .fs-photo{grid-column:1;grid-row:1/6;margin:0;aspect-ratio:4/5;border-radius:999px 999px 22px 22px;overflow:hidden;box-shadow:0 26px 50px -36px rgba(41,58,57,.6)}
+.first-step .fs-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:40% center}
+.sub-head.first-step h2{font-size:clamp(32px,3.2vw,44px);margin-bottom:4px}
+.sub-head.first-step .sub-kicker{font-size:clamp(19px,1.8vw,23px);margin:0 0 12px}
+.sub-head.first-step p{margin-inline:0;font-size:16px;max-width:52ch}
+.sub-head.first-step .step-btn{justify-self:start;margin-top:14px}
+@media (max-width:760px){
+  .sub-head.first-step{grid-template-columns:1fr;text-align:center}
+  .sub-head.first-step > *{grid-column:1!important}
+  .first-step .fs-photo{grid-row:auto;max-width:240px;margin:0 auto 18px;aspect-ratio:1/1}
+  .sub-head.first-step p{margin-inline:auto}
+  .sub-head.first-step .step-btn{justify-self:center}
+}
+
+/* homepage collage: show more of the woman in green */
+.vc-a img{object-position:44% center}
+
+/* ---------- 43. "Je eerste stap": handshake as the section background ---------- */
+.sub-steps--photo{position:relative;isolation:isolate;overflow:hidden}
+.sub-steps--photo::before{
+  content:"";position:absolute;inset:0;z-index:-2;
+  background:url("img/photo/contact-handdruk.webp") center/cover no-repeat;transform:scaleX(-1);
+}
+.sub-steps--photo::after{
+  content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:linear-gradient(90deg,rgba(239,231,244,.96) 0%,rgba(239,231,244,.9) 38%,rgba(239,231,244,.45) 56%,rgba(239,231,244,0) 72%);
+}
+.sub-steps--photo .first-step{display:block;max-width:560px;margin-inline:0;text-align:left}
+.sub-steps--photo .first-step .fs-photo{display:none}
+.sub-steps--photo .sub-head.first-step p{margin-inline:0}
+.sub-steps--photo .first-step .step-btn{margin-top:18px}
+.sub-steps--photo .intake{position:relative}
+@media (max-width:760px){
+  .sub-steps--photo::after{background:linear-gradient(180deg,rgba(239,231,244,.94) 0%,rgba(239,231,244,.88) 60%,rgba(239,231,244,.7) 100%)}
+  .sub-steps--photo .first-step{text-align:center;margin-inline:auto}
+  .sub-steps--photo .sub-head.first-step p{margin-inline:auto}
+}
+
+/* ---------- 44. Lezersreacties: book on the table as hero background ---------- */
+.sub-hero.photo-hero.tex-lezers::before{background-image:url("img/photo/boek-tafel.webp");background-position:right center}
+@media (min-width:761px){
+  .sub-hero.photo-hero.tex-lezers{min-height:clamp(420px,52vh,560px)}
+  .sub-hero.photo-hero.tex-lezers .sub-hero-copy{max-width:min(560px,42%)}
+}
+@media (min-width:761px){
+  .sub-hero.photo-hero.tex-lezers .sub-hero-copy{max-width:min(620px,46%)}
+  .sub-hero.photo-hero.tex-lezers h1{font-size:clamp(38px,3.6vw,54px)}
+}
+@media (max-width:760px){
+  .sub-hero.photo-hero.tex-lezers .sub-hero-copy{padding-top:24px}
+}
+/* collage: man for Verkennen, handshake shown higher in its frame */
+.vc-c img{object-position:74% 30%}
+.vc-b img{object-position:32% 78%}
+.vc-b figcaption{top:14px;bottom:auto}
+.vc-b img{object-position:30% 62%}
+
+/* Verkennen: the group, wide enough to see several people */
+.vc-c img{object-position:62% 40%}
+
+/* ---------- 45. Header: Begeleiding dropdown ---------- */
+.nav-links .has-dd{position:relative}
+.nav-links .has-dd > a{display:inline-flex;align-items:center;gap:5px}
+.dd-caret{width:13px;height:13px;transition:transform .25s var(--ease)}
+.has-dd:hover .dd-caret,.has-dd:focus-within .dd-caret{transform:rotate(180deg)}
+.nav-dd{
+  position:absolute;top:100%;left:50%;z-index:60;min-width:300px;
+  margin-top:14px;padding:10px;border-radius:18px;
+  background:#fffdf9;border:1px solid var(--line);box-shadow:0 26px 60px -30px rgba(20,39,40,.55);
+  opacity:0;visibility:hidden;transform:translate(-50%,8px);
+  transition:opacity .22s ease,transform .25s var(--ease),visibility 0s linear .25s;
+}
+.nav-dd::before{content:"";position:absolute;left:0;right:0;top:-16px;height:16px}
+.has-dd:hover .nav-dd,.has-dd:focus-within .nav-dd{opacity:1;visibility:visible;transform:translate(-50%,0);transition-delay:0s}
+.nav-links .nav-dd a{display:flex;flex-direction:column;gap:2px;padding:10px 14px;border-radius:12px;color:var(--teal-deep);font-weight:600;letter-spacing:0}
+.nav-links .nav-dd a::after{content:none}
+.nav-links .nav-dd a:hover{background:var(--sage-tint);color:var(--teal-deep)}
+.nav-dd .dd-t{font-size:14.5px}
+.nav-dd .dd-s{font-size:12.5px;font-weight:400;color:var(--ink-soft)}
+.nav-dd a:first-child{border-bottom:1px solid var(--line);border-radius:12px 12px 4px 4px;margin-bottom:4px}
+
+/* ---------- 46. Service tiles: thin photo across the top ---------- */
+.svc{padding-top:0;overflow:hidden}
+.svc .svc-photo{margin:0 -30px 4px;height:clamp(120px,11vw,150px);overflow:hidden}
+.svc .svc-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:72% 30%;transition:transform .8s var(--ease-out)}
+.svc:hover .svc-photo img{transform:scale(1.04)}
+.svc .ic{margin-top:-30px;position:relative;z-index:1;box-shadow:0 8px 18px -10px rgba(41,58,57,.45);background:#f3ecf8}
+.svc .svc-photo--gesprek img{object-position:62% 28%}
+.svc .svc-photo--gesprek img{object-position:88% 22%}
+/* "Herken je dit?" content sits a little higher */
+.values{padding-top:clamp(24px,3vw,44px)}
+/* Verkennen: only the men (right part of the group photo) */
+.vc-c img{object-position:100% 40%;transform:scale(1.25);transform-origin:right center}
+.vc-c img{object-position:84% 40%;transform:scale(1.12);transform-origin:80% center}
+/* Erkennen: a bit more of Brenda (left, back to camera) in frame */
+.vc-a img{object-position:30% center}
+.vc-a img{object-position:38% center}
+/* handwritten name above Brenda's photo */
+.about-sign--top{position:relative;z-index:2;margin:0 0 10px;text-align:center}
+/* price panel button: white text on violet, like the other primary buttons */
+.btn.rate-cta,.btn.rate-cta:hover,.btn-light.rate-cta{color:#fff}
+.btn.rate-cta svg{color:#fff}
+
+/* ---------- 47. Systemisch werk & Familieopstellingen: photo heroes ---------- */
+.sub-hero.photo-hero.tex-systemisch::before{background-image:url("img/photo/werkwijze.jpg");background-position:right center}
+.sub-hero.photo-hero.tex-familie::before{background-image:url("img/photo/visie-kring.webp");background-position:right center}
+
+/* ---------- 48. Intake form: compact, step by step ---------- */
+.intake-card.is-stepped{padding:clamp(24px,3vw,36px)}
+.intake-card.is-stepped .intake-head h3{font-size:clamp(24px,2.2vw,30px);margin-bottom:6px}
+.intake-card.is-stepped .intake-head p{font-size:14.5px;line-height:1.55;margin:0}
+.intake-card.is-stepped .intake-head .eyebrow{margin-bottom:8px}
+.iprog{margin:20px 0 18px}
+.iprog-label{display:block;font-size:12.5px;font-weight:700;letter-spacing:.06em;color:var(--sage-deep);margin-bottom:8px}
+.iprog-bar{display:block;height:4px;border-radius:99px;background:var(--line);overflow:hidden}
+.iprog-bar span{display:block;height:100%;background:var(--violet);border-radius:99px;transition:width .45s var(--ease)}
+.isteps{min-height:170px}
+.istep{display:grid;grid-template-columns:1fr 1fr;gap:16px 18px;animation:istepIn .4s var(--ease-out)}
+.istep[hidden]{display:none}
+.istep .q{margin:0}
+.istep .q-wide,.istep fieldset.q,.istep .intake-actions{grid-column:1/-1}
+.istep .q > legend,.istep .q > label{font-size:15px}
+.istep textarea{min-height:88px}
+@keyframes istepIn{from{opacity:0;transform:translateX(12px)}to{opacity:1;transform:none}}
+.inav{display:flex;justify-content:space-between;align-items:center;margin-top:18px}
+.inav-back{background:none;border:0;font:inherit;font-size:14px;font-weight:600;color:var(--sage-deep);cursor:pointer;padding:8px 0}
+.inav-back:hover{color:var(--teal-deep)}
+.inav .inav-next[hidden]{display:none}
+.istep .intake-actions{margin-top:4px}
+@media (max-width:600px){.istep{grid-template-columns:1fr}}
+.intake-card.is-stepped > *{grid-column:1/-1}
+.intake-card.is-stepped .istep .q:only-child,.istep fieldset.q{grid-column:1/-1}
+.intake-card.is-stepped .intake-actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.intake-card.is-stepped .intake-privacy{flex-basis:100%;margin:2px 0 0}
+/* stepped form: error directly under the missing field, clearer back button */
+.istep .intake-error{grid-column:auto;margin:8px 0 0;font-size:14px;color:#a14b4b;display:flex;gap:6px;align-items:center}
+.istep .intake-error::before{content:"!";display:inline-grid;place-items:center;width:18px;height:18px;border-radius:50%;background:#a14b4b;color:#fff;font-size:12px;font-weight:700;flex:none}
+.istep .is-missing{border-color:#c98585!important;box-shadow:0 0 0 3px rgba(201,133,133,.18)!important}
+.inav-back{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:10px 20px;border:1.5px solid rgba(41,71,73,.35);border-radius:999px;
+  background:#fffdf9;color:var(--teal-deep);font-size:14.5px;
+  transition:background .2s,border-color .2s;
+}
+.inav-back:hover{background:var(--sage-tint);border-color:var(--teal-deep)}
+
+/* ---------- 49. Erkennen/Herkennen/Verkennen offer items as white cards ---------- */
+.offer-list{gap:clamp(16px,2vw,24px)}
+.offer-item{
+  background:#fffdf9;border:1px solid var(--line);border-top:1px solid var(--line);
+  border-radius:22px;padding:clamp(24px,2.6vw,34px);
+  box-shadow:0 22px 46px -36px rgba(41,58,57,.55);
+  transition:transform .45s var(--ease-out),box-shadow .45s var(--ease-out);
+}
+.offer-item:hover{transform:translateY(-4px);box-shadow:0 28px 54px -36px rgba(41,58,57,.6)}
+.offer-item::before{color:var(--violet)}
+/* "Je eerste stap": show the whole handshake (less zoom, hands centred on the right) */
+@media (min-width:761px){
+  .sub-steps--photo::before{background-size:auto 135%;background-position:left 46%;background-color:#e9dccd}
+  .sub-steps--photo::after{background:linear-gradient(90deg,rgba(239,231,244,.96) 0%,rgba(239,231,244,.9) 34%,rgba(239,231,244,.35) 50%,rgba(239,231,244,0) 60%)}
+}
+@media (min-width:761px){
+  .sub-steps--photo::before{transform:scaleX(-1);background-size:auto 125%;background-position:right 48%}
+}
+@media (min-width:761px){
+  .sub-steps--photo::before{background-size:cover;background-position:left 46%}
+  .sub-steps--photo{min-height:clamp(380px,46vh,460px);display:flex;align-items:center}
+  .sub-steps--photo > .wrap{width:100%}
+}
+/* Patronen & generaties: three generations in conversation with Brenda */
+.sub-hero.photo-hero.tex-topic-patronen::before{background-image:url("img/photo/generaties-gesprek.webp");background-position:right center}
+@media (max-width:760px){.sub-hero.photo-hero.tex-topic-patronen::before{background-position:62% center}}
+@media (min-width:761px){
+  .sub-hero.photo-hero.tex-topic-patronen .sub-hero-copy{max-width:min(440px,32%)}
+  .sub-hero.photo-hero.tex-topic-patronen h1{font-size:clamp(30px,2.6vw,40px)}
+  .sub-hero.photo-hero.tex-topic-patronen .sub-lead{font-size:16px}
+  .sub-hero.photo-hero.tex-topic-patronen::after{background:linear-gradient(90deg,rgba(229,236,230,.92) 0%,rgba(229,236,230,.8) 26%,rgba(239,231,244,.3) 36%,rgba(239,231,244,0) 44%)}
+}
+@media (min-width:761px){
+  .sub-hero.photo-hero.tex-topic-patronen{background:#f1e6da}
+  .sub-hero.photo-hero.tex-topic-patronen::before{left:22%;background-size:cover;background-position:right center}
+  .sub-hero.photo-hero.tex-topic-patronen::after{background:linear-gradient(90deg,#efe6dc 0%,#efe6dc 22%,rgba(239,230,220,.7) 28%,rgba(239,230,220,0) 36%)}
+  .sub-hero.photo-hero.tex-topic-patronen .sub-hero-copy{max-width:min(460px,34%)}
+}
+.pain-grid .pain-note{max-width:none}
+/* intake: Brenda card and form card line up top and bottom */
+.intake-wrap{align-items:stretch}
+.intake-wrap > .brenda-card,.intake-wrap > form.intake-card{height:100%;margin:0}
+.intake-wrap > .brenda-card{display:flex;flex-direction:column;justify-content:center}
+.intake-card.is-stepped{display:flex;flex-direction:column}
+.intake-card.is-stepped .isteps{min-height:0;flex:1}
+.intake-card.is-stepped .inav{margin-top:auto;padding-top:18px}
+@media (max-width:900px){.intake-wrap > .brenda-card,.intake-wrap > form.intake-card{height:auto}}
+
+/* ---------- 50. Offer items + info bar as one connected panel ---------- */
+.offer-list:has(+ .practical-strip){
+  gap:0;background:#fffdf9;border:1px solid var(--line);border-bottom:0;
+  border-radius:26px 26px 0 0;overflow:hidden;
+  box-shadow:0 26px 54px -42px rgba(41,58,57,.55);
+}
+.offer-list:has(+ .practical-strip) .offer-item{
+  background:none;border:0;border-radius:0;box-shadow:none;
+  padding:clamp(26px,3vw,40px);
+}
+.offer-list:has(+ .practical-strip) .offer-item + .offer-item{border-left:1px solid var(--line)}
+.offer-list:has(+ .practical-strip) .offer-item:hover{transform:none;box-shadow:none;background:#fdf9f3}
+.offer-list + .practical-strip.ps-v2{
+  margin-top:0;border-radius:0 0 26px 26px;border:1px solid var(--line);
+  background:var(--sage-tint);box-shadow:0 26px 54px -42px rgba(41,58,57,.55);
+}
+.offer-list + .practical-strip.ps-v2 .ps-ic{background:#fffdf9}
+@media (max-width:900px){
+  .offer-list:has(+ .practical-strip) .offer-item + .offer-item{border-left:0;border-top:1px solid var(--line)}
+}
+.istep .ihint{display:block;margin:-2px 0 12px;font-size:13.5px;color:var(--ink-soft)}
+.chip input[type=checkbox]{position:absolute;opacity:0;pointer-events:none}
+/* once "Stap nemen" is clicked, the "… die moet je wel echt zelf nemen." line disappears */
+.sub-head:has(.step-btn[aria-expanded="true"]) .sub-kicker{display:none}
+
+/* ---------- 51. Dark "ways in" section: grainy light-sage glow rising from the bottom 20% ---------- */
+.pattern{position:relative;isolation:isolate}
+.pattern > *{position:relative;z-index:1}
+.pattern::after,.bp-author::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:20%;z-index:0;pointer-events:none;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+    linear-gradient(180deg,rgba(229,236,230,0) 0%,rgba(229,236,230,.35) 55%,rgba(229,236,230,.85) 100%);
+  -webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 60%);mask-image:linear-gradient(180deg,transparent 0%,#000 60%);
+  mix-blend-mode:normal;opacity:.9;
+}
+/* replace: vibrant colour shift (teal -> sage), opaque, grainy — like paint on canvas */
+.pattern::after,.bp-author::after{
+  height:24%;opacity:1;-webkit-mask-image:none;mask-image:none;mix-blend-mode:normal;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .1  0 0 0 0 .2  0 0 0 0 .18  0 0 0 .22 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+    linear-gradient(180deg,#294749 0%,#3f6a5c 38%,#6e9a7c 72%,#8fb592 100%);
+}
+/* sandy, greener colour shift that blends in with no visible top edge */
+.pattern::after,.bp-author::after{
+  height:42%;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.35' numOctaves='2' seed='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .96  0 0 0 0 .95  0 0 0 0 .86  0 0 0 1.6 -.92'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='b'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.1' numOctaves='2' seed='9' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .08  0 0 0 0 .16  0 0 0 0 .12  0 0 0 1.5 -.88'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23b)'/%3E%3C/svg%3E"),
+    linear-gradient(180deg,#294749 0%,#33604f 30%,#55895f 62%,#86b37f 88%,#9cc28c 100%);
+  -webkit-mask-image:linear-gradient(180deg,transparent 0%,rgba(0,0,0,.6) 22%,#000 45%);
+          mask-image:linear-gradient(180deg,transparent 0%,rgba(0,0,0,.6) 22%,#000 45%);
+}
+/* calmer mint colour shift, extra grainy */
+.pattern::after,.bp-author::after{
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.5' numOctaves='2' seed='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .97  0 0 0 0 .97  0 0 0 0 .92  0 0 0 2.2 -1.15'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='b'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.25' numOctaves='2' seed='9' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .1  0 0 0 0 .18  0 0 0 0 .16  0 0 0 2.2 -1.12'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23b)'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='c'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='3' seed='5' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .9  0 0 0 0 .94  0 0 0 0 .9  0 0 0 .5 -.1'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23c)'/%3E%3C/svg%3E"),
+    linear-gradient(180deg,#294749 0%,#3b5e58 30%,#7c9c90 64%,#b4cbbf 88%,#c9dacf 100%);
+}
+/* homepage 3D book: closer to the real cover's deeper, richer green */
+.book3d .b-face img{filter:saturate(1.3) brightness(.86) contrast(1.06) hue-rotate(-6deg)}
+.svc .svc-photo--familie img{object-position:60% 22%}
+/* colour shift curves up at the sides (smile-shaped edge), seamless */
+.pattern::after,.bp-author::after{
+  height:68%;
+  background-size:auto,auto,auto,100% 100%;
+  -webkit-mask-image:
+    linear-gradient(180deg,transparent 0%,transparent 38%,rgba(0,0,0,.6) 55%,#000 72%),
+    radial-gradient(ellipse 34% 95% at 0% 100%,#000 25%,rgba(0,0,0,.5) 55%,transparent 85%),
+    radial-gradient(ellipse 34% 95% at 100% 100%,#000 25%,rgba(0,0,0,.5) 55%,transparent 85%);
+  -webkit-mask-composite:source-over;
+          mask-image:
+    linear-gradient(180deg,transparent 0%,transparent 38%,rgba(0,0,0,.6) 55%,#000 72%),
+    radial-gradient(ellipse 34% 95% at 0% 100%,#000 25%,rgba(0,0,0,.5) 55%,transparent 85%),
+    radial-gradient(ellipse 34% 95% at 100% 100%,#000 25%,rgba(0,0,0,.5) 55%,transparent 85%);
+          mask-composite:add;
+}
+/* Familieopstellingen: the seated family (card on Begeleiding + page hero) */
+.also-card--photo .also-photo img[src*="familie-zittend"]{object-position:center 25%}
+.sub-hero.photo-hero.tex-familie::before{background-image:url("img/photo/familie-zittend.webp");background-position:right 30%}
+@media (min-width:761px){
+  .sub-hero.photo-hero.tex-familie{background:#efe6dc}
+  .sub-hero.photo-hero.tex-familie::before{left:30%;background-size:cover;background-position:left 30%}
+  .sub-hero.photo-hero.tex-familie::after{background:linear-gradient(90deg,#efe6dc 0%,#efe6dc 30%,rgba(239,230,220,.6) 35%,rgba(239,230,220,0) 42%)}
+  .sub-hero.photo-hero.tex-familie .sub-hero-copy{max-width:min(440px,32%)}
+}
+
+/* ---------- 52. Begeleiding & Werkwijze heroes: dark green wash, light text ---------- */
+@media (min-width:761px){
+  .sub-hero.photo-hero.tex-begeleiding::after,
+  .sub-hero.photo-hero.tex-werkwijze::after{
+    background:linear-gradient(90deg,rgba(28,52,54,.82) 0%,rgba(33,60,61,.68) 32%,rgba(41,71,73,.3) 50%,rgba(41,71,73,0) 62%);
+  }
+  .sub-hero.photo-hero.tex-begeleiding h1,.sub-hero.photo-hero.tex-werkwijze h1{color:#f8f4ec}
+  .sub-hero.photo-hero.tex-begeleiding h1 em,.sub-hero.photo-hero.tex-werkwijze h1 em{color:#d9c4ea}
+  .sub-hero.photo-hero.tex-begeleiding .sub-lead,.sub-hero.photo-hero.tex-werkwijze .sub-lead{color:#e6eee9}
+  .sub-hero.photo-hero.tex-begeleiding .sub-hero-copy,.sub-hero.photo-hero.tex-werkwijze .sub-hero-copy{text-shadow:0 1px 14px rgba(15,30,31,.35)}
+}
+@media (min-width:761px){.sub-hero.photo-hero.tex-werkwijze{min-height:clamp(340px,42vh,440px)}}
+/* vignette: dark teal hollow in the middle, grainy mint coming in from the sides and bottom */
+.pattern::after,.bp-author::after{
+  top:0;height:auto;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.5' numOctaves='2' seed='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .97  0 0 0 0 .97  0 0 0 0 .92  0 0 0 2.2 -1.15'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='b'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.25' numOctaves='2' seed='9' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .1  0 0 0 0 .18  0 0 0 0 .16  0 0 0 2.2 -1.12'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23b)'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='c'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='3' seed='5' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .9  0 0 0 0 .94  0 0 0 0 .9  0 0 0 .5 -.1'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23c)'/%3E%3C/svg%3E"),
+    radial-gradient(ellipse 62% 70% at 50% 30%,#294749 0%,#294749 45%,#3b5e58 62%,#7c9c90 82%,#b4cbbf 100%);
+  background-size:auto,auto,auto,100% 100%;
+  -webkit-mask-image:radial-gradient(ellipse 62% 70% at 50% 30%,transparent 42%,rgba(0,0,0,.55) 62%,#000 82%);
+          mask-image:radial-gradient(ellipse 62% 70% at 50% 30%,transparent 42%,rgba(0,0,0,.55) 62%,#000 82%);
+  -webkit-mask-composite:source-over;mask-composite:add;
+}
+/* back to the bottom-up version (sides rising), with a smooth eased dark-to-light ramp */
+.pattern::after,.bp-author::after{
+  top:auto;bottom:0;height:72%;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.5' numOctaves='2' seed='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .97  0 0 0 0 .97  0 0 0 0 .92  0 0 0 2.2 -1.15'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='b'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.25' numOctaves='2' seed='9' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .1  0 0 0 0 .18  0 0 0 0 .16  0 0 0 2.2 -1.12'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23b)'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='c'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='3' seed='5' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .9  0 0 0 0 .94  0 0 0 0 .9  0 0 0 .5 -.1'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23c)'/%3E%3C/svg%3E"),
+    linear-gradient(180deg,#294749 0%,#2d4e4f 14%,#345852 26%,#3f6559 37%,#4e7564 47%,#618674 57%,#779a88 67%,#8eae9c 77%,#a5c0b0 87%,#b9cfc2 95%,#c4d7cb 100%);
+  background-size:auto,auto,auto,100% 100%;
+  -webkit-mask-image:
+    linear-gradient(180deg,transparent 0%,rgba(0,0,0,.04) 18%,rgba(0,0,0,.14) 30%,rgba(0,0,0,.32) 42%,rgba(0,0,0,.55) 54%,rgba(0,0,0,.78) 66%,rgba(0,0,0,.93) 78%,#000 88%),
+    radial-gradient(ellipse 36% 100% at 0% 100%,rgba(0,0,0,.9) 0%,rgba(0,0,0,.6) 40%,rgba(0,0,0,.25) 68%,transparent 92%),
+    radial-gradient(ellipse 36% 100% at 100% 100%,rgba(0,0,0,.9) 0%,rgba(0,0,0,.6) 40%,rgba(0,0,0,.25) 68%,transparent 92%);
+  -webkit-mask-composite:source-over;
+          mask-image:
+    linear-gradient(180deg,transparent 0%,rgba(0,0,0,.04) 18%,rgba(0,0,0,.14) 30%,rgba(0,0,0,.32) 42%,rgba(0,0,0,.55) 54%,rgba(0,0,0,.78) 66%,rgba(0,0,0,.93) 78%,#000 88%),
+    radial-gradient(ellipse 36% 100% at 0% 100%,rgba(0,0,0,.9) 0%,rgba(0,0,0,.6) 40%,rgba(0,0,0,.25) 68%,transparent 92%),
+    radial-gradient(ellipse 36% 100% at 100% 100%,rgba(0,0,0,.9) 0%,rgba(0,0,0,.6) 40%,rgba(0,0,0,.25) 68%,transparent 92%);
+          mask-composite:add;
+}
+
+/* ---------- 53. "Herken je dit?": Brenda's own slowly moving fluid gradient (replaces the leaf photo) ---------- */
+.values::after{content:none!important}
+.values{background:var(--cream)}
+.values > .wrap{position:relative;z-index:1}
+.fluid{
+  position:absolute;left:0;right:0;top:0;height:var(--herken-line,75%);z-index:0;overflow:hidden;pointer-events:none;
+  background:linear-gradient(180deg,#f3efe6 0%,#eef1ea 55%,var(--cream) 100%);
+  -webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 14%,#000 82%,transparent 100%);
+          mask-image:linear-gradient(180deg,transparent 0%,#000 14%,#000 82%,transparent 100%);
+}
+.fluid span:not(.fgrain){position:absolute;border-radius:50%;filter:blur(70px);opacity:.85;will-change:transform}
+.fluid .f1{width:46vw;height:46vw;left:-8vw;top:-6vw;background:radial-gradient(circle,rgba(125,154,134,.55),rgba(125,154,134,0) 68%);animation:fluidA 26s ease-in-out infinite alternate}
+.fluid .f2{width:40vw;height:40vw;right:-6vw;top:2vw;background:radial-gradient(circle,rgba(193,162,218,.5),rgba(193,162,218,0) 68%);animation:fluidB 31s ease-in-out infinite alternate}
+.fluid .f3{width:38vw;height:38vw;left:30vw;top:14vw;background:radial-gradient(circle,rgba(229,236,230,.95),rgba(229,236,230,0) 70%);animation:fluidC 23s ease-in-out infinite alternate}
+.fluid .f4{width:30vw;height:30vw;left:12vw;top:22vw;background:radial-gradient(circle,rgba(195,154,84,.22),rgba(195,154,84,0) 70%);animation:fluidB 37s ease-in-out -9s infinite alternate-reverse}
+.fluid .f5{width:34vw;height:34vw;right:14vw;top:24vw;background:radial-gradient(circle,rgba(76,104,85,.28),rgba(76,104,85,0) 70%);animation:fluidA 29s ease-in-out -14s infinite alternate-reverse}
+@keyframes fluidA{0%{transform:translate(0,0) scale(1)}50%{transform:translate(8vw,4vw) scale(1.12)}100%{transform:translate(3vw,-3vw) scale(.94)}}
+@keyframes fluidB{0%{transform:translate(0,0) scale(1)}50%{transform:translate(-7vw,5vw) scale(1.08)}100%{transform:translate(-2vw,-4vw) scale(1.15)}}
+@keyframes fluidC{0%{transform:translate(0,0) scale(1)}50%{transform:translate(-6vw,-3vw) scale(1.18)}100%{transform:translate(6vw,2vw) scale(.92)}}
+.fluid .fgrain{
+  position:absolute;inset:0;opacity:.35;mix-blend-mode:multiply;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .3  0 0 0 0 .35  0 0 0 0 .32  0 0 0 .5 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+@media (prefers-reduced-motion:reduce){.fluid span{animation:none!important}}
+@media (max-width:680px){.fluid span:not(.fgrain){filter:blur(46px)}.fluid .f1,.fluid .f2,.fluid .f3{width:80vw;height:80vw}}
+/* "Alle begeleiding" link under the three tiles */
+.svc-all{grid-column:1/-1;margin:clamp(26px,3vw,38px) 0 0;text-align:center}
+.svc-all .link-more{color:#f8f4ec;font-weight:600;justify-content:center}
+.svc-all .link-more:hover{color:#d9c4ea}
+/* fluid: a touch more colour */
+.fluid span:not(.fgrain){opacity:1}
+/* Levend verlies tile: same as the others — white at rest, heading turns violet on hover */
+.pattern .svc--lead{background:var(--cream-raise);box-shadow:none;border-color:var(--line)}
+.pattern .svc--lead h3{font-size:25px}
+.pattern .svc--lead:hover{background:#fff;border-color:#e6d6f1;box-shadow:0 0 0 1px #e6d6f1,0 0 60px -2px rgba(214,190,236,.75),0 26px 50px -30px rgba(0,0,0,.45)}
+/* "Alle begeleiding": a bit higher, less space below, soft white glow on hover */
+.svc-all{margin-top:clamp(14px,1.8vw,22px)}
+.pattern:has(.svc-all){padding-bottom:clamp(48px,6vw,72px)}
+.svc-all .link-more{transition:color .3s,text-shadow .3s}
+.svc-all .link-more:hover{color:#fff;text-shadow:0 0 14px rgba(255,255,255,.85),0 0 28px rgba(255,255,255,.45)}
+.svc-all .link-more:hover svg{filter:drop-shadow(0 0 6px rgba(255,255,255,.8))}
+/* thin outline only around the photo, not around the name above it */
+.about-media::after{content:none}
+.about-media .frame{position:relative}
+.about-media .frame::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(180,154,208,.32);pointer-events:none}
+/* "Herken je dit?" fluid: lighter green from the left, lilac from the right, lighter middle */
+.fluid{background:linear-gradient(180deg,#f6f3ec 0%,#f4f4ef 55%,var(--cream) 100%)}
+.fluid .f1{left:-22vw;top:-4vw;width:48vw;height:48vw;background:radial-gradient(circle,rgba(160,190,168,.6),rgba(160,190,168,0) 68%)}
+.fluid .f2{right:-22vw;top:-2vw;width:48vw;height:48vw;background:radial-gradient(circle,rgba(200,170,226,.6),rgba(200,170,226,0) 68%)}
+.fluid .f3{left:28vw;top:6vw;width:44vw;height:44vw;background:radial-gradient(circle,rgba(255,253,247,.95),rgba(255,253,247,0) 70%)}
+.fluid .f4{left:-14vw;top:20vw;background:radial-gradient(circle,rgba(184,212,192,.45),rgba(184,212,192,0) 70%)}
+.fluid .f5{right:-14vw;left:auto;top:20vw;background:radial-gradient(circle,rgba(214,194,234,.45),rgba(214,194,234,0) 70%)}
+@keyframes fluidA{0%{transform:translate(0,0) scale(1)}50%{transform:translate(4vw,3vw) scale(1.1)}100%{transform:translate(1vw,-2vw) scale(.95)}}
+@keyframes fluidB{0%{transform:translate(0,0) scale(1)}50%{transform:translate(-4vw,3vw) scale(1.08)}100%{transform:translate(-1vw,-2vw) scale(1.12)}}
+@keyframes fluidC{0%{transform:translate(0,0) scale(1)}50%{transform:translate(-3vw,-2vw) scale(1.12)}100%{transform:translate(3vw,1vw) scale(.95)}}
+/* fluid: bigger and brighter green (left) and lilac (right) */
+.fluid .f1{left:-24vw;top:-10vw;width:62vw;height:62vw;background:radial-gradient(circle,rgba(150,196,164,.85),rgba(150,196,164,.35) 40%,rgba(150,196,164,0) 70%)}
+.fluid .f2{right:-24vw;top:-10vw;width:62vw;height:62vw;background:radial-gradient(circle,rgba(196,160,232,.85),rgba(196,160,232,.35) 40%,rgba(196,160,232,0) 70%)}
+.fluid .f4{left:-18vw;top:14vw;width:46vw;height:46vw;background:radial-gradient(circle,rgba(176,214,186,.7),rgba(176,214,186,0) 70%)}
+.fluid .f5{right:-18vw;top:14vw;width:46vw;height:46vw;background:radial-gradient(circle,rgba(212,186,240,.7),rgba(212,186,240,0) 70%)}
+.fluid .f3{width:36vw;height:36vw;left:32vw}
+/* fluid: colour fills top to bottom from each side (no white bands), smaller, asymmetrical */
+.fluid{-webkit-mask-image:none;mask-image:none;height:var(--herken-line,75%);background:#f5f2ea}
+.fluid span:not(.fgrain){border-radius:50%}
+/* green: left, tall, leaning toward the top */
+.fluid .f1{left:-16vw;top:-12%;width:40vw;height:96%;background:radial-gradient(ellipse at center,rgba(150,196,164,.85),rgba(150,196,164,.35) 45%,rgba(150,196,164,0) 72%)}
+.fluid .f4{left:-12vw;top:48%;width:30vw;height:70%;background:radial-gradient(ellipse at center,rgba(176,214,186,.75),rgba(176,214,186,0) 70%)}
+/* lilac: right, a bit narrower, leaning toward the bottom */
+.fluid .f2{right:-14vw;top:18%;width:34vw;height:100%;background:radial-gradient(ellipse at center,rgba(196,160,232,.82),rgba(196,160,232,.32) 45%,rgba(196,160,232,0) 72%)}
+.fluid .f5{right:-10vw;left:auto;top:-18%;width:28vw;height:62%;background:radial-gradient(ellipse at center,rgba(212,186,240,.7),rgba(212,186,240,0) 70%)}
+/* soft light in the middle, slightly off-centre */
+.fluid .f3{left:34vw;top:4%;width:30vw;height:80%;background:radial-gradient(ellipse at center,rgba(255,253,247,.9),rgba(255,253,247,0) 70%)}
+/* the fluid colours run up into the hero wave: the wave itself becomes the gradient (no cream band) */
+.values .section-wave{display:none}
+.fluid{
+  top:-55px;height:calc(var(--herken-line,75%) + 55px);overflow:hidden;
+  -webkit-mask:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 72' preserveAspectRatio='none'%3E%3Cpath d='M0 48C178 18 354 7 544 20c205 14 338 49 536 34 168-13 270-40 360-28v46H0Z'/%3E%3C/svg%3E") top/100% 56px no-repeat,
+    linear-gradient(#000,#000) 0 55px/100% calc(100% - 55px) no-repeat;
+          mask:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 72' preserveAspectRatio='none'%3E%3Cpath d='M0 48C178 18 354 7 544 20c205 14 338 49 536 34 168-13 270-40 360-28v46H0Z'/%3E%3C/svg%3E") top/100% 56px no-repeat,
+    linear-gradient(#000,#000) 0 55px/100% calc(100% - 55px) no-repeat;
+}
+@media (max-width:1100px){.fluid{top:-39px;height:calc(var(--herken-line,75%) + 39px);-webkit-mask-size:100% 40px,100% calc(100% - 39px);mask-size:100% 40px,100% calc(100% - 39px);-webkit-mask-position:top,0 39px;mask-position:top,0 39px}}
+@media (max-width:680px){.fluid{top:-29px;height:calc(var(--herken-line,75%) + 29px);-webkit-mask-size:100% 30px,100% calc(100% - 29px);mask-size:100% 30px,100% calc(100% - 29px);-webkit-mask-position:top,0 29px;mask-position:top,0 29px}}
+.values{overflow:visible}
+@media (min-width:761px){
+  .sub-hero.photo-hero.tex-topic-coaching{background:#f0ebe2}
+  .sub-hero.photo-hero.tex-topic-coaching::before{left:24%;background-size:cover;background-position:right center}
+  .sub-hero.photo-hero.tex-topic-coaching::after{background:linear-gradient(90deg,#efeae1 0%,#efeae1 24%,rgba(239,234,225,.6) 30%,rgba(239,234,225,0) 38%)}
+  .sub-hero.photo-hero.tex-topic-coaching .sub-hero-copy{max-width:min(460px,34%)}
+}
+/* fluid: softer, lighter colours */
+.fluid span:not(.fgrain){opacity:.6}
+.fluid .fgrain{opacity:.25}
+/* softer hover glow on cards */
+.pattern .svc:hover,.pattern .svc--lead:hover{box-shadow:0 0 0 1px #ece2f3,0 0 26px -10px rgba(214,190,236,.45),0 22px 44px -32px rgba(0,0,0,.35)}
+.svc:hover{box-shadow:0 0 0 1px #e6dcee,0 0 20px -10px rgba(180,154,208,.35),0 22px 44px -32px rgba(41,58,57,.3)}
+/* "Herken je dit?": right side soft mint instead of lilac */
+.fluid .f2{background:radial-gradient(ellipse at center,rgba(198,224,210,.85),rgba(198,224,210,.35) 45%,rgba(198,224,210,0) 72%)}
+.fluid .f5{background:radial-gradient(ellipse at center,rgba(232,242,236,.9),rgba(232,242,236,0) 70%)}
+/* crisper, fresher green on both sides */
+.fluid span:not(.fgrain){opacity:.8}
+.fluid .f1{background:radial-gradient(ellipse at center,rgba(132,196,156,.85),rgba(132,196,156,.35) 45%,rgba(132,196,156,0) 72%)}
+.fluid .f4{background:radial-gradient(ellipse at center,rgba(168,218,184,.75),rgba(168,218,184,0) 70%)}
+.fluid .f2{background:radial-gradient(ellipse at center,rgba(150,208,172,.8),rgba(150,208,172,.32) 45%,rgba(150,208,172,0) 72%)}
+.fluid .f5{background:radial-gradient(ellipse at center,rgba(190,228,202,.8),rgba(190,228,202,0) 70%)}
+/* stronger, sandy grain over the green */
+.fluid .fgrain{
+  opacity:1;mix-blend-mode:normal;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.5' numOctaves='2' seed='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 .97  0 0 0 2.2 -1.2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='b'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.25' numOctaves='2' seed='9' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .2  0 0 0 0 .3  0 0 0 0 .26  0 0 0 2 -1.12'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23b)'/%3E%3C/svg%3E");
+}
+/* green glow only on the right, low, behind the "Je bent jezelf een beetje kwijt" card; more grain */
+.fluid .f1,.fluid .f4{display:none}
+.fluid .f2{right:-8vw;top:38%;width:46vw;height:96%;background:radial-gradient(ellipse at 45% 55%,rgba(140,202,162,.9),rgba(140,202,162,.4) 42%,rgba(140,202,162,0) 72%)}
+.fluid .f5{right:-14vw;top:62%;width:34vw;height:70%;background:radial-gradient(ellipse at center,rgba(176,222,190,.85),rgba(176,222,190,0) 70%)}
+.fluid .f3{left:20vw}
+.fluid .fgrain{
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.6' numOctaves='2' seed='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 .97  0 0 0 2.8 -1.4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='b'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.3' numOctaves='2' seed='9' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .18  0 0 0 0 .28  0 0 0 0 .24  0 0 0 2.6 -1.3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23b)'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='c'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' seed='5' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .4  0 0 0 0 .45  0 0 0 0 .4  0 0 0 .35 -.05'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23c)'/%3E%3C/svg%3E");
+}
+/* base of the "Herken" section in the warm wall tone from the hero photo (left side) */
+.fluid{background:linear-gradient(180deg,#ecdfd0 0%,#efe4d7 45%,#f2e9de 100%)}
+.fluid .f3{background:radial-gradient(ellipse at center,rgba(246,239,229,.75),rgba(246,239,229,0) 70%)}
+/* lighter warm base, close to the other light sections */
+.fluid{background:linear-gradient(180deg,#f5eee4 0%,#f6f0e7 45%,#f7f2ea 100%)}
+.fluid .f3{background:radial-gradient(ellipse at center,rgba(250,246,239,.8),rgba(250,246,239,0) 70%)}
+/* grain: strong only around the green glow (bottom-right), very light elsewhere so the base stays bright */
+.fluid .fgrain{
+  -webkit-mask-image:radial-gradient(ellipse 60% 75% at 88% 85%,#000 0%,rgba(0,0,0,.6) 40%,rgba(0,0,0,.12) 75%,rgba(0,0,0,.08) 100%);
+          mask-image:radial-gradient(ellipse 60% 75% at 88% 85%,#000 0%,rgba(0,0,0,.6) 40%,rgba(0,0,0,.12) 75%,rgba(0,0,0,.08) 100%);
+}
+/* green as a centred half-moon rising from the bottom, edge to edge */
+.fluid .f5,.fluid .f3{display:none}
+.fluid .f2{
+  left:-10%;right:auto;top:auto;bottom:-62%;width:120%;height:110%;border-radius:50%;
+  background:radial-gradient(ellipse 50% 50% at 50% 50%,rgba(140,202,162,.9) 0%,rgba(140,202,162,.55) 38%,rgba(140,202,162,.18) 62%,rgba(140,202,162,0) 76%);
+  filter:blur(40px);animation:moonDrift 24s ease-in-out infinite alternate;
+}
+@keyframes moonDrift{from{transform:translateX(-2%) scaleY(1)}to{transform:translateX(2%) scaleY(1.06)}}
+.fluid .fgrain{
+  -webkit-mask-image:radial-gradient(ellipse 70% 55% at 50% 100%,#000 0%,rgba(0,0,0,.6) 45%,rgba(0,0,0,.1) 80%,rgba(0,0,0,.06) 100%);
+          mask-image:radial-gradient(ellipse 70% 55% at 50% 100%,#000 0%,rgba(0,0,0,.6) 45%,rgba(0,0,0,.1) 80%,rgba(0,0,0,.06) 100%);
+}
+/* half-moon in the same mint as the dark section's bottom */
+.fluid .f2{background:radial-gradient(ellipse 50% 50% at 50% 50%,rgba(165,192,176,.95) 0%,rgba(185,207,194,.65) 38%,rgba(196,215,203,.25) 62%,rgba(196,215,203,0) 76%)}
+
+/* 54. Book page author: no rays, no big name, bigger quote, signature under photo */
+.bp-author .bp-author-lead{margin:14px 0 22px;font-family:"Libre Caslon Text",Georgia,serif;font-style:italic;font-weight:400;font-size:clamp(30px,3.2vw,44px);line-height:1.22;color:#e9dcf3}
+.bp-author-caption{position:relative;text-align:center;margin-top:34px}
+.bp-author-caption .bp-author-sign{margin:0 0 6px;font-size:40px}
+.bp-author-caption .bp-author-roles{margin:0}
+.bp-author-caption{position:absolute;top:100%;left:50%;transform:translateX(-50%);width:max-content;max-width:90vw;margin-top:40px}
+.bp-author-caption .bp-author-roles{white-space:nowrap}
+.bp-author-media{margin-bottom:80px}
+@media (max-width:600px){.bp-author-caption .bp-author-roles{white-space:normal}}
+.bp-author .bp-author-lead{font-family:"Mulish",system-ui,sans-serif;font-style:normal;font-weight:300;font-size:clamp(28px,2.8vw,40px);line-height:1.25;letter-spacing:-.01em}
+.bp-author .bp-author-actions{margin-top:40px}
+/* 55. Book author section gets the homepage grainy teal-to-mint rise */
+.bp-author{isolation:isolate}
+.bp-author > *{position:relative;z-index:1}
+.bp-author{padding-bottom:clamp(140px,14vw,220px)}
+.bp-author::after{height:58%}
+/* flipped: mint at the top, fading into teal */
+.bp-author::after{top:0;bottom:auto;transform:scaleY(-1)}
+.bp-author{padding-top:clamp(140px,14vw,220px);padding-bottom:clamp(72px,8vw,110px)}
+.bp-author::after{opacity:.6}
+.bp-author::after{opacity:1;height:66%;filter:brightness(1.12) saturate(1.05)}
+.bp-author::after{height:54%}
+.bp-author{background:linear-gradient(180deg,#365b57 0%,#3c635d 55%,#46706a 100%)}
+@media (min-width:901px){.bp-author-grid{align-items:start}.bp-author-media{margin-top:20px}}
+.bp-author-media{margin-bottom:0}
+.bp-author{background:linear-gradient(180deg,#3b605b 0%,#446c65 55%,#527c73 100%)}
+/* seamless fade from the cream section above into the mint */
+.bp-author::before{content:"";position:absolute;left:0;right:0;top:-1px;height:clamp(120px,14vw,200px);z-index:0;pointer-events:none;
+  background:linear-gradient(180deg,#f8f4ec 0%,rgba(248,244,236,.85) 25%,rgba(248,244,236,.5) 55%,rgba(248,244,236,.18) 80%,rgba(248,244,236,0) 100%)}
+.bp-inkijk{border-bottom:0;box-shadow:none}
+.bp-author::before{z-index:1}.bp-author > .wrap{z-index:2}
+.bp-author::before{height:clamp(70px,8vw,120px);background:linear-gradient(180deg,#f8f4ec 0%,rgba(248,244,236,.7) 30%,rgba(248,244,236,.3) 65%,rgba(248,244,236,0) 100%)}
+/* 56. Herken cards: static, no hover, not clickable */
+.herken-list li{pointer-events:none;border:0!important}
+
+.pattern-quote h2{font-size:clamp(22px,2.6vw,32px)!important;line-height:1.25;max-width:760px}
+
+/* 57. Homepage tiles: a bit smaller */
+@media (min-width:901px){.pattern .svc-grid{max-width:1000px;margin-inline:auto}}
+.about-copy h2{font-size:clamp(28px,2.8vw,38px)!important;line-height:1.15}
+.about-quote{font-family:"Mulish",system-ui,sans-serif!important;font-style:normal!important;font-weight:300}
+
+/* 58. Investering: choosable plans + add-ons */
+.rate-choice{display:grid;gap:10px;margin:6px 0 4px}
+.rate-choice .rate-row{position:relative;cursor:pointer;border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:18px 20px 18px 54px;margin:0;background:rgba(255,255,255,.03);transition:background .25s ease,border-color .25s ease,box-shadow .25s ease}
+.rate-choice .rate-row:hover{background:rgba(255,255,255,.07);border-color:rgba(220,200,238,.45)}
+.rate-choice .rate-row:focus-visible{outline:2px solid #dcc8ee;outline-offset:3px}
+.rate-choice .rate-row.is-chosen{background:rgba(255,255,255,.09);border-color:#dcc8ee;box-shadow:0 0 0 1px #dcc8ee,0 18px 40px -28px rgba(0,0,0,.6)}
+.rate-tick{position:absolute;left:20px;top:22px;width:20px;height:20px;border-radius:50%;border:1.5px solid rgba(238,243,240,.55);transition:border-color .2s ease}
+.rate-tick::after{content:"";position:absolute;inset:4px;border-radius:50%;background:#dcc8ee;transform:scale(0);transition:transform .25s cubic-bezier(.3,1.4,.5,1)}
+.is-chosen .rate-tick{border-color:#dcc8ee}
+.is-chosen .rate-tick::after{transform:scale(1)}
+.rate-extras{border:0;padding:0;margin:14px 0 4px;display:flex;flex-wrap:wrap;gap:8px 10px;align-items:center}
+.rate-extras legend{float:left;margin-right:6px;font-size:13px;letter-spacing:.06em;color:#a9bdb7}
+.rate-extra{display:inline-flex;align-items:center;gap:8px;cursor:pointer;padding:7px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.18);font-size:14px;color:#e4ece8;transition:background .2s ease,border-color .2s ease}
+.rate-extra:hover{border-color:rgba(220,200,238,.5)}
+.rate-extra input{appearance:none;width:14px;height:14px;margin:0;border-radius:4px;border:1.5px solid rgba(238,243,240,.6);display:grid;place-items:center}
+.rate-extra input:checked{background:#dcc8ee;border-color:#dcc8ee}
+.rate-extra:has(input:checked){background:rgba(220,200,238,.14);border-color:#dcc8ee}
+.rate-extra:has(input:focus-visible){outline:2px solid #dcc8ee;outline-offset:2px}
+.intake-choice{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px;margin:0 0 18px;padding:14px 18px;border-radius:14px;background:#f1eaf6;color:#2b3a39;font-size:15px}
+.intake-choice-k{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#6d5a86}
+.intake-choice-x{color:#54615e}
+.intake-choice a{margin-left:auto;font-size:14px;color:#7a5aa0}
+/* 59. Journey steps: meta sits next to the title, lighter rhythm */
+.journey-item h3{display:inline-block;margin-right:14px;vertical-align:baseline}
+.journey-item .journey-meta{display:inline-block;vertical-align:baseline;margin:0}
+.journey-item p{margin-top:8px}
+
+/* 60-61. Journey steps: number in each circle, option A (linnen) colours */
+.journey{counter-reset:jstep}
+.journey-item{counter-increment:jstep}
+.step-ic svg,.step-num{display:none}
+.step-ic,.practical.is-motion .journey-item.is-current .step-ic{background:#f3ead8;border-color:#d9c9a8;box-shadow:none}
+.step-ic::before{content:counter(jstep);font-family:"Libre Caslon Text",Georgia,serif;font-style:italic;font-size:20px;line-height:1;color:#a7864c}
+.about-copy h2 em{color:#4c6855!important}
+.btn.rate-cta,.btn-light.rate-cta{background:#d6c3e8!important;border-color:#d6c3e8!important;color:#2b3a39!important}
+.btn.rate-cta svg{color:#2b3a39!important}
+.btn.rate-cta:hover,.btn-light.rate-cta:hover{background:#e3d4f0!important;border-color:#e3d4f0!important;color:#2b3a39!important}
+.about-quote{font-size:19px!important}
+.about-quote{font-weight:600!important}
+.practical-details a.rate-more{color:#e6d8f0;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}.practical-details a.rate-more:hover{color:#fff}
+
+/* 62. About + book backgrounds mirrored horizontally (image on a flipped layer) */
+.about,.book{position:relative;isolation:isolate;background:var(--linen)}
+.book{background:#f1e6d8}
+.about::before,.book::before{content:"";position:absolute;inset:0;z-index:-1;transform:scaleX(-1);pointer-events:none}
+.about::before{background:linear-gradient(180deg,rgba(239,232,220,.25),rgba(239,232,220,.15)),url("img/tex/zonsopkomst-l.jpg") center/cover no-repeat}
+.book::before{background:linear-gradient(rgba(241,230,216,.5),rgba(241,230,216,.5)),url("img/boek-varen.webp") center/cover no-repeat}
+.rate-panel .practical-details{margin-top:28px}
+.rate-amount--soft{font-size:clamp(26px,2.4vw,34px)!important}
+.rate-panel .rate-amount{font-size:30px!important;line-height:1.05}.rate-panel .rate-amount--soft{font-size:24px!important}.rate-choice .rate-row{padding-top:14px;padding-bottom:14px}.rate-tick{top:18px}
+.rate-panel .rate-amount{font-size:24px!important}.rate-panel .rate-amount--soft{font-size:20px!important}
+/* 63. Seamless seam: Brenda section fades into the book section's linen tone */
+.about:has(+ .book)::after{content:"";position:absolute;left:0;right:0;bottom:0;height:clamp(120px,14vw,200px);z-index:-1;pointer-events:none;
+  background:linear-gradient(180deg,rgba(239,228,214,0) 0%,rgba(239,228,214,.6) 55%,#efe4d6 100%)}
+.about + .book::after{content:"";position:absolute;left:0;right:0;top:0;height:clamp(90px,10vw,150px);z-index:-1;pointer-events:none;
+  background:linear-gradient(180deg,#efe4d6 0%,rgba(239,228,214,.6) 45%,rgba(239,228,214,0) 100%)}
+.book-copy .book-poems{margin-top:32px}
+/* 64. Book flip button: quiet text link instead of a pill */
+.book-flip{background:transparent!important;border:0!important;box-shadow:none!important;padding:6px 4px!important;font-size:13px!important;font-weight:500!important;color:#6f7b77!important;gap:6px}
+.book-flip svg{width:14px!important;height:14px!important;opacity:.7}
+.book-flip:hover{color:#2b3a39!important;background:transparent!important}
+.book-flip:hover svg{opacity:1}
+.book-copy .book-poems{grid-template-columns:minmax(0,1fr);max-width:none;width:100%}.book-copy .book-poem{transform:none!important;padding:24px 28px 18px}.book-copy .book-poem:hover{transform:translateY(-3px)!important}
+.book-poem-line{font-family:"Mulish",system-ui,sans-serif!important;font-style:normal!important;font-weight:400}
+@media (min-width:901px){.story-reviews > .eyebrow{grid-column:1!important}.story-reviews > .testi-stage{grid-row:1 / span 5!important;align-self:start}}
+@media (min-width:901px){.story-reviews > .testi-stage{margin-top:-10px}}
+.story-reviews > .eyebrow{border-radius:6px;font-size:12px!important;letter-spacing:.14em!important;padding:6px 10px!important;justify-self:start;width:max-content;max-width:100%;white-space:nowrap}
+/* 65. Review carousel: hairline scroll indicator */
+@supports selector(::-webkit-scrollbar){.story .testi-grid{scrollbar-width:auto!important;scrollbar-color:auto!important}}
+.story .testi-grid::-webkit-scrollbar{height:2px}
+.story .testi-grid::-webkit-scrollbar-track{background:rgba(255,255,255,.12);border-radius:2px}
+.story .testi-grid::-webkit-scrollbar-thumb{background:rgba(255,255,255,.5);border-radius:2px}
+
+/* 66. Reviews: teal fading into soft sage with the dragonfly pattern. Closing section: smiling photo under a teal wash */
+.story{background-color:#3d6360;background-image:url("img/libellen-patroon.webp"),linear-gradient(180deg,#4f7a70 0%,#3f6660 45%,#2f5250 100%);background-size:320px 320px,100% 100%;background-blend-mode:soft-light,normal}
+.cta-band{background-image:url("img/photo/prijzen-glimlach.jpg");background-size:cover;background-position:70% 35%}
+.cta-band h2,.cta-band .cta-lead{text-shadow:none!important}
+.cta-dragon{display:none}
+.hero-quote-by{margin-top:14px;font-size:15px;letter-spacing:.02em;color:#4c6855}
+.hero-quote-by em{font-style:italic}
+
+/* 67. Closing photo section: text on the left over a teal fade, her face free on the right */
+.cta-band{background-image:linear-gradient(90deg,rgba(31,52,53,.9) 0%,rgba(31,52,53,.75) 38%,rgba(31,52,53,0) 68%),url("img/photo/prijzen-glimlach.jpg");background-size:cover,cover;background-position:center,70% 35%;text-align:left}
+.cta-band h2,.cta-lead{margin-left:0;margin-right:0;text-shadow:none}
+.cta-band .cta-lead{max-width:40ch}
+.cta-band .cta-actions{justify-content:flex-start}
+
+/* 68. Lezersreacties page: sage-to-teal gradient with dragonflies (option A) */
+.reviews-page{background-color:#3d6360;background-image:url("img/libellen-patroon.webp"),linear-gradient(180deg,#4f7a70 0%,#3f6660 45%,#2f5250 100%);background-size:320px 320px,100% 100%;background-blend-mode:soft-light,normal}
+.cta-band > .wrap,.cta-band > div{position:relative;z-index:1}
+/* Lezersreacties page without hero: room for the header, heading sized like the old h2 */
+.reviews-page{padding-top:clamp(140px,14vw,190px)}
+.reviews-page .rv-title{font-size:clamp(34px,4.4vw,56px);line-height:1.08;margin:10px 0 18px}
+.reviews-page .sub-head h1{color:#f6f1e7}
+.reviews-page h1 em{color:#cdb4e6}
+.hero-awards .award-big{font-weight:400!important}.hero-awards .award-top{font-weight:500!important}

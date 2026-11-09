@@ -9,8 +9,9 @@
 <meta name="robots" content="noindex, nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Mulish:wght@300;400;500;600;700&family=Caveat:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Mulish:wght@300;400;500;600;700&family=Caveat:wght@400;500;600&family=Cormorant+Garamond:wght@600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/design-b.css?v=223">
 </head>
 <body>
 <!-- ============ HEADER ============ -->
@@ -26,7 +27,16 @@
     <nav aria-label="Hoofdmenu">
       <ul class="nav-links">
         <li><a class="is-current" aria-current="page" href="praktijk-moed.html">Visie</a></li>
-        <li><a href="coaching.html">Begeleiding</a></li>
+        <li class="has-dd"><a href="coaching.html" aria-haspopup="true">Begeleiding <svg class="dd-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a>
+          <div class="nav-dd" role="menu">
+            <a role="menuitem" href="coaching.html"><span class="dd-t">Alle begeleiding</span><span class="dd-s">Eén visie, verschillende ingangen</span></a>
+            <a role="menuitem" href="rouw-en-verlies.html"><span class="dd-t">Levend verlies &amp; rouw</span><span class="dd-s">Verlies tijdens en na het leven</span></a>
+            <a role="menuitem" href="innerlijke-groei.html"><span class="dd-t">Patronen &amp; generaties</span><span class="dd-s">Wat van generatie op generatie doorwerkt</span></a>
+            <a role="menuitem" href="richting-en-zingeving.html"><span class="dd-t">Persoonlijke coaching</span><span class="dd-s">Als je jezelf een beetje kwijt bent</span></a>
+            <a role="menuitem" href="systemische-begeleiding.html"><span class="dd-t">Systemisch werk</span><span class="dd-s">Een instrument als het past</span></a>
+            <a role="menuitem" href="familieopstellingen.html"><span class="dd-t">Familieopstellingen</span><span class="dd-s">Je systeem zichtbaar maken</span></a>
+          </div>
+        </li>
         <li><a href="werkwijze.html">Werkwijze</a></li>
         <li><a href="over-brenda.html">Over Brenda</a></li>
         <li><a href="boek.html">Boek</a></li>
@@ -54,34 +64,37 @@
 
 <main id="top" class="sub">
 
-<section class="sub-hero">
+<section class="tex-visie sub-hero sub-hero--plain photo-hero">
   <div class="wrap sub-hero-grid">
     <div class="sub-hero-copy hero-in">
-      <nav class="crumbs" aria-label="Kruimelpad"><a href="index.html">Home</a><span aria-hidden="true">/</span><span aria-current="page">Visie</span></nav>
       <p class="topic-tag"><span class="topic-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h14"/><path d="M8 17a4 4 0 0 1 8 0"/><path d="M12 6v3M6.3 9.3l2 2M17.7 9.3l-2 2M4 13h2M18 13h2"/></svg></span>Visie</p>
-      <span class="eyebrow">Praktijk MOED</span>
       <h1>Transformatie in <em>perspectief</em></h1>
       <p class="sub-lead">Niet de klacht, het probleem of de methode staat voorop, maar de mens achter de vraag.</p>
       <div class="hero-actions">
         <a class="btn btn-primary btn-lg" href="contact.html#kennismaken">Plan een kennismaking <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="btn btn-ghost btn-lg" href="#inhoud">Lees verder</a>
       </div>
     </div>
-    <figure class="sub-hero-media reveal"><img src="assets/img/libellen.webp" alt="Libellen tussen zacht verlichte bladeren" decoding="async"></figure>
   </div>
 </section>
 
 <section class="section info-body" id="inhoud">
-  <div class="wrap info-grid">
-    <article class="prose reveal">
+  <div class="wrap info-grid info-grid--bio">
+    <aside class="bio-side"><nav class="bio-toc" aria-label="Visie, in delen"><p class="bio-toc-title">Op deze pagina</p><ol><li><a href="#naam">De naam</a></li><li><a href="#mens">De mens</a></li><li><a href="#ankers">De ankers</a></li><li><a href="#ingangen">De ingangen</a></li></ol></nav>
+      <div class="fact-card bio-fact"><h3>In het kort</h3><dl><dt>Begeleiding</dt><dd>Brenda van Melle</dd><dt>Sinds</dt><dd>2021</dd><dt>Kennismaken</dt><dd>Telefonisch</dd><dt>Contact</dt><dd><a href="mailto:bjvanmelle@gmail.com">bjvanmelle@gmail.com</a><br><a href="tel:+31654725032">+31 (0)6 54 72 50 32</a></dd></dl></div>
+      <nav class="related" aria-label="Meer lezen"><h3>Lees ook</h3><a href="rouw-en-verlies.html">Levend verlies &amp; rouw <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a href="innerlijke-groei.html">Patronen &amp; generaties <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a href="richting-en-zingeving.html">Persoonlijke coaching <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a href="werkwijze.html">Werkwijze &amp; tarieven <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></nav>
+    </aside>
+    <article class="prose bio-grid">
+<section class="bio-block reveal" id="naam" data-label="De naam">
 <h2>Wat de naam betekent</h2>
 <p>Het vraagt moed om stil te staan bij wat er speelt. Bij verdriet dat je lang hebt weggezet, bij patronen die steeds terugkomen, of bij het gevoel dat je jezelf onderweg bent kwijtgeraakt.</p>
 <p><strong>Transformatie in perspectief</strong> betekent dat verandering niet altijd in de situatie zelf zit. Soms verandert een situatie niet direct. Wel de manier waarop je ernaar kijkt en je ertoe verhoudt. Daar ontstaat ruimte.</p>
-
+</section>
+<section class="bio-block reveal" id="mens" data-label="De mens">
 <h2>De mens achter de vraag</h2>
-<p>Bij Brenda hoef je niet binnen te komen met een compleet verhaal of een duidelijke hulpvraag. Samen onderzoeken jullie wat er werkelijk speelt, welke betekenis iets heeft en wat aandacht vraagt.</p>
+<p>Je hoeft niet binnen te komen met een compleet verhaal of een duidelijke hulpvraag. Samen onderzoeken jullie wat er werkelijk speelt, welke betekenis iets heeft en wat aandacht vraagt.</p>
 <p>De begeleiding begint daarom bij jouw verhaal. De passende vorm en de werkwijze volgen daaruit, niet andersom.</p>
-
+</section>
+<section class="bio-block reveal" id="ankers" data-label="De ankers">
 <h2>Erkennen, herkennen, verkennen</h2>
 <p>Drie ankers keren steeds terug. In de begeleiding, en in hoe Brenda zelf onderzoekt, ervaringen verwerkt en tot nieuwe inzichten komt.</p>
 <ul>
@@ -90,7 +103,8 @@
 <li><strong>Verkennen.</strong> Ruimte maken voor nieuwe inzichten, perspectieven en mogelijke vervolgstappen.</li>
 </ul>
 <p>Het is geen stappenplan en geen vaste methode. Soms ligt de nadruk op het ene anker, soms keer je terug naar het andere.</p>
-
+</section>
+<section class="bio-block reveal" id="ingangen" data-label="De ingangen">
 <h2>Eén visie, verschillende ingangen</h2>
 <p>Vanuit die visie kun je op verschillende manieren binnenkomen:</p>
 <ul>
@@ -99,18 +113,14 @@
 <li><a href="innerlijke-groei.html">Patronen en generaties</a>: wat in families van generatie op generatie doorwerkt.</li>
 </ul>
 <p>Lees meer <a href="over-brenda.html">over Brenda</a>, of hoe de <a href="werkwijze.html">begeleiding praktisch verloopt</a>.</p>
+</section>
 </article>
-    <aside class="info-aside">
-      <div class="fact-card reveal"><h3>In het kort</h3><dl><dt>Begeleiding</dt><dd>Brenda van Melle</dd><dt>Sinds</dt><dd>2021</dd><dt>Kennismaken</dt><dd>Telefonisch</dd><dt>Contact</dt><dd><a href="mailto:bjvanmelle@gmail.com">bjvanmelle@gmail.com</a><br><a href="tel:+31654725032">+31 (0)6 54 72 50 32</a></dd></dl></div>
-      <nav class="related reveal" aria-label="Meer lezen"><h3>Lees ook</h3><a href="rouw-en-verlies.html">Levend verlies &amp; rouw <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a href="innerlijke-groei.html">Patronen &amp; generaties <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a href="richting-en-zingeving.html">Persoonlijke coaching <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a href="werkwijze.html">Werkwijze &amp; tarieven <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></nav>
-    </aside>
   </div>
 </section>
 
 <section class="cta-band info-cta">
   <span class="cta-dragon one" aria-hidden="true"></span>
   <div class="wrap">
-    <span class="eyebrow">Je eerste stap</span>
     <h2>Klaar om die stap te <em>nemen</em>?</h2>
     <p class="cta-lead">Begin gewoon met een rustig telefonisch gesprek. Je hoeft nog niets te beslissen.</p>
     <div class="cta-actions">
@@ -155,7 +165,7 @@
       </div>
     </div>
     <div class="foot-bottom">
-      <span>&copy; 2026 Brenda van Melle · <a href="privacyverklaring.html">Privacyverklaring</a></span>
+      <span>&copy; 2026 Brenda van Melle · KvK 65739736 · <a href="privacyverklaring.html">Privacyverklaring</a></span>
       <span>Conceptontwerp door Salty Code Studio</span>
     </div>
   </div>
@@ -164,6 +174,7 @@
   <a class="btn btn-primary" href="contact.html#kennismaken">Plan een kennismaking</a>
   <a class="mobile-cta-wa" href="https://wa.me/31654725032?text=Hallo%20Brenda%2C%20ik%20wil%20graag%20een%20telefonische%20kennismaking%20plannen." target="_blank" rel="noopener" aria-label="Stuur Brenda een WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 19.5 5.6 16A8 8 0 1 1 8.4 18.6Z"/><path d="M9 10.5h.01M12 10.5h.01M15 10.5h.01"/></svg></a>
 </div>
-<script src="assets/site.js"></script>
+<script src="assets/site.js?v=3"></script>
+<script src="assets/design-b.js?v=30"></script>
 </body>
 </html>
