@@ -89,10 +89,10 @@
       var message = lines.join('\n');
       if (via === 'whatsapp') {
         window.open('https://wa.me/31654725032?text=' + encodeURIComponent(message), '_blank', 'noopener');
-        done.textContent = 'Je bericht staat klaar in WhatsApp. Verstuur het daar, dan neemt Brenda contact met je op.';
+        done.textContent = 'Je bericht staat klaar in WhatsApp. Verstuur het daar, dan neem ik contact met je op.';
       } else {
         window.location.href = 'mailto:bjvanmelle@gmail.com?subject=' + encodeURIComponent('Kennismaking: ' + traject) + '&body=' + encodeURIComponent(message);
-        done.textContent = 'Je e-mail staat klaar. Verstuur hem vanuit je mailprogramma, dan neemt Brenda contact met je op.';
+        done.textContent = 'Je e-mail staat klaar. Verstuur hem vanuit je mailprogramma, dan neem ik contact met je op.';
       }
       done.hidden = false;
     });

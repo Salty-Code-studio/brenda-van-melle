@@ -538,7 +538,7 @@ h1,h2,h3{font-synthesis:none}
 
 /* ---------- 25. Photo swap: Werkwijze hero = smiling woman, Contact hero = handshake ---------- */
 .sub-hero.photo-hero.tex-werkwijze::before{background-image:url("img/photo/contact.jpg")}
-.sub-hero.photo-hero.tex-contact::before{background-image:url("img/photo/contact-handdruk.webp");background-position:center center}
+.sub-hero.photo-hero.tex-contact::before{background-image:url("img/photo/contact-handdruk.webp?v=2");background-position:center center}
 .sub-hero.photo-hero.tex-contact::before{transform:scaleX(-1);background-position:left center}
 /* homepage pricing: photo at full strength, no veil */
 .practical--home::after{content:none}
@@ -846,7 +846,7 @@ h1,h2,h3{font-synthesis:none}
 .sub-steps--photo{position:relative;isolation:isolate;overflow:hidden}
 .sub-steps--photo::before{
   content:"";position:absolute;inset:0;z-index:-2;
-  background:url("img/photo/contact-handdruk.webp") center/cover no-repeat;transform:scaleX(-1);
+  background:url("img/photo/contact-handdruk.webp?v=2") center/cover no-repeat;transform:scaleX(-1);
 }
 .sub-steps--photo::after{
   content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
@@ -1447,3 +1447,1071 @@ h1,h2,h3{font-synthesis:none}
 /* 69 · header CTA in light green */
 .site-head .nav-cta .btn-header{background:#cfe3d4!important;color:#243f3c!important;border-color:#cfe3d4!important;box-shadow:none!important}
 .site-head .nav-cta .btn-header:hover{background:#e0eee3!important;border-color:#e0eee3!important}
+
+/* 71 · poem written by hand: letters and signature drawn stroke by stroke (driven by design-b.js) */
+.book-hand{display:inline-flex;flex-direction:column;align-items:flex-start;margin-top:30px;text-decoration:none;color:#2f4a47;width:min(440px,100%)}
+.book-hand .hand-svg{width:100%;height:auto;overflow:visible}
+.book-hand .hand-svg path{fill:currentColor;fill-opacity:0;stroke:currentColor;stroke-width:7;stroke-linecap:round;stroke-linejoin:round}
+.book-hand .hand-swash{width:min(360px,80%);height:auto;margin:-2px 0 0 10px}
+.book-hand .hand-sig{width:185px;height:auto;margin:2px 0 0 auto;overflow:visible}
+.book-hand .hand-src{margin-top:14px;font:600 12px/1 "Mulish",sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#7a6a9a;opacity:0;transition:opacity .6s ease}
+.book-hand .hand-src em{font-style:normal}
+.book-hand:hover .hand-src{color:#5d4a86}
+.book-hand.is-done .hand-src{opacity:1}
+
+/* 72 · closing WhatsApp button in light lilac */
+.cta-band .cta-actions .btn-light{background:#d6c3e8!important;color:#2b2540!important;border-color:#d6c3e8!important}
+.cta-band .cta-actions .btn-light:hover{background:#e4d6f0!important;border-color:#e4d6f0!important}
+.cta-band .cta-actions .btn-light svg{color:#2b2540}
+
+/* 73 · footer in the reviews green */
+.foot{background:#435e5b!important}
+
+/* 74 · poem source as a button */
+.book-hand .hand-src{display:inline-flex;align-items:center;gap:8px;margin-top:22px;padding:12px 20px;border-radius:999px;background:#d6c3e8;color:#2b2540;font:600 14px/1 "Mulish",sans-serif;letter-spacing:.02em;text-transform:none;transition:opacity .6s ease,background .2s ease}
+.book-hand .hand-src em{font-style:normal}
+.book-hand .hand-src svg{width:16px;height:16px;transition:transform .2s ease}
+.book-hand:hover .hand-src{background:#e4d6f0;color:#2b2540}
+.book-hand:hover .hand-src svg{transform:translateX(3px)}
+
+/* 75 · all primary (purple) buttons in light lilac with dark text */
+.btn-primary,.intake .btn-primary,.btn-lilac{background:#d6c3e8!important;color:#2b2540!important;border-color:#d6c3e8!important;box-shadow:none!important}
+.btn-primary:hover,.intake .btn-primary:hover,.btn-lilac:hover{background:#e4d6f0!important;border-color:#e4d6f0!important;color:#2b2540!important}
+.btn-primary svg,.btn-lilac svg{color:#2b2540}
+
+/* 76 · trial: the quiz splits over the price card. Left: information slides out from under the dark side.
+   Right: the dark side turns into the answer options, with Volgende in place of the button. Card keeps its size. */
+.practical-card{position:relative}
+.practical-card .journey{transition:opacity .35s ease,transform .5s cubic-bezier(.2,.8,.2,1)}
+.practical-card.is-quiz .journey{opacity:0;transform:translateX(-40px);pointer-events:none}
+.practical-card .intake-inline{position:absolute;inset:0;z-index:4;display:grid;gap:0;margin:0;padding:0;border:0;border-radius:0;box-shadow:none;background:none;overflow:hidden;pointer-events:none}
+.practical-card .intake-inline[hidden]{display:none}
+.practical-card.is-quiz .intake-inline{pointer-events:auto}
+.intake-inline .iq-left{grid-column:1;z-index:1;display:flex;flex-direction:column;gap:12px;padding:clamp(24px,3vw,40px);background:#fbf8f2;transform:translateX(100%);transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.practical-card.is-quiz .iq-left{transform:none}
+.intake-inline .iq-right{grid-column:2;z-index:2;display:flex;flex-direction:column;gap:14px;padding:clamp(24px,3vw,40px);background:var(--teal-deep,#294749);color:#eef3f0;overflow-y:auto;opacity:0;transition:opacity .45s ease .15s}
+.practical-card.is-quiz .iq-right{opacity:1}
+.intake-inline .intake-back{align-self:flex-start;display:inline-flex;align-items:center;gap:6px;margin:0;padding:0;border:0;background:none;color:#5d4a86;font:600 14px/1 "Mulish",sans-serif;cursor:pointer}
+.intake-inline .intake-back:hover{text-decoration:underline;text-underline-offset:3px}
+.intake-inline .intake-head h3{font-size:clamp(26px,2.4vw,34px);line-height:1.12;margin:6px 0 0}
+.intake-inline .intake-head p{margin:6px 0 0;font-size:15px;line-height:1.55;color:#54615e;max-width:46ch}
+.intake-inline .intake-choice{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;margin:4px 0 0;padding:10px 14px;border-radius:12px;font-size:14px}
+.intake-inline .intake-choice-k{font-size:11px}
+.intake-inline .iprog{margin:8px 0 0}
+.intake-inline .iq-question{margin:4px 0 0;font:400 clamp(22px,2vw,28px)/1.2 "Libre Caslon Text",Georgia,serif;color:var(--teal-deep,#294749)}
+.intake-inline .iq-eyebrow{color:#cfe3d4;margin:0}
+.iq-right legend,.iq-right label:not(.chip),.iq-right .q > label{color:#f6f1e7}
+.iq-right .ihint,.iq-right .opt{color:rgba(238,243,240,.7)}
+.iq-right .chip span{background:rgba(255,255,255,.06);border-color:rgba(238,243,240,.3);color:#f6f1e7}
+.iq-right .chip:hover span{border-color:#d6c3e8}
+.iq-right .chip input:checked+span{background:#d6c3e8;border-color:#d6c3e8;color:#2b2540}
+.iq-right input[type=text],.iq-right input[type=tel],.iq-right textarea{background:rgba(255,255,255,.08);border-color:rgba(238,243,240,.3);color:#f6f1e7}
+.iq-right input::placeholder,.iq-right textarea::placeholder{color:rgba(238,243,240,.55)}
+.iq-right .inav{margin-top:auto;padding-top:16px;border-top:1px solid rgba(238,243,240,.16)}
+.iq-right .inav-back{background:none!important;border:0!important;color:#cfe3d4}
+.iq-right .inav-back:hover{color:#fff}
+.iq-right .intake-actions .btn-ghost{background:transparent;border-color:rgba(238,243,240,.4);color:#f6f1e7}
+.iq-right .intake-privacy,.iq-right .intake-done{color:rgba(238,243,240,.75)}
+.iq-right .intake-error{color:#f2c9c9}
+@media (max-width:900px){
+  .practical-card.is-quiz .rate-panel,.practical-card.is-quiz .practical-flow{display:none}
+  .practical-card .intake-inline{position:static;grid-template-columns:1fr!important}
+  .intake-inline .iq-left,.intake-inline .iq-right{grid-column:1;transform:none;opacity:1}
+}
+@media (prefers-reduced-motion:reduce){.intake-inline .iq-left,.intake-inline .iq-right,.practical-card .journey{transition:none}}
+
+/* 77 · coaching: italic line on top as the heading, "Wat Brenda daarbij inzet" smaller below */
+.also .sub-head .also-title{font-family:"Libre Caslon Text",Georgia,serif;font-weight:400;font-size:clamp(30px,3.4vw,46px);line-height:1.15;color:var(--teal-deep,#294749)}
+.also .sub-head .also-title em{font-style:italic;color:inherit}
+.also .sub-head .also-sub{margin-top:10px;font-family:"Libre Caslon Text",Georgia,serif;font-size:clamp(19px,1.6vw,23px);line-height:1.3;color:#54615e}
+.iq-right .istep{display:flex;flex-direction:column;gap:16px}
+.iq-right .istep[hidden]{display:none}
+.iq-right .istep .q{width:100%}
+
+/* 78 · Begeleiding menu: current page highlighted like the hover state */
+.nav-links .nav-dd a.is-here{background:var(--sage-tint,#e3ebe5);color:var(--teal-deep)}
+
+/* 79 · quiz layout v3: left = question + options stacked; right (green) = choice line, "1 van 4" in the corner, photo, Volgende */
+.intake-inline .iq-left{gap:0;overflow-y:auto}
+.intake-inline .iq-right{gap:16px;overflow:hidden}
+.intake-inline .intake-head{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.intake-inline .iq-question{margin:22px 0 18px;font:400 clamp(28px,2.6vw,36px)/1.15 "Libre Caslon Text",Georgia,serif;color:var(--teal-deep,#294749)}
+.iq-left .istep{display:flex;flex-direction:column;gap:16px}
+.iq-left .istep[hidden]{display:none}
+.iq-left .istep[data-i="0"] legend{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.iq-left .ihint{display:block;margin:-6px 0 12px;color:#6b7673;font-size:14px}
+.iq-left .chips{display:flex;flex-direction:column;align-items:stretch;gap:10px;max-width:420px}
+.iq-left .chip span{width:100%;justify-content:flex-start;padding:12px 20px;border-radius:14px}
+.iq-left .chip input:checked+span{background:#d6c3e8;border-color:#d6c3e8;color:#2b2540}
+.iq-left .q{max-width:440px}
+.iq-top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+.iq-right .intake-choice{display:block;margin:0;padding:0;background:none;border:0;color:#cfe3d4;font-size:14px;line-height:1.4}
+.iq-right .intake-choice-k{display:block;margin-bottom:4px;font:700 11px/1 "Mulish",sans-serif;letter-spacing:.2em;text-transform:uppercase;color:rgba(238,243,240,.6)}
+.iq-right .intake-choice strong{font-weight:600;color:#f6f1e7}
+.iq-right .iq-dots{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.iq-right .iq-count{font:600 14px/1 "Mulish",sans-serif;color:#f6f1e7;margin-right:4px;font-variant-numeric:tabular-nums}
+.iq-right .iq-dot{width:10px;height:10px;border-radius:50%;background:rgba(238,243,240,.22);transition:background .3s ease}
+.iq-right .iq-dot.is-on{background:#d9a94a}
+.iq-photo{flex:1;min-height:0;border-radius:16px;overflow:hidden}
+.iq-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.iq-right .iprog{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);margin:0}
+.iq-right .inav{margin-top:0;padding-top:0;border-top:0}
+.iq-right .inav .inav-next{background:#d6c3e8!important;color:#2b2540!important;border-color:#d6c3e8!important}
+.iq-left .intake-actions .btn-ghost{border-color:rgba(41,71,73,.3);color:var(--teal-deep,#294749)}
+
+/* 80 · italic line as the (smaller) heading, the old heading as a quiet line below */
+.sub-head .swap-title{font-family:"Libre Caslon Text",Georgia,serif;font-weight:400;font-size:clamp(28px,3vw,40px);line-height:1.18;color:var(--teal-deep,#294749)}
+.sub-head .swap-title em{font-style:italic;color:inherit}
+.sub-head .swap-sub{margin-top:8px;font-family:"Libre Caslon Text",Georgia,serif;font-size:clamp(18px,1.5vw,21px);line-height:1.3;color:#54615e}
+.iq-right .intake-actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:0}
+.iq-right .intake-actions[hidden]{display:none}
+.iq-right .intake-actions .btn{padding:11px 18px;font-size:14px}
+.iq-right .intake-privacy{flex-basis:100%;margin:2px 0 0;font-size:12.5px;line-height:1.45}
+
+/* 81 · homepage quiz v4: two split slides + summary. Left (light) and right (dark) both hold questions. */
+.intake-inline .iq-left{display:flex;flex-direction:column;gap:18px;overflow-y:auto}
+.intake-inline .iq-right{display:flex;flex-direction:column;gap:18px;overflow-y:auto}
+.iq-pane{display:flex;flex-direction:column;gap:18px}
+.iq-pane[hidden]{display:none}
+.intake-inline .iq-title{margin:6px 0 0;font:400 clamp(28px,2.6vw,36px)/1.15 "Libre Caslon Text",Georgia,serif;color:var(--teal-deep,#294749)}
+.iq-left .q{max-width:440px;margin:0}
+.iq-left label,.iq-left legend{color:var(--teal-deep,#294749)}
+.iq-left .chips{display:flex;flex-wrap:wrap;gap:8px}
+.iq-left .chip input:checked+span{background:#d6c3e8;border-color:#d6c3e8;color:#2b2540}
+.iq-right .q{margin:0}
+.iq-right legend,.iq-right label:not(.chip){color:#f6f1e7;font-weight:600}
+.iq-hint{display:block;margin:4px 0 12px;font-size:13.5px;color:rgba(238,243,240,.65)}
+.iq-right .chips{display:flex;flex-wrap:wrap;gap:9px}
+.iq-right .chips:has(input[name="traject"]){flex-direction:column;align-items:stretch}
+.iq-right .chip span{width:100%;justify-content:flex-start;padding:11px 18px;border-radius:14px;background:rgba(255,255,255,.06);border-color:rgba(238,243,240,.28);color:#f6f1e7}
+.iq-right .chip input:checked+span{background:#d6c3e8;border-color:#d6c3e8;color:#2b2540}
+.iq-right textarea{background:rgba(255,255,255,.08);border-color:rgba(238,243,240,.3);color:#f6f1e7}
+.iq-top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+.iq-choice{margin:0;font-size:14px;line-height:1.4}
+.iq-choice span{display:block;margin-bottom:4px;font:700 11px/1 "Mulish",sans-serif;letter-spacing:.2em;text-transform:uppercase;color:rgba(238,243,240,.6)}
+.iq-choice strong{font-weight:600;color:#f6f1e7}
+.iq-nav{display:flex;justify-content:space-between;align-items:center;margin-top:auto}
+.iq-prev{background:none;border:0;padding:8px 0;font:600 14px/1 "Mulish",sans-serif;color:#cfe3d4;cursor:pointer}
+.iq-prev:hover{color:#fff}
+.iq-nav .iq-next[hidden]{display:none}
+.iq-summary dl{display:grid;grid-template-columns:auto 1fr;gap:10px 22px;margin:0;font-size:15px;line-height:1.45}
+.iq-summary dt{font:700 11px/1.9 "Mulish",sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#7b8784}
+.iq-summary dd{margin:0;color:var(--teal-deep,#294749);white-space:pre-line;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.iq-send .iq-photo{height:190px;flex:none}
+.iq-send .intake-actions{display:flex;flex-direction:column;align-items:stretch;gap:10px;margin:0}
+.iq-send .intake-actions .btn{justify-content:center}
+.iq-send .intake-actions .btn-ghost{background:transparent;border-color:rgba(238,243,240,.4);color:#f6f1e7}
+.iq-send .intake-privacy{margin:2px 0 0;font-size:12.5px;line-height:1.45;color:rgba(238,243,240,.7)}
+.iq-left .intake-error{margin:0;color:#a0453f;font-size:14px}
+.intake-inline .iq-send .intake-actions{display:flex!important;flex-direction:column;align-items:stretch;gap:10px;grid-template-columns:none}
+.intake-inline .iq-send .intake-actions .btn{width:100%}
+.intake-inline .iq-send .intake-privacy{flex-basis:auto;max-width:none}
+.intake-inline .iq-left{gap:14px}
+.intake-inline .iq-left .iq-pane{gap:14px}
+
+/* 82 · Patronen hero: wider light fade so the text stays readable over the couch; smaller copy, moved left */
+@media (min-width:761px){
+  .sub-hero.photo-hero.tex-topic-patronen::after{background:linear-gradient(90deg,#efe6dc 0%,#efe6dc 30%,rgba(239,230,220,.85) 38%,rgba(239,230,220,.45) 46%,rgba(239,230,220,0) 54%)}
+  .sub-hero.photo-hero.tex-topic-patronen .sub-hero-copy{max-width:min(400px,30%)}
+}
+@media (min-width:1300px){
+  .sub-hero.photo-hero.tex-topic-patronen .sub-hero-copy{margin-left:-40px}
+  .sub-hero.photo-hero.tex-topic-patronen h1{font-size:clamp(26px,2.2vw,34px)}
+  .sub-hero.photo-hero.tex-topic-patronen .sub-lead{font-size:15px}
+}
+
+/* 83 · summary you can edit in place; Brenda's photo; slide-out from under the dark side without a see-through moment */
+.iq-photo img{object-position:66% 28%}
+.iq-sum{display:flex;flex-direction:column;gap:10px}
+.iq-row{display:grid;grid-template-columns:118px 1fr;align-items:center;gap:14px}
+.iq-k{font:700 11px/1.3 "Mulish",sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#7b8784}
+.iq-edit{width:100%;padding:7px 10px;border:1px solid transparent;border-radius:10px;background:transparent;font:500 15px/1.4 "Mulish",sans-serif;color:var(--teal-deep,#294749);resize:none;transition:border-color .2s ease,background .2s ease}
+.iq-edit:hover{border-color:rgba(41,71,73,.18)}
+.iq-edit:focus{outline:none;border-color:#b49ad0;background:#fff}
+.iq-edit::placeholder{color:#a3aba9;font-style:italic}
+.iq-opts{display:flex;flex-wrap:wrap;gap:6px}
+.iq-opt{padding:6px 12px;border:1px solid rgba(41,71,73,.2);border-radius:999px;background:#fff;font:500 13px/1.2 "Mulish",sans-serif;color:var(--teal-deep,#294749);cursor:pointer;transition:background .2s ease,border-color .2s ease}
+.iq-opt:hover{border-color:#b49ad0}
+.iq-opt.is-on{background:#d6c3e8;border-color:#d6c3e8;color:#2b2540}
+.iq-pane.iq-summary{gap:0}
+/* the dark side is solid from the first frame; only its contents fade in, so the light side slides out from beneath it */
+.intake-inline .iq-right{opacity:1!important;transition:none!important}
+.intake-inline .iq-right > *{opacity:0;transition:opacity .35s ease .3s}
+.practical-card.is-quiz .iq-right > *{opacity:1}
+.intake-inline .iq-left{transform:translateX(100%);transition:transform .7s cubic-bezier(.22,1,.36,1) .05s}
+.practical-card.is-quiz .intake-inline .iq-left{transform:none}
+.iq-sum{gap:5px}
+.iq-row{gap:12px}
+.iq-edit{padding:5px 9px}
+.iq-opt{padding:5px 11px}
+.iq-opts{gap:5px}
+.intake-inline .iq-left:has(.iq-summary:not([hidden])) .iq-title{margin-bottom:2px}
+
+/* 84 · quiz polish: light green progress dots and send button, no scrolling on the dark side, readable confirmation */
+.iq-right .iq-dot.is-on{background:#cfe3d4}
+.iq-send .intake-actions .btn-primary{background:#cfe3d4!important;border-color:#cfe3d4!important;color:#1f3435!important}
+.iq-send .intake-actions .btn-primary:hover{background:#e0eee3!important;border-color:#e0eee3!important}
+.iq-send .intake-actions .btn-primary svg{color:#1f3435}
+.intake-inline .iq-right{overflow:hidden!important}
+.iq-right .intake-done{margin:0;padding:14px 16px;border-radius:14px;background:#cfe3d4;color:#1f3435!important;font-size:14.5px;line-height:1.5}
+.iq-right:has(.intake-done:not([hidden])) .iq-photo{display:none}
+.iq-right .intake-done[hidden]{display:none}
+
+/* 85 · summary: dark pill for what you chose (chosen first, like a checklist); three layouts to compare */
+.iq-opt{border-color:transparent;background:transparent;color:#8a9391}
+.iq-opt:hover{border-color:rgba(41,71,73,.2)}
+.iq-opt.is-on{background:var(--teal-deep,#294749);border-color:var(--teal-deep,#294749);color:#f6f1e7}
+.iq-sum{display:flex;flex-direction:column;gap:0}
+.iq-row{position:relative;padding:7px 0;border-top:1px solid rgba(41,71,73,.09)}
+.iq-row:first-of-type{border-top:0}
+.iq-row .iq-edit{font-size:15px;font-weight:600}
+.iq-change{display:none;position:absolute;right:0;top:9px;padding:2px 0;border:0;background:none;font:600 12px/1.4 "Mulish",sans-serif;color:#5d4a86;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.iq-group{display:none;margin:0;font:700 11px/1 "Mulish",sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#4c6855}
+/* 2 · only your choice; "wijzig" shows the other options */
+html[data-sumv="2"] .iq-row--opts .iq-change{display:block}
+html[data-sumv="2"] .iq-row--opts:not(.is-open) .iq-opts:not(.is-empty) .iq-opt:not(.is-on){display:none}
+html[data-sumv="2"] .iq-row--opts .iq-opts{padding-right:56px}
+/* 3 · grouped: your choices first, then about you */
+html[data-sumv="3"] .iq-group{display:block}
+html[data-sumv="3"] .iq-sum > [data-key="g1"]{order:0;margin:2px 0 4px}
+html[data-sumv="3"] .iq-sum > [data-key="keuze"]{order:1}
+html[data-sumv="3"] .iq-sum > [data-key="traject"]{order:2}
+html[data-sumv="3"] .iq-sum > [data-key="duur"]{order:3}
+html[data-sumv="3"] .iq-sum > [data-key="moment"]{order:4}
+html[data-sumv="3"] .iq-sum > [data-key="g2"]{order:5;margin:14px 0 4px}
+html[data-sumv="3"] .iq-sum > [data-key="naam"]{order:6}
+html[data-sumv="3"] .iq-sum > [data-key="telefoon"]{order:7}
+html[data-sumv="3"] .iq-sum > [data-key="wat"]{order:8}
+html[data-sumv="3"] .iq-sum > [data-key="hoop"]{order:9}
+html[data-sumv="3"] .iq-row{border-top:0;padding:4px 0}
+html[data-sumv="3"] .iq-row--opts .iq-change{display:block}
+html[data-sumv="3"] .iq-row--opts:not(.is-open) .iq-opts:not(.is-empty) .iq-opt:not(.is-on){display:none}
+
+/* 86 · quiz text boxes: two lines, fixed size, no scrollbar or resize handle */
+.intake-inline textarea{resize:none!important;overflow:hidden!important;height:auto;line-height:1.45}
+.intake-inline .iq-pane textarea{min-height:0;height:calc(2 * 1.45em + 22px)}
+.intake-inline .iq-edit[rows]{height:calc(2 * 1.4em + 12px)}
+.iq-row{padding:4px 0}
+.intake-inline .iq-row .iq-edit[rows]{height:auto;min-height:0}
+.iq-row .iq-edit{padding:3px 8px;line-height:21px}
+.iq-opt{padding:4px 11px}
+.intake-inline .iq-left:has(.iq-summary:not([hidden])) .iq-title{font-size:clamp(24px,2.2vw,30px)}
+.intake-inline .iq-left:has(.iq-summary:not([hidden])){gap:10px}
+
+/* 87 · last slide, dark side: a welcoming heading; no second back button (the top-left link does that) */
+.iq-welcome h3{margin:0;font:400 clamp(24px,2.2vw,30px)/1.15 "Libre Caslon Text",Georgia,serif;color:#f6f1e7}
+.iq-welcome p{margin:6px 0 0;font-size:14.5px;line-height:1.5;color:#cfe3d4}
+.iq-send{gap:14px}
+.iq-send .iq-photo{height:150px}
+.iq-nav .iq-prev{display:none}
+.iq-nav{justify-content:flex-end}
+
+/* 88 · preview: three versions of the last slide's dark side (toggle) */
+.pv-sep{width:1px;margin:4px 6px;background:rgba(219,230,226,.3)}
+.iq-avatar{display:none}
+/* B · small round portrait, no big photo */
+html[data-sendv="b"] .iq-send .iq-photo{display:none}
+html[data-sendv="b"] .iq-avatar{display:block;width:76px;height:76px;margin:0 0 16px;border-radius:50%;object-fit:cover;object-position:66% 24%;box-shadow:0 0 0 3px rgba(207,227,212,.35)}
+html[data-sendv="b"] .iq-welcome{margin-top:6px}
+html[data-sendv="b"] .iq-welcome h3{font-size:clamp(28px,2.6vw,34px)}
+html[data-sendv="b"] .iq-send .intake-actions{margin-top:8px}
+/* C · the photo fills the dark side behind the text */
+html[data-sendv="c"] .intake-inline .iq-right:has(.iq-send:not([hidden])){background:linear-gradient(180deg,rgba(31,52,53,.72) 0%,rgba(31,52,53,.35) 34%,rgba(31,52,53,.82) 62%,rgba(31,52,53,.96) 100%),url("img/photo/brenda-bank-lach.webp") 64% 20%/cover no-repeat}
+html[data-sendv="c"] .iq-send .iq-photo{display:none}
+html[data-sendv="c"] .iq-send{flex:1;justify-content:flex-end}
+html[data-sendv="c"] .iq-welcome h3{font-size:clamp(28px,2.6vw,34px)}
+
+/* 89 · no "Je keuze" line on the dark side */
+.iq-top .iq-choice{display:none}
+.iq-top{justify-content:flex-end}
+
+/* 90 · summary: aligned rows, plus three calmer layouts (4 stacked, 5 as sentences, 6 two columns) */
+.iq-row{align-items:baseline}
+.iq-sentence,.iq-adjust{display:none}
+/* shared by 4 and 6: only what you chose, as plain text; pills come back while you change something */
+html[data-sumv="4"] .iq-row--opts:not(.is-open) .iq-opts:not(.is-empty) .iq-opt:not(.is-on),
+html[data-sumv="6"] .iq-row--opts:not(.is-open) .iq-opts:not(.is-empty) .iq-opt:not(.is-on){display:none}
+html[data-sumv="4"] .iq-row--opts:not(.is-open) .iq-opt.is-on,
+html[data-sumv="6"] .iq-row--opts:not(.is-open) .iq-opt.is-on{background:none;border-color:transparent;color:var(--teal-deep,#294749);font-size:15px;font-weight:600;padding:2px 8px}
+html[data-sumv="4"] .iq-row--opts:not(.is-open) .iq-opt.is-on + .iq-opt.is-on::before,
+html[data-sumv="6"] .iq-row--opts:not(.is-open) .iq-opt.is-on + .iq-opt.is-on::before{content:"+ ";color:#8a9391;font-weight:400}
+html[data-sumv="4"] .iq-change,html[data-sumv="6"] .iq-change{display:block}
+/* 4 · stacked: small label above its answer, one calm column */
+html[data-sumv="4"] .iq-row{display:block;padding:7px 0;border-top:1px solid rgba(41,71,73,.08)}
+html[data-sumv="4"] .iq-row:first-of-type{border-top:0}
+html[data-sumv="4"] .iq-k{display:block;margin-bottom:1px;font-size:10.5px}
+html[data-sumv="4"] .iq-row .iq-edit{padding:2px 8px;margin-left:-8px}
+html[data-sumv="4"] .iq-opts{margin-left:-8px;gap:0}
+/* 6 · two columns: short answers side by side, longer ones full width */
+html[data-sumv="6"] .iq-sum{display:grid;grid-template-columns:1fr 1fr;gap:12px 24px}
+html[data-sumv="6"] .iq-row{display:block;padding:0;border:0}
+html[data-sumv="6"] .iq-row[data-key="wat"],html[data-sumv="6"] .iq-row[data-key="hoop"],html[data-sumv="6"] .iq-row[data-key="traject"]{grid-column:1 / -1}
+html[data-sumv="6"] .iq-k{display:block;margin-bottom:2px;font-size:10.5px}
+html[data-sumv="6"] .iq-row .iq-edit{padding:2px 8px;margin-left:-8px}
+html[data-sumv="6"] .iq-opts{margin-left:-8px;gap:0}
+html[data-sumv="6"] .iq-change{top:-2px}
+/* 5 · a few plain sentences; "Iets aanpassen" opens the editable list */
+html[data-sumv="5"] .iq-sentence{display:block;font-size:16px;line-height:1.6;color:#54615e}
+html[data-sumv="5"] .iq-sentence p{margin:0 0 8px}
+html[data-sumv="5"] .iq-sentence strong{font-weight:600;color:var(--teal-deep,#294749)}
+html[data-sumv="5"] .iq-sentence .iq-quote{margin-top:12px;font:italic 400 17px/1.5 "Libre Caslon Text",Georgia,serif;color:var(--teal-deep,#294749)}
+html[data-sumv="5"] .iq-sentence .iq-quote--soft{margin-top:4px;font-size:15px;color:#54615e}
+html[data-sumv="5"] .iq-summary:not(.is-editing) .iq-sum{display:none}
+html[data-sumv="5"] .iq-summary.is-editing .iq-sentence{display:none}
+html[data-sumv="5"] .iq-adjust{display:inline-block;align-self:flex-start;margin-top:10px;padding:0;border:0;background:none;font:600 14px/1.4 "Mulish",sans-serif;color:#5d4a86;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+html[data-sumv="4"] .iq-row{padding:3px 0}
+html[data-sumv="4"] .iq-k{line-height:1.25;margin-bottom:0}
+html[data-sumv="4"] .iq-row .iq-edit{padding:0 8px;line-height:21px}
+html[data-sumv="4"] .iq-row--opts:not(.is-open) .iq-opt.is-on{padding:0 8px;line-height:21px}
+html[data-sumv="4"] .iq-change{top:4px}
+html[data-sumv="4"] .iq-row{padding:1px 0}
+html[data-sumv="4"] .intake-inline .iq-left .iq-title,html[data-sumv="4"] .iq-left:has(.iq-summary:not([hidden])) .iq-title{font-size:26px;margin-top:2px}
+
+/* 91 · "Je eerste stap" photo block: fade reaches further right, text block narrower and further left */
+@media (min-width:761px){
+  .sub-steps--photo::after{background:linear-gradient(90deg,rgba(239,231,244,.97) 0%,rgba(239,231,244,.94) 40%,rgba(239,231,244,.6) 52%,rgba(239,231,244,.2) 62%,rgba(239,231,244,0) 70%)}
+  .sub-steps--photo .first-step,.sub-steps--photo .sub-head.first-step{max-width:min(470px,40%)!important}
+  .sub-steps--photo .sub-head.first-step p{max-width:none}
+}
+@media (min-width:1300px){
+  .sub-steps--photo .first-step,.sub-steps--photo .sub-head.first-step{margin-left:-40px!important}
+}
+
+/* 92 · the preview switch: bigger, labelled, always visible */
+.pv-toggle{bottom:20px;flex-wrap:wrap;justify-content:center;align-items:center;max-width:calc(100vw - 32px);padding:7px;gap:4px;background:#1f3435;box-shadow:0 18px 40px -12px rgba(0,0,0,.55),0 0 0 1px rgba(207,227,212,.25);font-size:14px}
+.pv-toggle button{padding:10px 14px}
+.pv-toggle button:hover{background:rgba(207,227,212,.14)}
+.pv-toggle button[aria-pressed="true"]{background:#cfe3d4;color:#1f3435}
+.pv-label{padding:0 6px 0 10px;font:700 11px/1 "Mulish",sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#cfe3d4}
+.pv-toggle{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);z-index:9999;display:flex;border-radius:22px;font-family:"Mulish",sans-serif;font-weight:600;line-height:1}
+.pv-toggle button{border:0;border-radius:999px;background:transparent;color:#dbe6e2;cursor:pointer;font:inherit}
+
+/* 93 · layout 2 kept; preview: colour of the chosen option in the summary */
+html[data-pillc="salie"] .iq-opt.is-on{background:#4c6855;border-color:#4c6855;color:#f6f1e7}
+html[data-pillc="licht"] .iq-opt.is-on{background:#cfe3d4;border-color:#cfe3d4;color:#1f3435}
+html[data-pillc="lila"] .iq-opt.is-on{background:#e4d6f0;border-color:#e4d6f0;color:#2b2540}
+html[data-pillc="lijn"] .iq-opt.is-on{background:transparent;border-color:var(--teal-deep,#294749);color:var(--teal-deep,#294749)}
+
+/* 94 · "Misschien herken je dit": heading centred on top, the three situations as tiles side by side */
+.pain-grid--tiles{display:flex!important;flex-direction:column;align-items:center}
+.pain-grid--tiles > .sub-head{display:flex;flex-direction:column;align-items:center;text-align:center;max-width:none;margin:0 0 clamp(28px,4vw,48px)}
+.pain-grid--tiles > .sub-head .herken-dragon{margin:0 auto 12px}
+.pain-grid--tiles > .sub-head h2{margin:0}
+.pain-grid--tiles .pain-list{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;width:100%;margin:0}
+.pain-grid--tiles .pain-list li{display:flex;flex-direction:column;align-items:flex-start;gap:16px;height:100%;padding:28px 26px}
+.pain-grid--tiles .pain-note{width:100%;margin-top:clamp(24px,3vw,36px)}
+@media (max-width:900px){.pain-grid--tiles .pain-list{grid-template-columns:1fr}}
+
+/* 95 · last slide, photo background: two brighter variants to compare (c2 light, c3 soft) */
+html[data-sendv="c2"] .iq-send .iq-photo,html[data-sendv="c3"] .iq-send .iq-photo{display:none}
+html[data-sendv="c2"] .iq-send,html[data-sendv="c3"] .iq-send{flex:1;justify-content:flex-end}
+html[data-sendv="c2"] .iq-welcome h3,html[data-sendv="c3"] .iq-welcome h3{font-size:clamp(28px,2.6vw,34px)}
+/* c2 · light: the photo stays bright, a cream wash rises from the bottom, dark text */
+html[data-sendv="c2"] .intake-inline .iq-right:has(.iq-send:not([hidden])){background:linear-gradient(180deg,rgba(248,244,236,0) 0%,rgba(248,244,236,0) 38%,rgba(248,244,236,.82) 60%,rgba(248,244,236,.97) 78%,#f8f4ec 100%),url("img/photo/brenda-bank-lach.webp") 64% 20%/cover no-repeat}
+html[data-sendv="c2"] .iq-right:has(.iq-send:not([hidden])) .iq-welcome h3{color:var(--teal-deep,#294749)}
+html[data-sendv="c2"] .iq-right:has(.iq-send:not([hidden])) .iq-count{color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.35)}
+html[data-sendv="c2"] .iq-right:has(.iq-send:not([hidden])) .iq-dot{background:rgba(255,255,255,.75)}
+html[data-sendv="c2"] .iq-send .intake-actions .btn-primary{background:var(--teal-deep,#294749)!important;border-color:var(--teal-deep,#294749)!important;color:#f6f1e7!important}
+html[data-sendv="c2"] .iq-send .intake-actions .btn-primary svg{color:#f6f1e7}
+html[data-sendv="c2"] .iq-send .intake-actions .btn-ghost{border-color:rgba(41,71,73,.35);color:var(--teal-deep,#294749)}
+html[data-sendv="c2"] .iq-send .intake-privacy{color:#54615e}
+/* c3 · soft: photo clear at the top, a lighter green only behind the text */
+html[data-sendv="c3"] .intake-inline .iq-right:has(.iq-send:not([hidden])){background:linear-gradient(180deg,rgba(60,96,90,0) 0%,rgba(60,96,90,0) 42%,rgba(60,96,90,.7) 62%,rgba(52,86,82,.92) 82%,#345652 100%),url("img/photo/brenda-bank-lach.webp") 64% 20%/cover no-repeat}
+html[data-sendv="c3"] .iq-right:has(.iq-send:not([hidden])) .iq-count{text-shadow:0 1px 6px rgba(0,0,0,.35)}
+
+/* 96 · heading in the sans serif (Mulish) */
+h2.h-sans{font-family:"Mulish",sans-serif!important;font-weight:400;letter-spacing:-.01em}
+
+/* 97 · fine film grain over the photo on the last slide (all three versions) */
+.intake-inline .iq-right{position:relative}
+.intake-inline .iq-right > *{position:relative;z-index:1}
+.intake-inline .iq-right:has(.iq-send:not([hidden]))::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.5  0 0 0 0 0.5  0 0 0 0 0.5  0 0 0 1.1 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  background-size:220px 220px;opacity:.38;mix-blend-mode:overlay}
+
+/* 98 · progress "1 van 3" in the top-left corner of the dark side */
+.iq-top{justify-content:flex-start}
+
+/* 99 · Systemisch werk: the whole text column in the sans serif */
+.prose-sans,.prose-sans h2,.prose-sans h3,.prose-sans p,.prose-sans li,.prose-sans blockquote,.prose-sans em{font-family:"Mulish",sans-serif!important}
+.prose-sans h2,.prose-sans h3{font-weight:400;letter-spacing:-.01em}
+.prose-sans p,.prose-sans li{font-weight:400}
+.prose-sans h2{font-size:clamp(24px,2.2vw,30px)!important;line-height:1.2}
+.prose-sans h3{font-size:clamp(18px,1.5vw,21px)!important}
+.prose-sans .bio-block > h2 + p{font-size:19px!important;line-height:1.6}
+
+/* 100 · send note on the last slide: easier to read */
+.intake-inline .iq-send .intake-privacy{color:#f6f1e7!important;font-size:13.5px;font-weight:500;text-shadow:0 1px 8px rgba(20,36,36,.55)}
+
+/* 101 · Systemisch werk text: same sizes as the homepage cards (title 25px, text 17px) */
+.prose-sans h2{font-size:25px!important;line-height:1.16}
+.prose-sans p,.prose-sans li,.prose-sans .bio-block > h2 + p{font-size:17px!important;line-height:1.55}
+
+/* 102 · familieopstellingen: the three steps as tiles */
+.prose .step-tiles{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:18px 0 22px;padding:0;counter-reset:none}
+.prose .step-tiles li{display:flex;flex-direction:column;gap:8px;margin:0;padding:22px 20px;border-radius:18px;background:#fbf8f2;border:1px solid rgba(41,71,73,.08);box-shadow:0 18px 36px -30px rgba(41,58,57,.45)}
+.prose .step-tiles li::before{content:none!important;display:none!important}
+.prose .step-tiles .st-num{display:grid;place-items:center;width:34px;height:34px;margin-bottom:6px;border-radius:50%;background:#f3ead8;border:1px solid #d9c9a8;font:italic 400 17px/1 "Libre Caslon Text",Georgia,serif;color:#a7864c}
+.prose .step-tiles strong{font-weight:700;font-size:17px;color:var(--teal-deep,#294749)}
+.prose .step-tiles .st-text{font-size:15.5px!important;line-height:1.5;color:#54615e}
+@media (max-width:760px){.prose .step-tiles{grid-template-columns:1fr}}
+
+/* 103 · Over mij hero: the whole name together, in green */
+.h1-name{white-space:nowrap}
+
+/* 104 · preview: three calmer versions of "Over de bundel" (toggle on boek.html) */
+/* shared by A, B and C: no tilted paper stack, quieter type, no eyebrow, sans subline */
+html[data-inkijk] .bp-inkijk .sub-head .eyebrow{display:none}
+html[data-inkijk] .bp-inkijk .sub-head h2{font-size:clamp(34px,3.4vw,46px)}
+html[data-inkijk] .bp-inkijk .sub-kicker{font:400 17px/1.5 "Mulish",sans-serif!important;color:#54615e;margin-top:8px}
+html[data-inkijk] .bp-inkijk .bp-intro{display:none}
+html[data-inkijk] .bp-paper::before{display:none}
+html[data-inkijk] .bp-poem,html[data-inkijk] .has-motion .bp-poem.is-entering{transform:none;animation:none}
+html[data-inkijk] .bp-poem h3{font-family:"Libre Caslon Text",Georgia,serif;font-size:24px;font-weight:400;margin-bottom:18px}
+html[data-inkijk] .bp-poem p{font-family:"Libre Caslon Text",Georgia,serif;font-size:18px;line-height:1.65}
+html[data-inkijk] .bp-poem .bp-poem-close{font-size:18px;line-height:1.65}
+html[data-inkijk] .bp-poem-foot{font-size:13px}
+html[data-inkijk] .bp-themes-label{font-size:11px;color:#7b8784}
+
+/* A · Rustig: soft cream card, underline tabs, light green themes */
+html[data-inkijk="a"] .bp-poem-tabs{padding:0;border:0;gap:22px;margin-bottom:22px}
+html[data-inkijk="a"] .bp-poem-tabs button{padding:6px 0;border-radius:0;font-size:15px;color:#7b8784;border-bottom:1.5px solid transparent}
+html[data-inkijk="a"] .bp-poem-tabs button[aria-selected="true"]{background:none;color:var(--teal-deep,#294749);border-bottom-color:var(--teal-deep,#294749)}
+html[data-inkijk="a"] .bp-poem{border-radius:20px;background:#fbf8f2;border:1px solid rgba(41,71,73,.08);box-shadow:0 24px 48px -36px rgba(41,58,57,.45)}
+html[data-inkijk="a"] .bp-themes li{background:#cfe3d4;color:#1f3435;font-weight:500}
+
+/* B · Groen: the poem on the dark green of the site, light green tabs */
+html[data-inkijk="b"] .bp-poem-tabs{background:#fbf8f2}
+html[data-inkijk="b"] .bp-poem-tabs button[aria-selected="true"]{background:#cfe3d4;color:#1f3435}
+html[data-inkijk="b"] .bp-poem{border-radius:20px;background:var(--teal-deep,#294749);box-shadow:0 30px 60px -36px rgba(31,52,53,.7)}
+html[data-inkijk="b"] .bp-poem h3{color:#f6f1e7}
+html[data-inkijk="b"] .bp-poem p{color:#e4ece6}
+html[data-inkijk="b"] .bp-poem .bp-poem-close{color:#cfe3d4}
+html[data-inkijk="b"] .bp-poem-foot{color:rgba(238,243,240,.7);border-top-color:rgba(238,243,240,.18)}
+html[data-inkijk="b"] .bp-poem-foot em{color:#f6f1e7}
+html[data-inkijk="b"] .bp-themes ul{gap:0}
+html[data-inkijk="b"] .bp-themes li{padding:0;background:none;font-size:15px;font-weight:500;color:var(--teal-deep,#294749)}
+html[data-inkijk="b"] .bp-themes li:not(:last-child)::after{content:"·";margin:0 10px;color:#9aa3a1}
+
+/* C · Open: no card at all, the poem sits on the page with lots of air */
+html[data-inkijk="c"] .bp-poem-tabs{padding:0;border:0;background:none;gap:8px;margin-bottom:30px}
+html[data-inkijk="c"] .bp-poem-tabs button{padding:8px 16px;border:1px solid rgba(41,71,73,.2);font-size:14px;color:#54615e}
+html[data-inkijk="c"] .bp-poem-tabs button[aria-selected="true"]{background:var(--teal-deep,#294749);border-color:var(--teal-deep,#294749);color:#f6f1e7}
+html[data-inkijk="c"] .bp-poem{padding:0;background:none;box-shadow:none;border-radius:0}
+html[data-inkijk="c"] .bp-poem h3{display:none}
+html[data-inkijk="c"] .bp-poem p{font-size:22px;line-height:1.6;color:var(--teal-deep,#294749)}
+html[data-inkijk="c"] .bp-poem .bp-poem-close{font-size:22px;color:#4c6855}
+html[data-inkijk="c"] .bp-poem p+p{margin-top:24px}
+html[data-inkijk="c"] .bp-poem-foot{border-top:0;padding-top:0;margin-top:26px}
+html[data-inkijk="c"] .bp-themes{margin-top:48px}
+html[data-inkijk="c"] .bp-themes ul{gap:0}
+html[data-inkijk="c"] .bp-themes li{padding:0;background:none;font-size:15px;font-weight:500;color:#54615e}
+html[data-inkijk="c"] .bp-themes li:not(:last-child)::after{content:",";margin-right:6px}
+html[data-inkijk="a"] .bp-poem-tabs{background:none}
+
+/* 105 · preview: three versions of the author section on the book page (no purple; clear colour hierarchy) */
+html[data-auteur] .bp-author-media::before{display:none}
+html[data-auteur] .bp-author .link-more{color:inherit}
+html[data-auteur] .bp-author .bp-author-actions .btn-light{background:#cfe3d4!important;border-color:#cfe3d4!important;color:#1f3435!important;box-shadow:none!important}
+html[data-auteur] .bp-author .bp-author-actions .btn-light svg{color:#1f3435}
+html[data-auteur] .bp-author .bp-author-lead{font-size:clamp(26px,2.5vw,34px);margin:12px 0 18px}
+/* A · Licht: cream ground, one dark green heading, rounded rectangle photo */
+html[data-auteur="a"] .bp-author{background:#f3ece2!important}
+html[data-auteur="a"] .bp-author::before,html[data-auteur="a"] .bp-author::after{display:none}
+html[data-auteur="a"] .bp-author .eyebrow{color:#4c6855}
+html[data-auteur="a"] .bp-author .bp-author-lead{color:var(--teal-deep,#294749)}
+html[data-auteur="a"] .bp-author-text{color:#54615e}
+html[data-auteur="a"] .bp-author .link-more{color:var(--teal-deep,#294749)}
+html[data-auteur="a"] .bp-author .bp-author-actions .btn-light{background:var(--teal-deep,#294749)!important;border-color:var(--teal-deep,#294749)!important;color:#f6f1e7!important}
+html[data-auteur="a"] .bp-author .bp-author-actions .btn-light svg{color:#f6f1e7}
+html[data-auteur="a"] .bp-author-photo{border-radius:24px;box-shadow:0 34px 60px -40px rgba(41,58,57,.55)}
+/* B · Groen: keep the green, but cream heading, soft light green accents; photo with an offset line frame */
+html[data-auteur="b"] .bp-author .eyebrow{color:#cfe3d4}
+html[data-auteur="b"] .bp-author .bp-author-lead{color:#f6f1e7}
+html[data-auteur="b"] .bp-author-text{color:#d7e3dd}
+html[data-auteur="b"] .bp-author .link-more{color:#f6f1e7}
+html[data-auteur="b"] .bp-author-photo{border-radius:20px}
+html[data-auteur="b"] .bp-author-media::after{content:"";position:absolute;inset:18px -18px -18px 18px;border:1px solid rgba(207,227,212,.55);border-radius:22px;z-index:0}
+/* C · Zand: warm sand ground, round portrait with a light green ring, centred story feel */
+html[data-auteur="c"] .bp-author{background:#ece3d6!important}
+html[data-auteur="c"] .bp-author::before,html[data-auteur="c"] .bp-author::after{display:none}
+html[data-auteur="c"] .bp-author .eyebrow{color:#4c6855}
+html[data-auteur="c"] .bp-author .bp-author-lead{color:var(--teal-deep,#294749)}
+html[data-auteur="c"] .bp-author-text{color:#54615e}
+html[data-auteur="c"] .bp-author .link-more{color:var(--teal-deep,#294749)}
+html[data-auteur="c"] .bp-author-media{max-width:340px}
+html[data-auteur="c"] .bp-author-photo{aspect-ratio:1/1;border-radius:50%;object-position:60% 22%;box-shadow:0 0 0 10px #cfe3d4,0 40px 70px -40px rgba(41,58,57,.6)}
+
+/* 106 · "Over de bundel" options: own background each, and compact so the whole section fits one screen */
+html[data-inkijk] .bp-inkijk{padding-top:clamp(48px,6vh,72px);padding-bottom:clamp(48px,6vh,72px)}
+html[data-inkijk="a"] .bp-inkijk{background:#f3ece2}
+html[data-inkijk="b"] .bp-inkijk{background:#e5ece6}
+html[data-inkijk="c"] .bp-inkijk{background:#ece3d6}
+html[data-inkijk] .bp-inkijk-grid{align-items:center;gap:clamp(32px,5vw,72px)}
+html[data-inkijk] .bp-inkijk .sub-head{margin-bottom:18px}
+html[data-inkijk] .bp-inkijk .sub-head h2{font-size:clamp(28px,2.6vw,36px)}
+html[data-inkijk] .bp-inkijk .sub-kicker{font-size:15px;margin-top:4px}
+html[data-inkijk] .bp-poem-tabs{margin-bottom:14px}
+html[data-inkijk] .bp-poem{padding:22px 26px 18px}
+html[data-inkijk="c"] .bp-poem{padding:0}
+html[data-inkijk] .bp-poem h3{font-size:20px;margin-bottom:10px}
+html[data-inkijk] .bp-poem p,html[data-inkijk] .bp-poem .bp-poem-close{font-size:15.5px;line-height:1.5}
+html[data-inkijk="c"] .bp-poem p,html[data-inkijk="c"] .bp-poem .bp-poem-close{font-size:17px}
+html[data-inkijk] .bp-poem p+p{margin-top:10px}
+html[data-inkijk] .bp-poem-foot{margin-top:12px;padding-top:10px}
+html[data-inkijk] .bp-themes{margin-top:18px}
+html[data-inkijk] .bp-themes-label{margin-bottom:8px}
+html[data-inkijk] .bp-themes li{font-size:13px;padding:5px 12px}
+html[data-inkijk="b"] .bp-themes li,html[data-inkijk="c"] .bp-themes li{padding:0}
+html[data-inkijk] .bp-inkijk .book-media{min-height:0;gap:18px}
+html[data-inkijk] .bp-inkijk .book3d-stage{--w:230px;--h:322px;--d:14px}
+html[data-inkijk] .bp-flip-hint{margin-top:6px;font-size:12px}
+
+/* 107 · author section: B's colours kept, three other layouts / photo treatments (data-auteurl) */
+@media (min-width:901px){
+  /* 2 · photo on the right, wider landscape crop */
+  html[data-auteurl="2"] .bp-author-grid{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);align-items:center}
+  html[data-auteurl="2"] .bp-author-media{order:2;max-width:none;margin-top:0}
+  html[data-auteurl="2"] .bp-author-photo{aspect-ratio:4/3;object-position:62% 30%}
+  html[data-auteurl="2"] .bp-author-media::after{inset:18px 18px -18px -18px}
+  /* 3 · photo fills the right half of the section and fades into the green, no frame */
+  html[data-auteurl="3"] .bp-author{position:relative;overflow:hidden}
+  html[data-auteurl="3"] .bp-author-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;min-height:clamp(440px,52vh,560px)}
+  html[data-auteurl="3"] .bp-author-media{position:absolute;top:0;bottom:0;right:0;width:52%;max-width:none;margin:0;z-index:0;
+    background:url("img/photo/hero-brenda-bank.webp") 60% 28%/cover no-repeat;
+    -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 38%);mask-image:linear-gradient(90deg,transparent 0%,#000 38%)}
+  html[data-auteurl="3"] .bp-author-media::after{display:none}
+  html[data-auteurl="3"] .bp-author-photo{visibility:hidden}
+  html[data-auteurl="3"] .bp-author-copy{position:relative;z-index:1}
+  /* 4 · centred: small round portrait above the text */
+  html[data-auteurl="4"] .bp-author-grid{grid-template-columns:minmax(0,1fr);justify-items:center;text-align:center;gap:22px}
+  html[data-auteurl="4"] .bp-author-media{max-width:132px;margin:0}
+  html[data-auteurl="4"] .bp-author-media::after{display:none}
+  html[data-auteurl="4"] .bp-author-photo{aspect-ratio:1/1;border-radius:50%;object-position:62% 24%;box-shadow:0 0 0 6px rgba(207,227,212,.45)}
+  html[data-auteurl="4"] .bp-author-copy{max-width:720px}
+  html[data-auteurl="4"] .bp-author-text{margin-inline:auto}
+  html[data-auteurl="4"] .bp-author-actions{justify-content:center}
+}
+html[data-auteurl="3"] .bp-author > .wrap,html[data-auteurl="3"] .bp-author-grid{position:static}
+@media (min-width:901px){html[data-auteurl="3"] .bp-author-media{-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 34%),linear-gradient(180deg,transparent 0%,#000 14%,#000 100%);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent 0%,#000 34%),linear-gradient(180deg,transparent 0%,#000 14%,#000 100%);mask-composite:intersect}}
+@media (min-width:901px){html[data-auteurl="3"] .bp-author-media{top:clamp(90px,9vw,140px);background-position:60% 18%}}
+
+/* 108 · "Over de bundel": no book next to the poems */
+.bp-inkijk .bp-flip{display:none!important}
+.bp-inkijk .bp-inkijk-grid{grid-template-columns:minmax(0,1fr)!important}
+.bp-inkijk .bp-inkijk-text{max-width:760px}
+
+/* 109 · "Over de bundel": heading and themes on the left, the poem cards on the right; heading in sans, smaller */
+.bp-inkijk .bp-inkijk-text{max-width:none!important}
+@media (min-width:901px){
+  .bp-inkijk .bp-inkijk-text{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);column-gap:clamp(40px,6vw,96px);align-items:start}
+  .bp-inkijk .bp-inkijk-text > .sub-head{grid-column:1;grid-row:1}
+  .bp-inkijk .bp-inkijk-text > .bp-intro{grid-column:1;grid-row:2}
+  .bp-inkijk .bp-inkijk-text > .bp-themes{grid-column:1;grid-row:3}
+  .bp-inkijk .bp-inkijk-text > .bp-poems{grid-column:2;grid-row:1 / span 4}
+}
+.bp-inkijk .sub-head h2{font-family:"Mulish",sans-serif!important;font-weight:400!important;font-size:clamp(26px,2.2vw,32px)!important;letter-spacing:-.01em;line-height:1.2}
+.bp-inkijk .sub-kicker{font-family:"Mulish",sans-serif!important;font-style:normal!important;font-size:16px!important;color:#54615e}
+
+/* 110 · "Reflecties van mijn innerlijk landschap" as a centred italic line across the top of the section */
+.bp-inkijk-tagline{margin:0 0 clamp(28px,4vw,48px);text-align:center;font:italic 400 clamp(28px,3.2vw,44px)/1.2 "Libre Caslon Text",Georgia,serif;color:var(--teal-deep,#294749)}
+@media (min-width:901px){
+  .bp-inkijk .bp-inkijk-text > .bp-inkijk-tagline{grid-column:1 / -1;grid-row:1}
+  .bp-inkijk .bp-inkijk-text > .sub-head{grid-row:2}
+  .bp-inkijk .bp-inkijk-text > .bp-intro{grid-row:3}
+  .bp-inkijk .bp-inkijk-text > .bp-themes{grid-row:4}
+  .bp-inkijk .bp-inkijk-text > .bp-poems{grid-row:2 / span 4}
+}
+
+/* 111 · "Over de bundel": only the italic line and the poem card remain, centred */
+.bp-inkijk .bp-inkijk-text > .sub-head,.bp-inkijk .bp-inkijk-text > .bp-intro,.bp-inkijk .bp-inkijk-text > .bp-themes{display:none!important}
+.bp-inkijk .bp-inkijk-text{display:block!important;max-width:640px!important;margin-inline:auto}
+.bp-inkijk .bp-poem-tabs{display:flex;width:max-content;margin-inline:auto}
+.bp-inkijk .bp-inkijk-text{max-width:none!important}
+.bp-inkijk .bp-inkijk-text > .bp-poems{max-width:620px;margin-inline:auto}
+
+/* 112 · both poems side by side, no tabs */
+.bp-inkijk .bp-poem-tabs{display:none!important}
+.bp-inkijk .bp-inkijk-text > .bp-poems{max-width:1040px}
+.bp-inkijk .bp-paper{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,2.4vw,32px);margin:0}
+.bp-inkijk .bp-paper::before{display:none}
+.bp-inkijk .bp-poem[hidden]{display:block!important}
+.bp-inkijk .bp-poem{transform:none!important;animation:none!important;border-radius:18px}
+@media (max-width:760px){.bp-inkijk .bp-paper{grid-template-columns:1fr}}
+
+/* 113 · poems in the sans serif, upright, even size */
+.bp-inkijk .bp-poem p,.bp-inkijk .bp-poem .bp-poem-close{font-family:"Mulish",sans-serif!important;font-style:normal!important;font-weight:400;font-size:16px!important;line-height:1.6!important;color:#54615e}
+.bp-inkijk .bp-poem .bp-poem-close{color:var(--teal-deep,#294749);font-weight:500}
+
+/* 114 · preview: background options for "Over de bundel" */
+html[data-inkbg="zand"] .bp-inkijk{background:#ece3d6!important}
+html[data-inkbg="salie"] .bp-inkijk{background:#e5ece6!important}
+html[data-inkbg="groen"] .bp-inkijk{background:linear-gradient(180deg,#3b605b 0%,#446c65 55%,#527c73 100%)!important}
+html[data-inkbg="groen"] .bp-inkijk-tagline{color:#f6f1e7}
+html[data-inkbg="groen"] .bp-inkijk .bp-poem{box-shadow:0 30px 60px -36px rgba(20,36,36,.6)}
+html[data-inkbg="textuur"] .bp-inkijk{background-color:#efe7dc!important;background-image:url("img/libellen-patroon.webp")!important;background-size:320px 320px!important;background-blend-mode:multiply}
+
+/* 115 · "Over de bundel": green chosen; lighter at the top, darker below, with fine grain */
+html[data-inkbg="groen"] .bp-inkijk{position:relative;isolation:isolate;background:linear-gradient(180deg,#6f948a 0%,#557d74 30%,#446c65 65%,#3a605a 100%)!important}
+html[data-inkbg="groen"] .bp-inkijk::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.32;mix-blend-mode:overlay;background-size:220px 220px;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.5  0 0 0 0 0.5  0 0 0 0 0.5  0 0 0 1.1 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+/* 116 · stronger gradient: pale mint at the top, deep green at the bottom */
+html[data-inkbg="groen"] .bp-inkijk{background:linear-gradient(180deg,#dbe8df 0%,#a9c6b9 22%,#6e968b 48%,#4b7369 74%,#3a605a 100%)!important}
+html[data-inkbg="groen"] .bp-inkijk-tagline{color:var(--teal-deep,#294749)}
+
+/* 117 · poems section: the homepage "ways" background, upside down (light at the top, deep green below) */
+html[data-inkbg="groen"] .bp-inkijk{background:var(--teal-deep,#294749)!important;position:relative;isolation:isolate}
+html[data-inkbg="groen"] .bp-inkijk > *{position:relative;z-index:1}
+html[data-inkbg="groen"] .bp-inkijk::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:20%;z-index:0;pointer-events:none;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+    linear-gradient(180deg,rgba(229,236,230,0) 0%,rgba(229,236,230,.35) 55%,rgba(229,236,230,.85) 100%);
+  -webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 60%);mask-image:linear-gradient(180deg,transparent 0%,#000 60%);
+  mix-blend-mode:normal;opacity:.9;
+}
+html[data-inkbg="groen"] .bp-inkijk::after{
+  height:24%;opacity:1;-webkit-mask-image:none;mask-image:none;mix-blend-mode:normal;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .1  0 0 0 0 .2  0 0 0 0 .18  0 0 0 .22 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+    linear-gradient(180deg,#294749 0%,#3f6a5c 38%,#6e9a7c 72%,#8fb592 100%);
+}
+html[data-inkbg="groen"] .bp-inkijk::after{
+  height:42%;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.35' numOctaves='2' seed='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .96  0 0 0 0 .95  0 0 0 0 .86  0 0 0 1.6 -.92'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='b'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.1' numOctaves='2' seed='9' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .08  0 0 0 0 .16  0 0 0 0 .12  0 0 0 1.5 -.88'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23b)'/%3E%3C/svg%3E"),
+    linear-gradient(180deg,#294749 0%,#33604f 30%,#55895f 62%,#86b37f 88%,#9cc28c 100%);
+  -webkit-mask-image:linear-gradient(180deg,transparent 0%,rgba(0,0,0,.6) 22%,#000 45%);
+          mask-image:linear-gradient(180deg,transparent 0%,rgba(0,0,0,.6) 22%,#000 45%);
+}
+html[data-inkbg="groen"] .bp-inkijk::after{
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.5' numOctaves='2' seed='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .97  0 0 0 0 .97  0 0 0 0 .92  0 0 0 2.2 -1.15'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='b'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.25' numOctaves='2' seed='9' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .1  0 0 0 0 .18  0 0 0 0 .16  0 0 0 2.2 -1.12'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23b)'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='c'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='3' seed='5' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .9  0 0 0 0 .94  0 0 0 0 .9  0 0 0 .5 -.1'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23c)'/%3E%3C/svg%3E"),
+    linear-gradient(180deg,#294749 0%,#3b5e58 30%,#7c9c90 64%,#b4cbbf 88%,#c9dacf 100%);
+}
+html[data-inkbg="groen"] .bp-inkijk::after{
+  height:68%;
+  background-size:auto,auto,auto,100% 100%;
+  -webkit-mask-image:
+    linear-gradient(180deg,transparent 0%,transparent 38%,rgba(0,0,0,.6) 55%,#000 72%),
+    radial-gradient(ellipse 34% 95% at 0% 100%,#000 25%,rgba(0,0,0,.5) 55%,transparent 85%),
+    radial-gradient(ellipse 34% 95% at 100% 100%,#000 25%,rgba(0,0,0,.5) 55%,transparent 85%);
+  -webkit-mask-composite:source-over;
+          mask-image:
+    linear-gradient(180deg,transparent 0%,transparent 38%,rgba(0,0,0,.6) 55%,#000 72%),
+    radial-gradient(ellipse 34% 95% at 0% 100%,#000 25%,rgba(0,0,0,.5) 55%,transparent 85%),
+    radial-gradient(ellipse 34% 95% at 100% 100%,#000 25%,rgba(0,0,0,.5) 55%,transparent 85%);
+          mask-composite:add;
+}
+html[data-inkbg="groen"] .bp-inkijk::after{
+  top:0;height:auto;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.5' numOctaves='2' seed='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .97  0 0 0 0 .97  0 0 0 0 .92  0 0 0 2.2 -1.15'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='b'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.25' numOctaves='2' seed='9' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .1  0 0 0 0 .18  0 0 0 0 .16  0 0 0 2.2 -1.12'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23b)'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='c'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='3' seed='5' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .9  0 0 0 0 .94  0 0 0 0 .9  0 0 0 .5 -.1'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23c)'/%3E%3C/svg%3E"),
+    radial-gradient(ellipse 62% 70% at 50% 30%,#294749 0%,#294749 45%,#3b5e58 62%,#7c9c90 82%,#b4cbbf 100%);
+  background-size:auto,auto,auto,100% 100%;
+  -webkit-mask-image:radial-gradient(ellipse 62% 70% at 50% 30%,transparent 42%,rgba(0,0,0,.55) 62%,#000 82%);
+          mask-image:radial-gradient(ellipse 62% 70% at 50% 30%,transparent 42%,rgba(0,0,0,.55) 62%,#000 82%);
+  -webkit-mask-composite:source-over;mask-composite:add;
+}
+html[data-inkbg="groen"] .bp-inkijk::after{
+  top:auto;bottom:0;height:72%;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.5' numOctaves='2' seed='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .97  0 0 0 0 .97  0 0 0 0 .92  0 0 0 2.2 -1.15'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='b'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.25' numOctaves='2' seed='9' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .1  0 0 0 0 .18  0 0 0 0 .16  0 0 0 2.2 -1.12'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23b)'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='c'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='3' seed='5' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .9  0 0 0 0 .94  0 0 0 0 .9  0 0 0 .5 -.1'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23c)'/%3E%3C/svg%3E"),
+    linear-gradient(180deg,#294749 0%,#2d4e4f 14%,#345852 26%,#3f6559 37%,#4e7564 47%,#618674 57%,#779a88 67%,#8eae9c 77%,#a5c0b0 87%,#b9cfc2 95%,#c4d7cb 100%);
+  background-size:auto,auto,auto,100% 100%;
+  -webkit-mask-image:
+    linear-gradient(180deg,transparent 0%,rgba(0,0,0,.04) 18%,rgba(0,0,0,.14) 30%,rgba(0,0,0,.32) 42%,rgba(0,0,0,.55) 54%,rgba(0,0,0,.78) 66%,rgba(0,0,0,.93) 78%,#000 88%),
+    radial-gradient(ellipse 36% 100% at 0% 100%,rgba(0,0,0,.9) 0%,rgba(0,0,0,.6) 40%,rgba(0,0,0,.25) 68%,transparent 92%),
+    radial-gradient(ellipse 36% 100% at 100% 100%,rgba(0,0,0,.9) 0%,rgba(0,0,0,.6) 40%,rgba(0,0,0,.25) 68%,transparent 92%);
+  -webkit-mask-composite:source-over;
+          mask-image:
+    linear-gradient(180deg,transparent 0%,rgba(0,0,0,.04) 18%,rgba(0,0,0,.14) 30%,rgba(0,0,0,.32) 42%,rgba(0,0,0,.55) 54%,rgba(0,0,0,.78) 66%,rgba(0,0,0,.93) 78%,#000 88%),
+    radial-gradient(ellipse 36% 100% at 0% 100%,rgba(0,0,0,.9) 0%,rgba(0,0,0,.6) 40%,rgba(0,0,0,.25) 68%,transparent 92%),
+    radial-gradient(ellipse 36% 100% at 100% 100%,rgba(0,0,0,.9) 0%,rgba(0,0,0,.6) 40%,rgba(0,0,0,.25) 68%,transparent 92%);
+          mask-composite:add;
+}
+html[data-inkbg="groen"] .bp-inkijk::after{content:"";position:absolute;left:0;right:0;z-index:0;pointer-events:none;opacity:1;mix-blend-mode:normal;top:0;bottom:auto;transform:scaleY(-1)}
+html[data-inkbg="groen"] .bp-inkijk-tagline{color:var(--teal-deep,#294749)}
+
+/* 118 · book page hero: smaller text block, sitting lower */
+.bp-hero .bp-hero-copy h1{font-size:clamp(34px,3vw,46px)!important}
+.bp-hero .bp-lead{font-size:16.5px;max-width:42ch;margin:14px 0 24px}
+.bp-hero .bp-hero-copy .btn-lg{padding:14px 26px;font-size:15px}
+@media (min-width:901px){.bp-hero .bp-hero-copy{align-self:end;padding-top:clamp(60px,10vh,120px);margin-bottom:clamp(20px,4vh,48px)}}
+/* 119 · book hero text back in the middle; white button */
+@media (min-width:901px){.bp-hero .bp-hero-copy{align-self:center;padding-top:0;margin-bottom:0}}
+.bp-hero .bp-hero-copy .btn{background:#fffdf8!important;border-color:#fffdf8!important;color:var(--teal-deep,#294749)!important;box-shadow:0 14px 30px -18px rgba(41,58,57,.45)!important}
+.bp-hero .bp-hero-copy .btn:hover{background:#fff!important;border-color:#fff!important}
+.bp-hero .bp-hero-copy .btn svg{color:var(--teal-deep,#294749)}
+@media (min-width:901px){.bp-hero .bp-hero-copy{position:relative;top:clamp(30px,6.9vh,80px)}}
+.bp-hero .bp-hero-copy .btn{width:143px;padding-left:0!important;padding-right:0!important;justify-content:center;gap:6px;font-size:14px}
+
+/* 120 · preview: beige tones for the poem cards */
+html[data-poemc="linnen"] .bp-inkijk .bp-poem{background:#f5efe5!important}
+html[data-poemc="beige"] .bp-inkijk .bp-poem{background:#eee4d4!important}
+html[data-poemc="zand"] .bp-inkijk .bp-poem{background:#e6d8c2!important}
+html[data-poemc] .bp-inkijk .bp-poem-foot{border-top-color:rgba(41,71,73,.15)}
+
+/* 121 · book hero fades softly into the reviews below */
+.bp-hero{position:relative;isolation:isolate}
+.bp-hero > .wrap{position:relative;z-index:1}
+.bp-hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:clamp(140px,22vh,240px);z-index:0;pointer-events:none;background:linear-gradient(180deg,rgba(248,244,236,0) 0%,rgba(248,244,236,.55) 45%,rgba(248,244,236,.9) 75%,#f8f4ec 100%)}
+.bp-hero::before{content:"";position:absolute;left:0;bottom:0;width:min(46vw,640px);height:70%;z-index:0;pointer-events:none;background:radial-gradient(ellipse 85% 80% at 0% 100%,#f2ebe1 0%,rgba(242,235,225,.96) 40%,rgba(242,235,225,.7) 62%,rgba(242,235,225,0) 100%)}
+
+/* 122 · seamless seam: the poems section starts in the hero cream and melts into its mint */
+html[data-inkbg="groen"] .bp-inkijk::before{content:"";position:absolute;left:0;right:0;top:-1px;height:clamp(140px,16vw,240px);z-index:0;pointer-events:none;background:linear-gradient(180deg,#f8f4ec 0%,rgba(248,244,236,.85) 25%,rgba(248,244,236,.5) 55%,rgba(248,244,236,.18) 80%,rgba(248,244,236,0) 100%)}
+html[data-inkbg="groen"] .bp-inkijk::after{z-index:-1}
+html[data-inkbg="groen"] .bp-inkijk::before{z-index:0}
+
+/* 123 · preview: lighter versions of the poems background (no dark depth) */
+html[data-inktone] .bp-inkijk{background:linear-gradient(180deg,#f8f4ec 0%,#eef1ea 35%,#dfe9e1 70%,#cfdfd4 100%)!important}
+html[data-inktone="heel"] .bp-inkijk{background:linear-gradient(180deg,#f8f4ec 0%,#f2f2ec 45%,#e8eee8 100%)!important}
+html[data-inktone] .bp-inkijk::after{transform:none!important;top:0!important;bottom:0!important;height:auto!important;-webkit-mask-image:none!important;mask-image:none!important;opacity:.28!important;mix-blend-mode:multiply!important;background-size:220px 220px!important;
+  background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.45  0 0 0 0 0.5  0 0 0 0 0.47  0 0 0 .9 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")!important}
+html[data-inktone] .bp-inkijk::before{display:none}
+html[data-inktone] .bp-inkijk .bp-poem{box-shadow:0 26px 50px -34px rgba(41,58,57,.4)!important}
+html[data-inktone="midden"] .bp-inkijk{background:linear-gradient(180deg,#f8f4ec 0%,#e3ebe4 22%,#bcd1c5 48%,#94b3a6 75%,#7fa294 100%)!important}
+html[data-inktone="midden"] .bp-inkijk::after{opacity:.34!important}
+
+/* 124 · preview: zine / editorial style for the poems (horizontal, one screen) */
+.zine{display:none}
+html[data-zine] .bp-inkijk{background:#e8e2d6!important;padding:0!important;min-height:calc(100vh - 72px);display:flex;align-items:center}
+html[data-zine] .bp-inkijk::before{display:none!important}
+html[data-zine] .bp-inkijk::after{content:""!important;transform:none!important;top:0!important;bottom:0!important;height:auto!important;-webkit-mask-image:none!important;mask-image:none!important;opacity:.45!important;mix-blend-mode:multiply!important;z-index:0!important;
+  background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='260' height='260'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.5  0 0 0 0 0.47  0 0 0 0 0.42  0 0 0 .55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")!important;background-size:260px 260px!important}
+html[data-zine] .bp-inkijk > .wrap{display:none!important}
+html[data-zine] .zine{display:grid;position:relative;z-index:1;width:min(1240px,calc(100% - 64px));margin:0 auto;padding:clamp(36px,6vh,64px) 0;
+  font-family:"Space Mono",ui-monospace,monospace;color:#2b2a27;gap:22px 40px}
+.zine-poem h3{margin:0 0 14px;font:700 14px/1.3 "Space Mono",monospace;letter-spacing:.02em;color:#2b2a27}
+.zine-poem p{margin:0 0 12px;font:400 13.5px/1.62 "Space Mono",monospace;color:#3a3935}
+.zine-head .zine-kicker{margin:0;font:700 clamp(22px,2.3vw,32px)/1.15 "Space Mono",monospace;color:#2b2a27;letter-spacing:-.01em}
+.zine-head .zine-sub{margin:8px 0 0;font:400 13px/1.5 "Space Mono",monospace;color:#5d5a52}
+.zine-meta{display:flex;flex-direction:column;gap:2px;font:400 12.5px/1.5 "Space Mono",monospace;color:#5d5a52}
+.zine-meta strong{font-weight:700;color:#2b2a27}
+.zine-ph{margin:0;overflow:hidden;background:#cfc8bb}
+.zine-ph img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(1) contrast(.92) brightness(1.04);mix-blend-mode:multiply}
+
+/* Zine 1 · photo in the middle, poems either side, title bottom-left (like the first reference) */
+html[data-zine="1"] .zine{grid-template-columns:1fr 1.05fr 1fr;grid-template-rows:auto auto 1fr auto;grid-template-areas:"p1 ph1 p2" "p1 ph1 p2" "head ph1 p2" "meta ph1 p2"}
+html[data-zine="1"] .zine-p1{grid-area:p1}
+html[data-zine="1"] .zine-p2{grid-area:p2;align-self:end}
+html[data-zine="1"] .zine-ph1{grid-area:ph1;height:min(62vh,560px);align-self:center}
+html[data-zine="1"] .zine-ph2{display:none}
+html[data-zine="1"] .zine-head{grid-area:head;align-self:end}
+html[data-zine="1"] .zine-meta{grid-area:meta}
+
+/* Zine 2 · gold title top-left, poems in two columns, two stacked photos with a script-like rhythm (second reference) */
+html[data-zine="2"] .zine{grid-template-columns:1fr 1fr .95fr;grid-template-rows:auto 1fr auto;grid-template-areas:"head head phs" "p1 p2 phs" "meta . phs"}
+html[data-zine="2"] .zine-head{grid-area:head}
+html[data-zine="2"] .zine-head .zine-kicker{color:#a7864c;font-size:clamp(18px,1.6vw,22px)}
+html[data-zine="2"] .zine-head .zine-sub{color:#a7864c}
+html[data-zine="2"] .zine-p1{grid-area:p1}
+html[data-zine="2"] .zine-p2{grid-area:p2}
+html[data-zine="2"] .zine-meta{grid-area:meta}
+html[data-zine="2"] .zine-ph1,html[data-zine="2"] .zine-ph2{grid-area:phs}
+html[data-zine="2"] .zine-ph1{width:78%;height:min(40vh,360px);justify-self:end;align-self:start}
+html[data-zine="2"] .zine-ph2{width:62%;height:min(34vh,300px);justify-self:start;align-self:end;margin-bottom:10px;box-shadow:0 18px 36px -24px rgba(0,0,0,.35)}
+
+/* Zine 3 · newspaper spread: large photo on the right half, two narrow poem columns and the title on the left */
+html[data-zine="3"] .zine{grid-template-columns:1fr 1fr 1.6fr;grid-template-rows:auto 1fr auto;grid-template-areas:"head head ph1" "p1 p2 ph1" "meta meta ph1"}
+html[data-zine="3"] .zine-head{grid-area:head;padding-bottom:14px;border-bottom:1px solid rgba(43,42,39,.35)}
+html[data-zine="3"] .zine-head .zine-kicker{font-size:clamp(28px,3vw,42px)}
+html[data-zine="3"] .zine-p1{grid-area:p1}
+html[data-zine="3"] .zine-p2{grid-area:p2}
+html[data-zine="3"] .zine-meta{grid-area:meta;flex-direction:row;gap:18px;padding-top:12px;border-top:1px solid rgba(43,42,39,.35)}
+html[data-zine="3"] .zine-ph1{grid-area:ph1;height:min(70vh,640px);align-self:center}
+html[data-zine="3"] .zine-ph2{display:none}
+@media (max-width:900px){html[data-zine] .zine{grid-template-columns:1fr!important;grid-template-areas:"head" "p1" "ph1" "p2" "meta"!important}html[data-zine] .zine-ph2{display:none}html[data-zine] .zine-ph1{height:280px!important;width:100%!important}}
+
+/* 125 · "Over de schrijver": light, flat background (no gradient), dark text */
+.bp-author{background:#f3ece2!important}
+.bp-author::before,.bp-author::after{display:none!important}
+.bp-author .eyebrow{color:#4c6855!important}
+.bp-author .bp-author-lead{color:var(--teal-deep,#294749)!important}
+.bp-author-text{color:#54615e!important}
+.bp-author .link-more{color:var(--teal-deep,#294749)!important}
+html[data-auteur="b"] .bp-author-media::after{border-color:rgba(41,71,73,.25)!important}
+.bp-author-photo{box-shadow:0 30px 60px -40px rgba(41,58,57,.5)!important}
+
+/* 126 · zine: the two chosen photos in their own colours; title in the site's serif */
+.zine-ph{background:none}
+.zine-ph img{filter:none!important;mix-blend-mode:normal!important}
+.zine-head .zine-kicker{font-family:"Libre Caslon Text",Georgia,serif!important;font-weight:400!important;letter-spacing:0!important;color:var(--teal-deep,#294749)!important}
+.zine-head .zine-sub{font-family:"Libre Caslon Text",Georgia,serif!important;font-style:italic;font-size:clamp(15px,1.3vw,18px)!important;color:#4c6855!important}
+html[data-zine="2"] .zine-head .zine-kicker{color:var(--teal-deep,#294749)!important;font-size:clamp(24px,2.4vw,34px)!important}
+html[data-zine="1"] .zine-ph1{height:min(66vh,600px)}
+html[data-zine="1"] .zine-ph2{display:block;grid-area:p2;align-self:start;width:44%;height:min(26vh,230px);justify-self:end}
+html[data-zine="1"] .zine-p2{align-self:end}
+html[data-zine="3"] .zine-ph2{display:none}
+html[data-zine="3"] .zine-ph1 img{object-position:50% 60%}
+
+/* 127 · poems: three simple boxes. Left: title, subtitle, meta. Middle: Horizon. Right: Wanneer ik kies */
+html[data-zine="4"] .zine{grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:1fr;grid-template-areas:"lead p1 p2";gap:0;align-items:stretch}
+html[data-zine="4"] .zine-ph{display:none!important}
+html[data-zine="4"] .zine-head,html[data-zine="4"] .zine-meta{grid-area:lead}
+html[data-zine="4"] .zine-head{align-self:start;padding:40px 36px 0}
+html[data-zine="4"] .zine-meta{align-self:end;padding:0 36px 40px}
+html[data-zine="4"] .zine-p1{grid-area:p1}
+html[data-zine="4"] .zine-p2{grid-area:p2}
+html[data-zine="4"] .zine-p1,html[data-zine="4"] .zine-p2{padding:40px 36px}
+html[data-zine="4"] .zine::before{content:"";grid-area:lead}
+html[data-zine="4"] .zine-head,html[data-zine="4"] .zine-p1,html[data-zine="4"] .zine-p2{position:relative}
+/* the three boxes: one thin outline around each column */
+html[data-zine="4"] .zine::before{border:1px solid rgba(43,42,39,.28);z-index:-1}
+html[data-zine="4"] .zine-p1,html[data-zine="4"] .zine-p2{border:1px solid rgba(43,42,39,.28);margin-left:-1px}
+html[data-zine="4"] .zine{min-height:min(64vh,560px)}
+@media (max-width:900px){html[data-zine="4"] .zine{grid-template-columns:1fr!important;grid-template-areas:"lead" "p1" "p2"!important}html[data-zine="4"] .zine-meta{padding-top:18px}html[data-zine="4"] .zine-p1,html[data-zine="4"] .zine-p2{margin:-1px 0 0}}
+
+/* 128 · poems (three boxes): the homepage "Herken je dit?" look, cream fading into soft sage with fine grain */
+html[data-zine] .bp-inkijk{background:linear-gradient(180deg,#f4efe6 0%,#f1ece3 40%,#e3e8df 72%,#cfdcd2 100%)!important}
+html[data-zine] .bp-inkijk::after{opacity:1!important;mix-blend-mode:normal!important;background:
+  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.5' numOctaves='2' seed='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .97  0 0 0 0 .97  0 0 0 0 .92  0 0 0 2.2 -1.15'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)'/%3E%3C/svg%3E"),
+  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='b'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.25' numOctaves='2' seed='9' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .1  0 0 0 0 .18  0 0 0 0 .16  0 0 0 2.2 -1.12'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23b)'/%3E%3C/svg%3E")!important;
+  -webkit-mask-image:linear-gradient(180deg,transparent 0%,rgba(0,0,0,.25) 40%,#000 100%)!important;mask-image:linear-gradient(180deg,transparent 0%,rgba(0,0,0,.25) 40%,#000 100%)!important}
+html[data-zine="4"] .zine-p1,html[data-zine="4"] .zine-p2,html[data-zine="4"] .zine::before{background:rgba(250,247,241,.55)}
+html[data-zine] .bp-inkijk::after{opacity:.5!important}
+
+/* 129 · poems: seamless start in the hero cream; the italic line centred above the three boxes */
+html[data-zine] .bp-inkijk{background:linear-gradient(180deg,#f8f4ec 0%,#f3eee5 40%,#e3e8df 72%,#cfdcd2 100%)!important}
+.zine-tagline{display:none}
+html[data-zine="4"] .zine{grid-template-rows:auto 1fr;grid-template-areas:"tag tag tag" "lead p1 p2"}
+html[data-zine="4"] .zine::before{grid-row:2}
+html[data-zine="4"] .zine-tagline{display:block;grid-area:tag;margin:0 0 clamp(22px,3.5vh,36px);text-align:center;font:italic 400 clamp(28px,3vw,42px)/1.2 "Libre Caslon Text",Georgia,serif;color:var(--teal-deep,#294749)}
+html[data-zine="4"] .zine-head .zine-sub{display:none}
+html[data-zine="4"] .zine{min-height:0}
+html[data-zine="4"] .zine-p1,html[data-zine="4"] .zine-p2,html[data-zine="4"] .zine::before{min-height:min(56vh,500px)}
+@media (max-width:900px){html[data-zine="4"] .zine{grid-template-areas:"tag" "lead" "p1" "p2"!important}}
+
+/* 130 · poem boxes: rounded like the rest of the site, thin white outline instead of black */
+html[data-zine="4"] .zine{column-gap:18px}
+html[data-zine="4"] .zine-p1,html[data-zine="4"] .zine-p2{margin-left:0}
+html[data-zine="4"] .zine::before,html[data-zine="4"] .zine-p1,html[data-zine="4"] .zine-p2{border:1px solid rgba(255,255,255,.9)!important;border-radius:20px;background:rgba(250,247,241,.6);box-shadow:0 22px 44px -34px rgba(41,58,57,.35)}
+@media (max-width:900px){html[data-zine="4"] .zine{row-gap:14px}html[data-zine="4"] .zine-p1,html[data-zine="4"] .zine-p2{margin:0}}
+
+/* 131 · poems: only the two poem boxes, centred; a dragonfly top-left and bottom-right */
+html[data-zine="4"] .zine{grid-template-columns:repeat(2,minmax(0,380px));justify-content:center;grid-template-areas:"tag tag" "p1 p2";position:relative}
+html[data-zine="4"] .zine-head,html[data-zine="4"] .zine-meta{display:none!important}
+html[data-zine="4"] .zine::before,html[data-zine="4"] .zine::after{content:"";position:absolute;width:150px;height:113px;border:0!important;box-shadow:none!important;border-radius:0;min-height:0;
+  background:url("img/libel-groen.webp") center/contain no-repeat!important;opacity:.7;pointer-events:none;grid-area:auto;z-index:0}
+html[data-zine="4"] .zine::before{top:clamp(60px,9vh,96px);left:calc(50% - 389px - 170px);transform:rotate(-14deg)}
+html[data-zine="4"] .zine::after{bottom:clamp(30px,5vh,56px);left:calc(50% + 389px + 22px);transform:rotate(18deg) scaleX(-1)}
+@media (max-width:1100px){html[data-zine="4"] .zine::before,html[data-zine="4"] .zine::after{display:none}}
+@media (max-width:900px){html[data-zine="4"] .zine{grid-template-columns:1fr!important;grid-template-areas:"tag" "p1" "p2"!important}}
+
+/* 132 · the italic line peeks up into the bottom of the hero, so it is visible on the first screen */
+html[data-zine="4"] .bp-inkijk{align-items:flex-start}
+html[data-zine="4"] .zine{padding-top:0}
+html[data-zine="4"] .zine-tagline{position:relative;z-index:2;margin-top:clamp(-80px,-7vh,-40px)}
+html[data-zine="4"] .zine::before{top:clamp(10px,3vh,40px)}
+
+/* 133 · header in the footer green */
+.site-head{background:#435e5b!important}
+.site-head.scrolled{background:rgba(67,94,91,.82)!important}
+
+
+/* 134 · poems centred; dragonflies further out; section ends soon after the poems; italic line a bit lower */
+html[data-zine="4"] .zine-poem{text-align:center}
+html[data-zine="4"] .zine::before{left:calc(50% - 389px - 250px)}
+html[data-zine="4"] .zine::after{left:calc(50% + 389px + 100px)}
+html[data-zine="4"] .bp-inkijk{min-height:0!important}
+html[data-zine="4"] .zine{padding-bottom:clamp(48px,7vh,72px)}
+html[data-zine="4"] .zine-tagline{margin-top:clamp(-24px,-2vh,-8px)}
+html[data-zine="4"] .zine::after{bottom:clamp(40px,7vh,72px)}
+@media (max-width:1300px){html[data-zine="4"] .zine::before,html[data-zine="4"] .zine::after{display:none}}
+
+/* 135 · new handshake photo: not mirrored, hands in view on the right */
+@media (min-width:761px){.sub-steps--photo::before{transform:none!important;background-size:cover!important;background-position:15% 50%!important}}
+@media (min-width:761px){.sub-steps--photo::before{left:36%!important;right:0!important;background-position:40% 45%!important;-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 18%);mask-image:linear-gradient(90deg,transparent 0%,#000 18%)}}
+
+/* 136 · poems: huge dragonflies half off the screen on both sides; italic line lower with more room above the poems */
+html[data-zine="4"] .bp-inkijk{overflow:hidden}
+html[data-zine="4"] .zine{position:static}
+html[data-zine="4"] .zine::before,html[data-zine="4"] .zine::after{display:block!important;width:clamp(300px,30vw,460px);height:clamp(226px,22.6vw,346px);opacity:.55}
+html[data-zine="4"] .zine::before{left:calc(clamp(300px,30vw,460px) / -2)!important;top:clamp(40px,8vh,90px)!important;right:auto}
+html[data-zine="4"] .zine::after{left:auto!important;right:calc(clamp(300px,30vw,460px) / -2);bottom:clamp(20px,4vh,50px)!important}
+html[data-zine="4"] .zine-tagline{margin-top:clamp(24px,3.5vh,40px);margin-bottom:clamp(44px,6vh,64px)}
+@media (max-width:900px){html[data-zine="4"] .zine::before,html[data-zine="4"] .zine::after{width:220px;height:166px;opacity:.35}}
+
+/* 137 · poem cards: same space above and below the poem */
+html[data-zine="4"] .zine-p1,html[data-zine="4"] .zine-p2{min-height:0!important;padding:48px 40px!important;display:flex;flex-direction:column;justify-content:center}
+html[data-zine="4"] .zine-poem p:last-child{margin-bottom:0}
+
+/* 138 · book hero title in the sans serif */
+.bp-hero .bp-hero-copy h1{font-family:"Mulish",sans-serif!important;font-weight:400!important;letter-spacing:-.015em}
+.bp-hero .bp-hero-copy h1{text-transform:uppercase;font-size:clamp(26px,2.3vw,36px)!important;letter-spacing:.06em!important}
+
+/* 139 · poem titles line up at the top */
+html[data-zine="4"] .zine-p1,html[data-zine="4"] .zine-p2{justify-content:flex-start}
+
+/* 140 · poems: equal space above and below; the bottom fades into the reviews cream */
+html[data-zine="4"] .zine-tagline{margin-top:clamp(48px,7vh,72px)!important}
+html[data-zine="4"] .zine{padding-bottom:clamp(96px,13vh,140px)!important}
+html[data-zine] .bp-inkijk{background:linear-gradient(180deg,#f8f4ec 0%,#f1efe7 22%,#e2e9e0 48%,#dfe7de 62%,#ebede5 82%,#f8f4ec 100%)!important}
+html[data-zine] .bp-inkijk::after{-webkit-mask-image:linear-gradient(180deg,transparent 0%,rgba(0,0,0,.25) 30%,#000 55%,rgba(0,0,0,.6) 78%,transparent 100%)!important;mask-image:linear-gradient(180deg,transparent 0%,rgba(0,0,0,.25) 30%,#000 55%,rgba(0,0,0,.6) 78%,transparent 100%)!important}
+html[data-zine="4"] .zine{padding-bottom:clamp(48px,7vh,72px)!important}
+
+/* 141 · book hero: a touch shorter so the italic line shows on the first screen; text further left, books further right and larger */
+@media (min-width:901px){
+  .bp-hero .bp-hero-grid{min-height:clamp(560px,calc(100vh - 190px),760px);padding-block:16px}
+  .bp-hero .bp-hero-copy{margin-left:clamp(-64px,-3.5vw,-24px)}
+  .bp-hero .bp-books{transform:translateX(clamp(24px,4vw,64px)) scale(1.12);transform-origin:50% 55%}
+}
+
+/* 142 · undo the fade at the bottom of the poems (a clean line to the reviews is fine) */
+html[data-zine] .bp-inkijk{background:linear-gradient(180deg,#f8f4ec 0%,#f3eee5 40%,#e3e8df 72%,#cfdcd2 100%)!important}
+html[data-zine] .bp-inkijk::after{-webkit-mask-image:linear-gradient(180deg,transparent 0%,rgba(0,0,0,.25) 40%,#000 100%)!important;mask-image:linear-gradient(180deg,transparent 0%,rgba(0,0,0,.25) 40%,#000 100%)!important}
+/* … and fade between the reviews and "Over de schrijver" instead */
+.bp-author{background:linear-gradient(180deg,#f8f4ec 0%,#f5efe6 40%,#f3ece2 100%)!important}
+
+/* 143 · less space between the reviews and "Over de schrijver" */
+.bp-reviews{padding-bottom:clamp(36px,4vw,56px)!important}
+.bp-author{padding-top:clamp(48px,5vw,72px)!important}
+
+/* 144 · left dragonfly: small and in frame, just above the top-left of "Horizon" */
+html[data-zine="4"] .zine::before{width:120px!important;height:90px!important;left:calc(50% - 389px - 30px)!important;top:clamp(96px,13vh,124px)!important;opacity:.75!important;display:block!important}
+
+/* 145 · right dragonfly: same small size, just below the bottom-right corner of "Wanneer ik kies" */
+html[data-zine="4"] .zine::after{width:120px!important;height:90px!important;right:auto!important;left:calc(50% + 389px - 90px)!important;bottom:4px!important;top:auto!important;opacity:.75!important;display:block!important}
+html[data-zine="4"] .zine::after{bottom:40px!important}
+
+/* 146 · contact hero: new handshake photo, not mirrored, hands on the right */
+.sub-hero.photo-hero.tex-contact::before{transform:none!important;background-position:30% center!important}
+@media (min-width:761px){.sub-hero.photo-hero.tex-contact::before{left:34%!important;right:0!important;width:auto!important;background-size:cover!important;background-position:40% center!important}}
+html[data-zine="4"] .zine::before{z-index:3!important}
+@media (min-width:761px){.sub-hero.photo-hero.tex-contact::before{-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 22%);mask-image:linear-gradient(90deg,transparent 0%,#000 22%)}}
+
+/* 147 · contact page: same two-sided intake card as the homepage, opened straight away */
+.practical-card--contact{margin-top:clamp(28px,4vw,48px);min-height:540px}
+.practical-card--contact .rate-panel{visibility:hidden}
+
+/* 148 · closing band: the intake card slides up from under the footer in place of the text */
+.cta-intake{display:none}
+.cta-band.is-intake{overflow:hidden}
+.cta-band.is-intake > .wrap{display:none}
+.cta-band.is-intake .cta-intake{display:block;position:relative;z-index:2;width:min(1080px,calc(100% - 48px));margin:0 auto;animation:ctaSlideUp .75s cubic-bezier(.22,1,.36,1) both}
+@keyframes ctaSlideUp{from{transform:translateY(110%);opacity:.2}to{transform:none;opacity:1}}
+.practical-card--cta{min-height:540px;text-align:left;box-shadow:0 40px 80px -40px rgba(0,0,0,.55)}
+.practical-card--cta .rate-panel{visibility:hidden}
+@media (prefers-reduced-motion:reduce){.cta-band.is-intake .cta-intake{animation:none}}
+
+/* 149 · contact "Plan een kennismaking": the warm leaf-shadow backdrop from the book page */
+#kennismaken.sub-steps{background:linear-gradient(180deg,rgba(248,244,236,.15) 0%,rgba(248,244,236,.35) 55%,#f8f4ec 100%),#efe6da url("img/boek-hero.webp") center top/cover no-repeat!important}
+#kennismaken.sub-steps::before,#kennismaken.sub-steps::after{display:none!important}
+
+/* 150 · closing band intake: full width, light side to the left edge, dark side to the right edge */
+.cta-band.is-intake{padding-top:0!important;padding-bottom:0!important}
+.cta-band.is-intake .cta-intake{width:100%;margin:0}
+.practical-card--cta{border-radius:0!important;box-shadow:none!important;min-height:560px}
+.practical-card--cta .intake-inline .iq-left{padding-left:max(40px,calc((100vw - 1180px) / 2))}
+.practical-card--cta .intake-inline .iq-right{padding-right:max(40px,calc((100vw - 1180px) / 2))}
+
+/* 151 · contact form heading: much smaller */
+#kennismaken .sub-head h2{font-size:clamp(28px,2.6vw,38px)!important}
+#kennismaken .sub-head p{font-size:16px}
+
+/* 152 · closing band intake keeps the band's own height: compact layout so every step fits */
+.practical-card--cta{min-height:0!important}
+.practical-card--cta .intake-inline .iq-left,.practical-card--cta .intake-inline .iq-right{padding-top:22px!important;padding-bottom:22px!important;gap:10px!important}
+.practical-card--cta .iq-pane{gap:10px!important}
+.practical-card--cta .intake-inline .iq-title{font-size:24px!important;margin:2px 0 0!important}
+.practical-card--cta .iq-left .q label,.practical-card--cta .iq-left legend{margin-bottom:4px}
+.practical-card--cta input[type=text],.practical-card--cta input[type=tel]{padding-top:9px;padding-bottom:9px}
+.practical-card--cta .iq-right .chips{gap:6px}
+.practical-card--cta .iq-right .chip span{padding:8px 16px;min-height:0}
+.practical-card--cta .iq-hint{margin:0 0 6px}
+.practical-card--cta .iq-row{padding:1px 0!important}
+.practical-card--cta .iq-row .iq-edit{line-height:19px}
+.practical-card--cta .iq-welcome h3{font-size:24px!important}
+.practical-card--cta .iq-send .intake-actions .btn{padding-top:9px;padding-bottom:9px}
+.practical-card--cta .iq-send .intake-privacy{font-size:12px}
+.practical-card--cta .iq-pane textarea{height:calc(2 * 1.4em + 14px)!important;padding-top:6px;padding-bottom:6px}
+.practical-card--cta .iq-left .q{margin:0}
+.practical-card--cta .intake-inline .iq-left{padding-top:19px!important}
+/* 153 · contact form section: keep the leaf shadows, fade away the dried flowers on the right */
+#kennismaken.sub-steps{background:linear-gradient(90deg,rgba(248,244,236,0) 0%,rgba(248,244,236,0) 45%,rgba(243,236,226,.9) 68%,#f3ece2 82%),linear-gradient(180deg,rgba(248,244,236,.15) 0%,rgba(248,244,236,.35) 55%,#f8f4ec 100%),#efe6da url("img/boek-hero.webp") center top/cover no-repeat!important}
+
+/* 154 · closing band intake: each side's content centred in its own half */
+.practical-card--cta .intake-inline .iq-left,.practical-card--cta .intake-inline .iq-right{padding-left:40px!important;padding-right:40px!important;align-items:center;justify-content:center}
+.practical-card--cta .iq-left > *,.practical-card--cta .iq-right > *{width:min(460px,100%)}
+.practical-card--cta .iq-left .q{max-width:none}
+.practical-card--cta .iq-right .iq-nav{margin-top:6px}
+.practical-card--cta .iq-left .intake-back{align-self:center!important}
+.practical-card--cta .iq-left > *{width:min(540px,100%)}
+.practical-card--cta .iq-sum .iq-row{grid-template-columns:110px 1fr}
+.practical-card--cta .intake-inline .iq-left{padding-top:15px!important;padding-bottom:15px!important}
+
+/* 155 · contact form section: leaf shadows on both sides (the right side is the same photo, mirrored) */
+#kennismaken.sub-steps{position:relative;isolation:isolate;background:linear-gradient(180deg,rgba(248,244,236,.15) 0%,rgba(248,244,236,.35) 55%,#f8f4ec 100%),#efe6da url("img/boek-hero.webp") left top/cover no-repeat!important}
+#kennismaken.sub-steps > *{position:relative;z-index:1}
+#kennismaken.sub-steps::after{content:""!important;display:block!important;position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:linear-gradient(180deg,rgba(248,244,236,.15) 0%,rgba(248,244,236,.35) 55%,#f8f4ec 100%),url("img/boek-hero.webp") left top/cover no-repeat;transform:scaleX(-1);
+  -webkit-mask-image:linear-gradient(90deg,#000 0%,#000 38%,transparent 58%);mask-image:linear-gradient(90deg,#000 0%,#000 38%,transparent 58%)}
+
+/* 156 · "Hoe lang speelt dit al?": small pills side by side (like ochtend / middag / avond), above "Wat speelt er" */
+.intake-inline .iq-left .chips{flex-direction:row!important;flex-wrap:wrap;gap:8px}
+.intake-inline .iq-left .chip span{width:auto!important;padding:8px 16px!important;border-radius:999px!important;min-height:0}
+.intake-inline .iq-left .chips{max-width:none!important;flex-wrap:nowrap}
+.intake-inline .iq-left .chip span{white-space:nowrap;font-size:14px}
+
+/* 157 · closing band intake: see-through, so the band photo shows softly beneath */
+.practical-card--cta{background:transparent!important}
+.practical-card--cta .intake-inline .iq-left{background:rgba(250,247,241,.8)!important;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.practical-card--cta .intake-inline .iq-right:not(:has(.iq-send:not([hidden]))){background:rgba(41,71,73,.82)!important;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.practical-card--cta .intake-inline .iq-left{background:rgba(250,247,241,.9)!important}
+
+/* 158 · contact form section: lighter wash, softer leaf shadows; seamless top edge */
+#kennismaken.sub-steps{background:linear-gradient(180deg,#f8f4ec 0%,rgba(248,244,236,.6) 18%,rgba(248,244,236,.55) 55%,#f8f4ec 100%),#efe6da url("img/boek-hero.webp") left top/cover no-repeat!important}
+#kennismaken.sub-steps::after{background:linear-gradient(180deg,#f8f4ec 0%,rgba(248,244,236,.6) 18%,rgba(248,244,236,.55) 55%,#f8f4ec 100%),url("img/boek-hero.webp") left top/cover no-repeat!important}
+
+/* 159 · closing band intake: solid again (no photo through it); the right side light green with dark text */
+.practical-card--cta .intake-inline .iq-left{background:#faf7f1!important;-webkit-backdrop-filter:none;backdrop-filter:none}
+.practical-card--cta .intake-inline .iq-right:not(:has(.iq-send:not([hidden]))){background:#dce9e0!important;-webkit-backdrop-filter:none;backdrop-filter:none;color:var(--teal-deep,#294749)}
+.practical-card--cta .iq-right:not(:has(.iq-send:not([hidden]))) :is(legend,label:not(.chip),.iq-count){color:var(--teal-deep,#294749)!important}
+.practical-card--cta .iq-right:not(:has(.iq-send:not([hidden]))) :is(.iq-hint,.opt){color:#54615e!important}
+.practical-card--cta .iq-right:not(:has(.iq-send:not([hidden]))) .iq-dot{background:rgba(41,71,73,.2)}
+.practical-card--cta .iq-right:not(:has(.iq-send:not([hidden]))) .iq-dot.is-on{background:var(--teal-deep,#294749)}
+.practical-card--cta .iq-right .chip span{background:#f4f8f5!important;border-color:rgba(41,71,73,.18)!important;color:var(--teal-deep,#294749)!important}
+.practical-card--cta .iq-right .chip input:checked+span{background:var(--teal-deep,#294749)!important;border-color:var(--teal-deep,#294749)!important;color:#f6f1e7!important}
+.practical-card--cta .iq-right textarea{background:#f4f8f5!important;border-color:rgba(41,71,73,.18)!important;color:var(--teal-deep,#294749)!important}
+.practical-card--cta .iq-right .iq-next{background:var(--teal-deep,#294749)!important;border-color:var(--teal-deep,#294749)!important;color:#f6f1e7!important}
+
+/* 160 · contact: the form section sits closer to the three contact options above */
+#kennismaken.sub-steps{padding-top:clamp(24px,3vw,44px)!important}
+#inhoud.also{padding-bottom:clamp(24px,3vw,40px)!important}
+
+/* 161 · no scrollbars inside the intake card */
+.intake-inline .iq-left,.intake-inline .iq-right{overflow:hidden!important;scrollbar-width:none}
+.intake-inline .iq-left::-webkit-scrollbar,.intake-inline .iq-right::-webkit-scrollbar{display:none}
+
+/* 162 · thin white line between the open closing card and the footer */
+.cta-band.is-intake{border-bottom:1px solid rgba(255,255,255,.75)}
+
+/* 163 · closing card: back link and "x van 3" in the top-left corners; summary rows read around the chosen options */
+.practical-card--cta .intake-inline .iq-left,.practical-card--cta .intake-inline .iq-right{position:relative}
+.practical-card--cta .iq-left .intake-back{position:absolute!important;top:18px;left:40px;width:auto!important;margin:0!important}
+.practical-card--cta .iq-right .iq-top{position:absolute;top:18px;left:40px;width:auto!important;justify-content:flex-start}
+.practical-card--cta .iq-sum .iq-row{display:grid!important;grid-template-columns:118px minmax(0,1fr) auto;align-items:center;column-gap:14px;padding:3px 0!important}
+.practical-card--cta .iq-sum .iq-change{position:static!important;align-self:center;justify-self:end;padding:0}
+.practical-card--cta .iq-sum .iq-row--opts .iq-opts{padding-right:0!important}
+.practical-card--cta .iq-sum .iq-row .iq-edit[rows]{height:auto!important;min-height:0}
+.practical-card--cta .intake-inline .iq-left{padding-top:44px!important}
+.practical-card--cta .iq-sum .iq-row{padding:1px 0!important}
+.practical-card--cta .iq-left:has(.iq-summary:not([hidden])) .iq-title{font-size:22px!important}
+.cta-band.is-intake{border-bottom-color:#cfe3d4!important}
+
+
+/* 165 · "Zo ziet de begeleiding eruit": a slightly quicker build-up */
+.practical.is-motion .practical-card{transition:opacity .65s ease,transform .8s var(--ease-out)}
+.practical.is-motion .journey-item,.practical.is-motion .practical-note,.practical.is-motion .rate-panel>*{transition-duration:.55s,.7s}
+.practical.is-motion.s5 .rate-panel>:nth-child(2){transition-delay:.05s}
+.practical.is-motion.s5 .rate-panel>:nth-child(3){transition-delay:.1s}
+.practical.is-motion.s5 .rate-panel>:nth-child(4){transition-delay:.15s}
+.practical.is-motion.s5 .rate-panel>:nth-child(5){transition-delay:.2s}
+.practical.is-motion.s5 .rate-panel>:nth-child(6){transition-delay:.25s}
